@@ -13,9 +13,7 @@ import java.io.FileNotFoundException;
 public class Main {
 	private static String[] idExp = new String[4];
 	private static String[] descExp = new String[4];
-	
 	private static String[] metricas = new String[4];
-	
 	private static int[][] matrizMetricas = 
 		{{0,0,0,0},
 		 {0,0,0,0},
@@ -28,7 +26,6 @@ public class Main {
 		mostrarMenuGlobal(s);
 		s.close();
 	}
-	
 	public static void getDatos() throws FileNotFoundException {
 		Scanner exp = new Scanner(new File("experimentos.txt"));
 		getExperimentos(exp);
@@ -44,7 +41,6 @@ public class Main {
 		ver.close();
 	}
 	public static void getExperimentos(Scanner exp) {
-		System.out.println(1);
 		int i = 0;
 		while(exp.hasNextLine()) {
 			String l = exp.nextLine();
@@ -55,7 +51,6 @@ public class Main {
 		}
 	}
 	public static void getMetricas(Scanner met) {
-		System.out.println(2);
 		int i = 0;
 		while(met.hasNextLine()) {
 			String l = met.nextLine();
@@ -63,7 +58,6 @@ public class Main {
 		}
 	}
 	public static void getPredicciones(Scanner pre) {
-		System.out.println(3);
 		while(pre.hasNextLine()) {
 			String l = pre.nextLine();
 			String[] p = l.split(";");
@@ -87,7 +81,11 @@ public class Main {
 		}
 	}
 	public static void getVerificacion(Scanner ver) {
-		System.out.println(4);
+		while(ver.hasNextLine()) {
+			String l = ver.nextLine();
+			System.out.println(l);
+			String[] p = l.split(",");
+		}
 	}
 	
 	public static void mostrarMenuGlobal(Scanner s){
@@ -130,8 +128,26 @@ public class Main {
 			System.out.println("----------------------");
 			opcion = s.next();
 			s.nextLine();
-			if (!opciones.contains(opcion));
+			if (!opciones.contains(opcion)) {
 				System.out.println("Opcion invalida, ingrese nuevamente.");
+			}
+			switch (opcion){
+				case "1":
+					imprimirMatriz();
+					break;
+				case "2":
+					mostrarMayorFscore();
+					break;
+				case "3":
+					mostrarPromedioGlobal();
+					break;
+				case "4":
+					compararExp();
+					break;
+				case "5":
+					compararTablaMatriz();
+					break;
+			}
 		} while(!opcion.equals("0"));
 	}
 	public static void menuUser(Scanner s){
@@ -151,7 +167,60 @@ public class Main {
 			if (!opciones.contains(opcion)){
 				System.out.println("Opcion invalida, ingrese nuevamente.");
 			}
+			switch (opcion) {
+				case "1":
+					mostrarExp();
+					break;
+				case "2":
+					mostrarMatriz(s);
+					break;
+				case "3":
+					mostrarMetricas(s);
+					break;
+				case "4":
+					mostrarPromedios();
+					break;
+			}
 			
 		} while(!opcion.equals("0"));
+	}
+	
+	// Menu Admin.
+	private static void compararExp() {
+		// TODO Auto-generated method stub
+		
+	}
+	private static void mostrarPromedioGlobal() {
+		// TODO Auto-generated method stub
+		
+	}
+	private static void mostrarMayorFscore() {
+		// TODO Auto-generated method stub
+		
+	}
+	private static void imprimirMatriz() {
+		// TODO Auto-generated method stub
+		
+	}
+	private static void compararTablaMatriz() {
+		// TODO Auto-generated method stub
+		
+	}
+	// Menu User.
+	private static void mostrarPromedios() {
+		// TODO Auto-generated method stub
+		
+	}
+	private static void mostrarMetricas(Scanner s) {
+		// TODO Auto-generated method stub
+		
+	}
+	private static void mostrarMatriz(Scanner s) {
+		// TODO Auto-generated method stub
+		
+	}
+	private static void mostrarExp() {
+		// TODO Auto-generated method stub
+		
 	}
 }
