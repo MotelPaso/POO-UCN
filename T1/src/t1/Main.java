@@ -16,7 +16,11 @@ public class Main {
 	
 	private static String[] metricas = new String[4];
 	
-	private static int[][] matrizMetricas = new int[4][4];
+	private static int[][] matrizMetricas = 
+		{{0,0,0,0},
+		 {0,0,0,0},
+		 {0,0,0,0},
+		 {0,0,0,0}};
 	
 	public static void main(String[] args) throws FileNotFoundException {
 		getDatos();
@@ -24,6 +28,7 @@ public class Main {
 		mostrarMenuGlobal(s);
 		s.close();
 	}
+	
 	public static void getDatos() throws FileNotFoundException {
 		Scanner exp = new Scanner(new File("experimentos.txt"));
 		getExperimentos(exp);
@@ -62,12 +67,29 @@ public class Main {
 		while(pre.hasNextLine()) {
 			String l = pre.nextLine();
 			String[] p = l.split(";");
+			for (int i = 0; i < matrizMetricas[0].length; i++) { // 4
+				while(p[0].equals(idExp[i])) {
+					if (p[1].equals("1") && p[2].equals("1")){ // TP
+						matrizMetricas[i][0] += 1;
+					}
+					else if (p[1].equals("0") && p[2].equals("1")) { // FP
+						matrizMetricas[i][1] += 1;
+					}
+					else if (p[1].equals("0") && p[2].equals("0")) { // TN
+						matrizMetricas[i][2] += 1;
+					}
+					else if (p[1].equals("1") && p[2].equals("0")) { // FN
+						matrizMetricas[i][3] += 1;
+					}
+					break;
+				}
+			}
 		}
 	}
 	public static void getVerificacion(Scanner ver) {
 		System.out.println(4);
 	}
-
+	
 	public static void mostrarMenuGlobal(Scanner s){
 		String opcion;
 		String opciones = "1 2 0";
