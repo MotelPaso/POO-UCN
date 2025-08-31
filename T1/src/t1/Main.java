@@ -226,7 +226,15 @@ public class Main {
 		
 	}
 	public static void mostrarMayorFscore() {
-		// TODO Auto-generated method stub
+		float mayor = 0;
+		int indice = 0;
+		for(int i = 0; i < matrizMetricas.length; i++){
+			if (matrizMetricas[i][3] > mayor){
+				mayor = matrizMetricas[i][3];
+				indice = i;
+			}
+		}
+		System.out.println("El experimento con mayor F1 Score es: " + idExp[indice] + " con un F1 Score de " + mayor);
 		
 	}
 	public static void mostrarPromedioGlobal() {
