@@ -14,7 +14,13 @@ public class Main {
 	private static String[] idExp = new String[4];
 	private static String[] descExp = new String[4];
 	private static String[] metricas = new String[4];
-	private static int[][] matrizMetricas = 
+	private static int[][] matrizConfusion = 
+		{{0,0,0,0},
+		 {0,0,0,0},
+		 {0,0,0,0},
+		 {0,0,0,0}};
+		 // TP , FP , TN, FN
+	private static int[][] matrizMetricas =
 		{{0,0,0,0},
 		 {0,0,0,0},
 		 {0,0,0,0},
@@ -30,12 +36,12 @@ public class Main {
 		Scanner exp = new Scanner(new File("experimentos.txt"));
 		getExperimentos(exp);
 		exp.close();
-		Scanner met = new Scanner(new File("metricas.txt"));
-		getMetricas(met);
-		met.close();
 		Scanner pre = new Scanner(new File("predicciones.txt"));
 		getPredicciones(pre);
 		pre.close();
+		Scanner met = new Scanner(new File("metricas.txt"));
+		getMetricas(met);
+		met.close();
 		Scanner ver = new Scanner(new File("verificacion_docente_confusiones.csv"));
 		getVerificacion(ver);
 		ver.close();
@@ -61,19 +67,19 @@ public class Main {
 		while(pre.hasNextLine()) {
 			String l = pre.nextLine();
 			String[] p = l.split(";");
-			for (int i = 0; i < matrizMetricas[0].length; i++) { // 4
+			for (int i = 0; i < matrizConfusion[0].length; i++) { // 4
 				while(p[0].equals(idExp[i])) {
 					if (p[1].equals("1") && p[2].equals("1")){ // TP
-						matrizMetricas[i][0] += 1;
+						matrizConfusion[i][0] += 1;
 					}
 					else if (p[1].equals("0") && p[2].equals("1")) { // FP
-						matrizMetricas[i][1] += 1;
+						matrizConfusion[i][1] += 1;
 					}
 					else if (p[1].equals("0") && p[2].equals("0")) { // TN
-						matrizMetricas[i][2] += 1;
+						matrizConfusion[i][2] += 1;
 					}
 					else if (p[1].equals("1") && p[2].equals("0")) { // FN
-						matrizMetricas[i][3] += 1;
+						matrizConfusion[i][3] += 1;
 					}
 					break;
 				}
@@ -117,8 +123,8 @@ public class Main {
 	public static void menuAdmin(Scanner s) {
 		String opcion;
 		do {
-			System.out.println("Menu admin.");
 			System.out.println("----------------------");
+			System.out.println("Menu admin.");
 			System.out.println("1. Ver matriz de metricas.");
 			System.out.println("2. Ver experimento con mayor F1 Score.");
 			System.out.println("3. Mostrar promedio global de cada metrica.");
@@ -155,8 +161,8 @@ public class Main {
 	public static void menuUser(Scanner s){
 		String opcion;
 		do {
-			System.out.println("Menu User.");
 			System.out.println("----------------------");
+			System.out.println("Menu User.");
 			System.out.println("1. Ver lista de experimentos.");
 			System.out.println("2. Mostrar matriz de un experimento");
 			System.out.println("3. Ver metricas de un experimento");
@@ -189,40 +195,64 @@ public class Main {
 	}
 	
 	// Menu Admin.
-	private static void compararExp() {
+	public static void imprimirMatriz() {
+		// TODO
+		
+	}
+	public static void mostrarMayorFscore() {
 		// TODO Auto-generated method stub
 		
 	}
-	private static void mostrarPromedioGlobal() {
+	public static void mostrarPromedioGlobal() {
 		// TODO Auto-generated method stub
 		
 	}
-	private static void mostrarMayorFscore() {
+	public static void compararExp() {
 		// TODO Auto-generated method stub
 		
 	}
-	private static void imprimirMatriz() {
+	public static void compararTablaMatriz() {
 		// TODO Auto-generated method stub
 		
 	}
-	private static void compararTablaMatriz() {
-		// TODO Auto-generated method stub
-		
-	}
+
 	// Menu User.
-	private static void mostrarPromedios() {
+	public static void mostrarExp() {
+		System.out.println("Listado de Experimentos: ");
+		for (int i = 0; i < idExp.length; i++) {
+			System.out.println(idExp[i] + " " + descExp[i]);
+		}
+		System.out.println("");
+		
+	}
+	public static void mostrarMatriz(Scanner s) {
+		System.out.println("Elija el experimento que desea revisar: ");
+		for (int i = 0; i < idExp.length; i++) {
+			System.out.println(idExp[i] + ": " + descExp[i]);
+		}
+		System.out.println("");
+		int opcion = s.nextInt();
+		s.nextLine();
+		int i;
+		if (opcion >= 1 && opcion <= 4) {
+			System.out.println("nExp | TP | NP | TN | FN |");
+			System.out.print(idExp[opcion-1] + " | ");
+			for (i = 0; i < matrizConfusion[opcion-1].length; i++){
+				System.out.print(matrizConfusion[opcion-1][i] + " | ");
+			}
+		
+			System.out.println("");
+		}
+		else{
+			System.out.println("Opcion invalida, volviendo al menu...");
+		}
+	}
+
+	public static void mostrarMetricas(Scanner s) {
 		// TODO Auto-generated method stub
 		
 	}
-	private static void mostrarMetricas(Scanner s) {
-		// TODO Auto-generated method stub
-		
-	}
-	private static void mostrarMatriz(Scanner s) {
-		// TODO Auto-generated method stub
-		
-	}
-	private static void mostrarExp() {
+	public static void mostrarPromedios() {
 		// TODO Auto-generated method stub
 		
 	}
