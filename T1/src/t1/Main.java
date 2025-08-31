@@ -26,6 +26,7 @@ public class Main {
 		 {0,0,0,0},
 		 {0,0,0,0}};
 		 // Acc, Pre, Rec, F1
+	private static float[] promedios = {0,0,0,0};
 	public static void main(String[] args) throws FileNotFoundException {
 		getDatos();
 		Scanner s = new Scanner(System.in);
@@ -45,6 +46,7 @@ public class Main {
 		Scanner ver = new Scanner(new File("verificacion_docente_confusiones.csv"));
 		getVerificacion(ver);
 		ver.close();
+		getPromedios();
 	}
 	public static void getExperimentos(Scanner exp) {
 		int i = 0;
@@ -110,6 +112,21 @@ public class Main {
 		}
 	}
 	
+	public static void getPromedios(){
+		int i = 0;
+		for (int prom = 0; prom < promedios.length; prom++) {
+			float suma = 0;
+			for(int j = 0; j < matrizMetricas.length; j++){
+				suma += matrizMetricas[j][i];
+			}
+			promedios[prom] = (float) (suma / 4);
+			i++;
+		}
+		for (float prom : promedios){
+			System.out.println(prom);
+		}
+	}
+
 	public static void mostrarMenuGlobal(Scanner s){
 		String opcion;
 		do {
@@ -238,7 +255,9 @@ public class Main {
 		
 	}
 	public static void mostrarPromedioGlobal() {
-		// TODO Auto-generated method stub
+		for (int i = 0; i < promedios.length; i++){
+			System.out.println(metricas[i] + ": " + promedios[i]);
+		}
 		
 	}
 	public static void compararExp() {
