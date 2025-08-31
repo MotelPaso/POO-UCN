@@ -1,7 +1,7 @@
 /* Paulo Araya
  * 21.918.080-2
  * Diego Malebran
- * 
+ * 21.661.740-1
  * ICCI
  */
 package t1;
@@ -90,7 +90,6 @@ public class Main {
 	
 	public static void mostrarMenuGlobal(Scanner s){
 		String opcion;
-		String opciones = "1 2 0";
 		do {
 			System.out.println("Analisis modelos IA");
 			System.out.println("----------------------");
@@ -100,9 +99,6 @@ public class Main {
 			System.out.println("----------------------");
 			opcion = s.next();
 			s.nextLine();
-			if (!opciones.contains(opcion)){
-				System.out.println("Opcion invalida, ingrese nuevamente.");
-			}
 			switch (opcion){
 				case "1":
 					menuAdmin(s);
@@ -110,12 +106,16 @@ public class Main {
 				case "2":
 					menuUser(s);
 					break;
+				case "0":
+					System.out.println("Adios!");
+					break;
+				default:
+					System.out.println("Opcion invalida, ingrese nuevamente.");
 			}
-		} while(opcion == "0");
+		} while(!opcion.equals("0"));
 	}
 	public static void menuAdmin(Scanner s) {
 		String opcion;
-		String opciones = "1 2 3 4 5 0";
 		do {
 			System.out.println("Menu admin.");
 			System.out.println("----------------------");
@@ -128,9 +128,6 @@ public class Main {
 			System.out.println("----------------------");
 			opcion = s.next();
 			s.nextLine();
-			if (!opciones.contains(opcion)) {
-				System.out.println("Opcion invalida, ingrese nuevamente.");
-			}
 			switch (opcion){
 				case "1":
 					imprimirMatriz();
@@ -147,12 +144,16 @@ public class Main {
 				case "5":
 					compararTablaMatriz();
 					break;
+				case "0":
+					System.out.println("Volviendo al menu...");
+					break;
+				default:
+					System.out.println("Opcion invalida, ingrese nuevamente.");
 			}
 		} while(!opcion.equals("0"));
 	}
 	public static void menuUser(Scanner s){
 		String opcion;
-		String opciones = "1 2 3 4 0";
 		do {
 			System.out.println("Menu User.");
 			System.out.println("----------------------");
@@ -164,9 +165,6 @@ public class Main {
 			System.out.println("----------------------");
 			opcion = s.next();
 			s.nextLine();
-			if (!opciones.contains(opcion)){
-				System.out.println("Opcion invalida, ingrese nuevamente.");
-			}
 			switch (opcion) {
 				case "1":
 					mostrarExp();
@@ -180,6 +178,11 @@ public class Main {
 				case "4":
 					mostrarPromedios();
 					break;
+				case "0":
+					System.out.println("Volviendo al menu...");
+					break;
+				default:
+					System.out.println("Opcion invalida, ingrese nuevamente.");
 			}
 			
 		} while(!opcion.equals("0"));
