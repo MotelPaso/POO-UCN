@@ -302,8 +302,30 @@ public class Main {
 	}
 
 	public static void mostrarMetricas(Scanner s) {
-		// TODO Auto-generated method stub
+		System.out.println("Elija el experimento que desea revisar: ");
+		for (int i = 0; i < idExp.length; i++) {
+			System.out.println(idExp[i] + ": " + descExp[i]);
+		}
+		System.out.println("");
+		int opcion = s.nextInt();
+		s.nextLine();
+		int i;
+		if (opcion >= 1 && opcion <= 4) {
+			System.out.print("nExp | ");
+			for (String met : metricas) {
+				System.out.print(met + " | ");
+			}
+			System.out.println("");
+			System.out.print(idExp[opcion-1] + " | ");
+			for (i = 0; i < matrizMetricas[opcion-1].length; i++){
+				System.out.print(matrizMetricas[opcion-1][i] + " | ");
+			}
 		
+			System.out.println("");
+		}
+		else{
+			System.out.println("Opcion invalida, volviendo al menu...");
+		}
 	}
 	public static void mostrarPromedios() {
 		// TODO Auto-generated method stub
