@@ -20,12 +20,12 @@ public class Main {
 		 {0,0,0,0},
 		 {0,0,0,0}};
 		 // TP , FP , TN, FN
-	private static int[][] matrizMetricas =
+	private static float[][] matrizMetricas =
 		{{0,0,0,0},
 		 {0,0,0,0},
 		 {0,0,0,0},
 		 {0,0,0,0}};
-	
+		 // Acc, Pre, Rec, F1
 	public static void main(String[] args) throws FileNotFoundException {
 		getDatos();
 		Scanner s = new Scanner(System.in);
@@ -61,6 +61,22 @@ public class Main {
 		while(met.hasNextLine()) {
 			String l = met.nextLine();
 			metricas[i] = l;
+			i++;
+		}
+		for (i = 0; i < matrizConfusion.length; i++) {
+			int TP = matrizConfusion[i][0];
+			int FP = matrizConfusion[i][1];
+			int TN = matrizConfusion[i][2];
+			int FN = matrizConfusion[i][3];
+			float Acc = (float) (TP + TN)/(TP + FP + TN + FN);
+			float Pre = (float) TP / (TP + FP);
+			float Rec = (float) TP / (TP + FN);
+			float F1 = (float) 2 * (Pre * Rec) / (Pre + Rec);
+			matrizMetricas[i][0] = Acc;
+			matrizMetricas[i][1] = Pre;
+			matrizMetricas[i][2] = Rec;
+			matrizMetricas[i][3] = F1;
+			System.out.println("");
 		}
 	}
 	public static void getPredicciones(Scanner pre) {
@@ -89,8 +105,8 @@ public class Main {
 	public static void getVerificacion(Scanner ver) {
 		while(ver.hasNextLine()) {
 			String l = ver.nextLine();
-			System.out.println(l);
 			String[] p = l.split(",");
+			// TODO
 		}
 	}
 	
@@ -196,7 +212,17 @@ public class Main {
 	
 	// Menu Admin.
 	public static void imprimirMatriz() {
-		// TODO
+		// TODO hacer bonito
+		for (String s : metricas) {
+			System.out.print(s + " | ");
+		}
+		System.out.println("");
+		for (int i = 0; i < matrizMetricas.length; i++){
+			for (float met : matrizMetricas[i]) {
+				System.out.print(met + " | ");
+			}
+			System.out.println("");
+		}
 		
 	}
 	public static void mostrarMayorFscore() {
