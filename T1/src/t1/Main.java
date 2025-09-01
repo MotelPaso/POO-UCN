@@ -33,6 +33,7 @@ public class Main {
 		mostrarMenuGlobal(s);
 		s.close();
 	}
+	// Funciones Archivos
 	public static void getDatos() throws FileNotFoundException {
 		Scanner exp = new Scanner(new File("experimentos.txt"));
 		getExperimentos(exp);
@@ -78,7 +79,6 @@ public class Main {
 			matrizMetricas[i][1] = Pre;
 			matrizMetricas[i][2] = Rec;
 			matrizMetricas[i][3] = F1;
-			System.out.println("");
 		}
 	}
 	public static void getPredicciones(Scanner pre) {
@@ -111,7 +111,6 @@ public class Main {
 			// TODO
 		}
 	}
-	
 	public static void getPromedios(){
 		int i = 0;
 		for (int prom = 0; prom < promedios.length; prom++) {
@@ -122,11 +121,8 @@ public class Main {
 			promedios[prom] = (float) (suma / 4);
 			i++;
 		}
-		for (float prom : promedios){
-			System.out.println(prom);
-		}
 	}
-
+	// Funciones Menu
 	public static void mostrarMenuGlobal(Scanner s){
 		String opcion;
 		do {
@@ -229,12 +225,13 @@ public class Main {
 	
 	// Menu Admin.
 	public static void imprimirMatriz() {
-		// TODO hacer bonito
+		System.out.print("nExp | ");
 		for (String s : metricas) {
 			System.out.print(s + " | ");
 		}
 		System.out.println("");
 		for (int i = 0; i < matrizMetricas.length; i++){
+			System.out.print(idExp[i] + " | ");
 			for (float met : matrizMetricas[i]) {
 				System.out.print(met + " | ");
 			}
@@ -255,6 +252,7 @@ public class Main {
 		
 	}
 	public static void mostrarPromedioGlobal() {
+		System.out.println("Imprimiendo promedios globales...");
 		for (int i = 0; i < promedios.length; i++){
 			System.out.println(metricas[i] + ": " + promedios[i]);
 		}
@@ -283,7 +281,7 @@ public class Main {
 		for (int i = 0; i < idExp.length; i++) {
 			System.out.println(idExp[i] + ": " + descExp[i]);
 		}
-		System.out.println("");
+		System.out.print("Ingrese numero: ");
 		int opcion = s.nextInt();
 		s.nextLine();
 		int i;
@@ -300,13 +298,12 @@ public class Main {
 			System.out.println("Opcion invalida, volviendo al menu...");
 		}
 	}
-
 	public static void mostrarMetricas(Scanner s) {
 		System.out.println("Elija el experimento que desea revisar: ");
 		for (int i = 0; i < idExp.length; i++) {
 			System.out.println(idExp[i] + ": " + descExp[i]);
 		}
-		System.out.println("");
+		System.out.print("Ingrese numero: ");
 		int opcion = s.nextInt();
 		s.nextLine();
 		int i;
@@ -328,7 +325,6 @@ public class Main {
 		}
 	}
 	public static void mostrarPromedios() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("El promedio Accuracy de todos los modelos es: " + promedios[0]);
 	}
 }
