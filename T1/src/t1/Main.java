@@ -14,6 +14,12 @@ public class Main {
 	private static String[] idExp = new String[4];
 	private static String[] descExp = new String[4];
 	private static String[] metricas = new String[4];
+	private static String[] predicciones = new String[4];
+	private static int[][] matrizDocente = 
+		{{0,0,0,0},
+		 {0,0,0,0},
+		 {0,0,0,0},
+		 {0,0,0,0}};
 	private static int[][] matrizConfusion = 
 		{{0,0,0,0},
 		 {0,0,0,0},
@@ -39,13 +45,13 @@ public class Main {
 		getExperimentos(exp);
 		exp.close();
 		Scanner pre = new Scanner(new File("predicciones.txt"));
-		getPredicciones(pre);
+		getMatConfusion(pre);
 		pre.close();
 		Scanner met = new Scanner(new File("metricas.txt"));
 		getMetricas(met);
 		met.close();
 		Scanner ver = new Scanner(new File("verificacion_docente_confusiones.csv"));
-		getVerificacion(ver);
+		getMatDocentes(ver);
 		ver.close();
 		getPromedios();
 	}
@@ -81,7 +87,7 @@ public class Main {
 			matrizMetricas[i][3] = F1;
 		}
 	}
-	public static void getPredicciones(Scanner pre) {
+	public static void getMatConfusion(Scanner pre) {
 		while(pre.hasNextLine()) {
 			String l = pre.nextLine();
 			String[] p = l.split(";");
@@ -104,11 +110,20 @@ public class Main {
 			}
 		}
 	}
-	public static void getVerificacion(Scanner ver) {
+	public static void getMatDocentes(Scanner ver) {
+		String[] partes = ver.nextLine().split(",");
+		
+		for (int i = 0; i < predicciones.length; i++) {
+			predicciones[i] = partes[i+1];
+		}
+		int i = 0;
 		while(ver.hasNextLine()) {
 			String l = ver.nextLine();
 			String[] p = l.split(",");
-			// TODO
+			for(int j = 0; j < matrizDocente.length; j++) {
+				matrizDocente[i][j] = Integer.valueOf(p[j+1]);
+			}
+			i++;
 		}
 	}
 	public static void getPromedios(){
@@ -263,7 +278,36 @@ public class Main {
 		
 	}
 	public static void compararTablaMatriz() {
-		// TODO Auto-generated method stub
+		
+		for (String pred : predicciones) {
+			System.out.print("| " + pred + " ");
+		}
+		System.out.println("");
+		for (int i = 0; i < matrizConfusion.length; i++) {
+			System.out.print("| ");
+			for(int j = 0; j < matrizConfusion[i].length; j++) {
+				System.out.print(matrizConfusion[i][j] + " | " );
+			}
+			System.out.print("\t| ");
+			for(int j = 0; j < matrizConfusion[i].length; j++) {
+				System.out.print(matrizDocente[i][j] + " | " );
+			}
+			System.out.println("");
+		}
+		
+		boolean diferencia = false;
+		for (int i = 0; i < matrizConfusion.length; i++) {
+			for(int j = 0; j < matrizConfusion[i].length; j++) {
+				 if (matrizConfusion[i][j] != matrizDocente[i][j]) {
+					 System.out.println("Diferencia encontrada en el experimento " + (i+1));
+					 System.out.println(predicciones[j] + " no son iguales.");
+					 diferencia = true;
+				 }
+			}
+		}
+		if (!diferencia) {
+			System.out.println("Los datos de la tabla son iguales.");
+		}
 		
 	}
 
