@@ -147,6 +147,7 @@ public class Main {
 			System.out.println("2. Usuario");
 			System.out.println("0. Salir del programa.");
 			System.out.println("----------------------");
+			System.out.print("Ingrese seleccion: ");
 			opcion = s.next();
 			s.nextLine();
 			switch (opcion){
@@ -176,6 +177,7 @@ public class Main {
 			System.out.println("5. Comparar tabla csv con datos de metricas.");
 			System.out.println("0. Volver al menu anterior.");
 			System.out.println("----------------------");
+			System.out.print("Ingrese seleccion: ");
 			opcion = s.next();
 			s.nextLine();
 			switch (opcion){
@@ -189,7 +191,7 @@ public class Main {
 					mostrarPromedioGlobal();
 					break;
 				case "4":
-					compararExp();
+					compararExp(s);
 					break;
 				case "5":
 					compararTablaMatriz();
@@ -213,6 +215,7 @@ public class Main {
 			System.out.println("4. Ver promedio Accuracy de todos los modelos");
 			System.out.println("0. Volver al menu anterior.");
 			System.out.println("----------------------");
+			System.out.print("Ingrese seleccion: ");
 			opcion = s.next();
 			s.nextLine();
 			switch (opcion) {
@@ -273,9 +276,29 @@ public class Main {
 		}
 		
 	}
-	public static void compararExp() {
-		// TODO Auto-generated method stub
-		
+	public static void compararExp(Scanner s) {
+		mostrarExp();
+		System.out.print("Elija un experimento: ");
+		int comp1 = s.nextInt();
+		s.nextLine();
+		mostrarExp();
+		System.out.print("Elija el siguiente experimento a comparar: ");
+		int comp2 = s.nextInt();
+		s.nextLine();
+		if ((comp1 >= 1 && comp1 <= 4) && (comp2 >= 1 && comp2 <= 4) ) { // tienen que estar dentro de rangos validos
+			if (comp1 == comp2) { // y no ser iguales
+				System.out.println("No se puede comparar el mismo experimento");
+			}
+			else {
+				System.out.println("Metricas \t" + idExp[comp1-1] + "\t" + idExp[comp2-1]);
+				for (int i = 0; i < metricas.length; i++) {
+					System.out.println(metricas[i] + "\t" + matrizMetricas[comp1-1][i] + "\t" + matrizMetricas[comp2-1][i]);
+				}
+			}
+		}
+		else {
+			System.out.println("Opcion invalida, volviendo al menu...");
+		}
 	}
 	public static void compararTablaMatriz() {
 		
