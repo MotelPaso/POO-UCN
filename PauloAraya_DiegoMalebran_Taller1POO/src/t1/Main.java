@@ -14,27 +14,27 @@ public class Main {
 	
 	// Arrays con la información de los experimentos 
 
-	private static String[] idExp = new String[4];
-	private static String[] descExp = new String[4];
-	private static String[] metricas = new String[4];
-	private static String[] predicciones = new String[4];
+	private static String[] idExp = new String[4]; //ids de los experimentos
+	private static String[] descExp = new String[4]; // descripciones
+	private static String[] metricas = new String[4]; // nombres de las metricas
+	private static String[] predicciones = new String[4]; // las predicciones
 	
 	// Matrices para almacenar los resultados
 
 	private static int[][] matrizDocente = 
-		{{0,0,0,0},
+		{{0,0,0,0},   // matriz de confusión que da el docente
 		 {0,0,0,0},
 		 {0,0,0,0},
 		 {0,0,0,0}};
 	private static int[][] matrizConfusion = 
 		{{0,0,0,0},
-		 {0,0,0,0},
+		 {0,0,0,0}, // matriz de confusión calculada por el code
 		 {0,0,0,0},
 		 {0,0,0,0}};
 		 // TP , FP , TN, FN
 	private static float[][] matrizMetricas =
 		{{0,0,0,0},
-		 {0,0,0,0},
+		 {0,0,0,0}, // metricas calculadas a partir de la matriz de confusión
 		 {0,0,0,0},
 		 {0,0,0,0}};
 		 // Acc, Pre, Rec, F1
@@ -45,7 +45,7 @@ public class Main {
 		mostrarMenuGlobal(s);
 		s.close();
 	}
-	// Funciones Archivos
+	// aca mas que nada son las lecturas de archivos
 	public static void getDatos() throws FileNotFoundException {
 		Scanner exp = new Scanner(new File("experimentos.txt"));
 		getExperimentos(exp);
@@ -59,10 +59,13 @@ public class Main {
 		Scanner ver = new Scanner(new File("verificacion_docente_confusiones.csv"));
 		getMatDocentes(ver);
 		ver.close();
+		
+		// calcular promedios de métricas
+
 		getPromedios();
 	}
 	
-	// Lee metricas desde el archivo y calcula las métricas por experimento
+	// lee metricas desde el archivo y calcula las métricas por experimento
 	
 	public static void getExperimentos(Scanner exp) {
 		int i = 0;
