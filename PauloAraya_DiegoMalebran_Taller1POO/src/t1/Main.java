@@ -11,10 +11,16 @@ import java.io.File;
 import java.io.FileNotFoundException;
 
 public class Main {
+	
+	// Arrays con la información de los experimentos 
+
 	private static String[] idExp = new String[4];
 	private static String[] descExp = new String[4];
 	private static String[] metricas = new String[4];
 	private static String[] predicciones = new String[4];
+	
+	// Matrices para almacenar los resultados
+
 	private static int[][] matrizDocente = 
 		{{0,0,0,0},
 		 {0,0,0,0},
@@ -343,6 +349,8 @@ public class Main {
 		System.out.println("");
 		
 	}
+	
+
 	public static void mostrarMatriz(Scanner s) {
 		System.out.println("Elija el experimento que desea revisar: ");
 		for (int i = 0; i < idExp.length; i++) {
@@ -365,6 +373,8 @@ public class Main {
 			System.out.println("Opcion invalida, volviendo al menu...");
 		}
 	}
+	
+	//mostrar metricas de los experimentos
 	public static void mostrarMetricas(Scanner s) {
 		System.out.println("Elija el experimento que desea revisar: ");
 		for (int i = 0; i < idExp.length; i++) {
@@ -391,6 +401,9 @@ public class Main {
 			System.out.println("Opcion invalida, volviendo al menu...");
 		}
 	}
+	
+	// Mostrar el promedio de Accuracy de todos los modelos
+
 	public static void mostrarPromedios() {
 		System.out.println("El promedio Accuracy de todos los modelos es: " + promedios[0]);
 	}
