@@ -61,6 +61,9 @@ public class Main {
 		ver.close();
 		getPromedios();
 	}
+	
+	// Lee metricas desde el archivo y calcula las métricas por experimento
+	
 	public static void getExperimentos(Scanner exp) {
 		int i = 0;
 		while(exp.hasNextLine()) {
@@ -71,6 +74,8 @@ public class Main {
 			i++;
 		}
 	}
+	
+	// calcular métricas a partir de la matriz de confusión
 	public static void getMetricas(Scanner met) {
 		int i = 0;
 		while(met.hasNextLine()) {
@@ -93,6 +98,9 @@ public class Main {
 			matrizMetricas[i][3] = F1;
 		}
 	}
+	
+	// construye la matriz de confusión con los datos de las predicciones
+
 	public static void getMatConfusion(Scanner pre) {
 		while(pre.hasNextLine()) {
 			String l = pre.nextLine();
@@ -116,6 +124,7 @@ public class Main {
 			}
 		}
 	}
+	// Lee la matriz de confusión entregada por el excel (csv)
 	public static void getMatDocentes(Scanner ver) {
 		String[] partes = ver.nextLine().split(",");
 		
@@ -132,6 +141,8 @@ public class Main {
 			i++;
 		}
 	}
+	
+	// Calcula promedios de las métricas Acc, Pre, Rec, F1
 	public static void getPromedios(){
 		int i = 0;
 		for (int prom = 0; prom < promedios.length; prom++) {
@@ -143,7 +154,7 @@ public class Main {
 			i++;
 		}
 	}
-	// Funciones Menu
+	// es el menu como global
 	public static void mostrarMenuGlobal(Scanner s){
 		String opcion;
 		do {
@@ -171,6 +182,7 @@ public class Main {
 			}
 		} while(!opcion.equals("0"));
 	}
+	//este es el menu admin
 	public static void menuAdmin(Scanner s) {
 		String opcion;
 		do {
@@ -210,6 +222,9 @@ public class Main {
 			}
 		} while(!opcion.equals("0"));
 	}
+	
+	
+	//este es el menu user
 	public static void menuUser(Scanner s){
 		String opcion;
 		do {
@@ -247,7 +262,9 @@ public class Main {
 		} while(!opcion.equals("0"));
 	}
 	
-	// Menu Admin.
+	// <<<<<<<Menu Administrador>>>>.
+	
+	//imprime las metricas por experimento
 	public static void imprimirMatriz() {
 		System.out.print("nExp | ");
 		for (String s : metricas) {
@@ -263,6 +280,8 @@ public class Main {
 		}
 		
 	}
+	
+	//mostrar los experimentos mejor evaluado
 	public static void mostrarMayorFscore() {
 		float mayor = 0;
 		int indice = 0;
@@ -282,6 +301,10 @@ public class Main {
 		}
 		
 	}
+	
+	// Comparar dos experimentos en todas las métricas
+
+	
 	public static void compararExp(Scanner s) {
 		mostrarExp();
 		System.out.print("Elija un experimento: ");
@@ -306,6 +329,9 @@ public class Main {
 			System.out.println("Opcion invalida, volviendo al menu...");
 		}
 	}
+	
+	// Comparar la matriz calculada vs la entregada 
+
 	public static void compararTablaMatriz() {
 		
 		for (String pred : predicciones) {
@@ -340,7 +366,10 @@ public class Main {
 		
 	}
 
-	// Menu User.
+	//<<<<Funciones usuario>>>> 
+	
+	
+	//muestra lista de esperimentos
 	public static void mostrarExp() {
 		System.out.println("Listado de Experimentos: ");
 		for (int i = 0; i < idExp.length; i++) {
@@ -350,6 +379,8 @@ public class Main {
 		
 	}
 	
+
+	// Mostrar matriz de confusión de un tipo experimento
 
 	public static void mostrarMatriz(Scanner s) {
 		System.out.println("Elija el experimento que desea revisar: ");
@@ -374,7 +405,7 @@ public class Main {
 		}
 	}
 	
-	//mostrar metricas de los experimentos
+	//mostrar metricas de un experimento
 	public static void mostrarMetricas(Scanner s) {
 		System.out.println("Elija el experimento que desea revisar: ");
 		for (int i = 0; i < idExp.length; i++) {
