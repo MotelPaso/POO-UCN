@@ -6,10 +6,10 @@
  */
 package t1;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
-
 public class Main {
 	
 	// Arrays con la información de los experimentos 
@@ -39,6 +39,7 @@ public class Main {
 		 {0,0,0,0}};
 		 // Acc, Pre, Rec, F1
 	private static float[] promedios = {0,0,0,0};
+	
 	public static void main(String[] args) throws FileNotFoundException {
 		getDatos();
 		Scanner s = new Scanner(System.in);
@@ -78,6 +79,31 @@ public class Main {
 		}
 	}
 	
+	// construye la matriz de confusión con los datos de las predicciones
+
+	public static void getMatConfusion(Scanner pre) {
+		while(pre.hasNextLine()) {
+			String l = pre.nextLine();
+			String[] p = l.split(";");
+			for (int i = 0; i < matrizConfusion[0].length; i++) { 
+				while(p[0].equals(idExp[i])) {
+					if (p[1].equals("1") && p[2].equals("1")){ // TP
+						matrizConfusion[i][0] += 1;
+					}
+					else if (p[1].equals("0") && p[2].equals("1")) { // FP
+						matrizConfusion[i][1] += 1;
+					}
+					else if (p[1].equals("0") && p[2].equals("0")) { // TN
+						matrizConfusion[i][2] += 1;
+					}
+					else if (p[1].equals("1") && p[2].equals("0")) { // FN
+						matrizConfusion[i][3] += 1;
+					}
+					break;
+				}
+			}
+		}
+	}
 	// calcular métricas a partir de la matriz de confusión
 	public static void getMetricas(Scanner met) {
 		int i = 0;
@@ -99,32 +125,6 @@ public class Main {
 			matrizMetricas[i][1] = Pre;
 			matrizMetricas[i][2] = Rec;
 			matrizMetricas[i][3] = F1;
-		}
-	}
-	
-	// construye la matriz de confusión con los datos de las predicciones
-
-	public static void getMatConfusion(Scanner pre) {
-		while(pre.hasNextLine()) {
-			String l = pre.nextLine();
-			String[] p = l.split(";");
-			for (int i = 0; i < matrizConfusion[0].length; i++) { // 4
-				while(p[0].equals(idExp[i])) {
-					if (p[1].equals("1") && p[2].equals("1")){ // TP
-						matrizConfusion[i][0] += 1;
-					}
-					else if (p[1].equals("0") && p[2].equals("1")) { // FP
-						matrizConfusion[i][1] += 1;
-					}
-					else if (p[1].equals("0") && p[2].equals("0")) { // TN
-						matrizConfusion[i][2] += 1;
-					}
-					else if (p[1].equals("1") && p[2].equals("0")) { // FN
-						matrizConfusion[i][3] += 1;
-					}
-					break;
-				}
-			}
 		}
 	}
 	// Lee la matriz de confusión entregada por el excel (csv)
@@ -157,7 +157,7 @@ public class Main {
 			i++;
 		}
 	}
-	// es el menu como global
+	// es el menu global
 	public static void mostrarMenuGlobal(Scanner s){
 		String opcion;
 		do {
@@ -168,9 +168,10 @@ public class Main {
 			System.out.println("0. Salir del programa.");
 			System.out.println("----------------------");
 			System.out.print("Ingrese seleccion: ");
-			opcion = s.next();
+			opcion = s.next(); 
 			s.nextLine();
-			switch (opcion){
+			// Lo hicimos en String para evitar algun error que detenga el programa.
+			switch (opcion){ 
 				case "1":
 					menuAdmin(s);
 					break;
@@ -200,7 +201,7 @@ public class Main {
 			System.out.println("----------------------");
 			System.out.print("Ingrese seleccion: ");
 			opcion = s.next();
-			s.nextLine();
+			s.nextLine(); // Misma razón que el menu global
 			switch (opcion){
 				case "1":
 					imprimirMatriz();
@@ -225,7 +226,6 @@ public class Main {
 			}
 		} while(!opcion.equals("0"));
 	}
-	
 	
 	//este es el menu user
 	public static void menuUser(Scanner s){
@@ -265,9 +265,9 @@ public class Main {
 		} while(!opcion.equals("0"));
 	}
 	
-	// <<<<<<<Menu Administrador>>>>.
+	// <<<<<<<Funciones Administrador>>>>>>>
 	
-	//imprime las metricas por experimento
+	// imprime las metricas por experimento
 	public static void imprimirMatriz() {
 		System.out.print("nExp | ");
 		for (String s : metricas) {
@@ -281,10 +281,9 @@ public class Main {
 			}
 			System.out.println("");
 		}
-		
 	}
 	
-	//mostrar los experimentos mejor evaluado
+	//mostrar el experimento con mejor Fscore
 	public static void mostrarMayorFscore() {
 		float mayor = 0;
 		int indice = 0;
@@ -307,7 +306,6 @@ public class Main {
 	
 	// Comparar dos experimentos en todas las métricas
 
-	
 	public static void compararExp(Scanner s) {
 		mostrarExp();
 		System.out.print("Elija un experimento: ");
@@ -325,7 +323,7 @@ public class Main {
 				System.out.println("Metricas \t" + idExp[comp1-1] + "\t" + idExp[comp2-1]);
 				for (int i = 0; i < metricas.length; i++) {
 					System.out.println(metricas[i] + "\t" + matrizMetricas[comp1-1][i] + "\t" + matrizMetricas[comp2-1][i]);
-				}
+				} // \t sirve como forma de tab, es para ordenar un poco mas los resultados.
 			}
 		}
 		else {
@@ -369,8 +367,7 @@ public class Main {
 		
 	}
 
-	//<<<<Funciones usuario>>>> 
-	
+	//<<<<Funciones Usuario>>>>
 	
 	//muestra lista de esperimentos
 	public static void mostrarExp() {
@@ -378,12 +375,9 @@ public class Main {
 		for (int i = 0; i < idExp.length; i++) {
 			System.out.println(idExp[i] + " " + descExp[i]);
 		}
-		System.out.println("");
-		
 	}
 	
-
-	// Mostrar matriz de confusión de un tipo experimento
+	// Mostrar matriz de confusión de un experimento especifico
 
 	public static void mostrarMatriz(Scanner s) {
 		System.out.println("Elija el experimento que desea revisar: ");
@@ -391,12 +385,20 @@ public class Main {
 			System.out.println(idExp[i] + ": " + descExp[i]);
 		}
 		System.out.print("Ingrese numero: ");
-		int opcion = s.nextInt();
-		s.nextLine();
+		int opcion = 0;
+		try {
+		    opcion = s.nextInt();
+		    s.nextLine();
+		} catch (InputMismatchException e) {
+		    s.nextLine();
+		}
 		int i;
 		if (opcion >= 1 && opcion <= 4) {
-			System.out.println("nExp | TP | NP | TN | FN |");
-			System.out.print(idExp[opcion-1] + " | ");
+			System.out.print("nExp ");
+			for (String pred : predicciones) {
+				System.out.print("| " + pred + " ");
+			}
+			System.out.print("|\n" + idExp[opcion-1] + " | ");
 			for (i = 0; i < matrizConfusion[opcion-1].length; i++){
 				System.out.print(matrizConfusion[opcion-1][i] + " | ");
 			}
@@ -408,15 +410,21 @@ public class Main {
 		}
 	}
 	
-	//mostrar metricas de un experimento
+	// mostrar metricas de un experimento
 	public static void mostrarMetricas(Scanner s) {
 		System.out.println("Elija el experimento que desea revisar: ");
 		for (int i = 0; i < idExp.length; i++) {
 			System.out.println(idExp[i] + ": " + descExp[i]);
 		}
 		System.out.print("Ingrese numero: ");
-		int opcion = s.nextInt();
-		s.nextLine();
+		int opcion = 0;
+		try {
+		    opcion = s.nextInt();
+		    s.nextLine();
+		} catch (InputMismatchException e) {
+		    s.nextLine();
+		}
+		
 		int i;
 		if (opcion >= 1 && opcion <= 4) {
 			System.out.print("nExp | ");
