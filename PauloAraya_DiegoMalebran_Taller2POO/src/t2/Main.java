@@ -7,6 +7,8 @@ import java.io.FileNotFoundException;
 
 public class Main {
 	private static ArrayList<User> listaUsuarios = new ArrayList<>();
+	private static ArrayList<PC> listaPC = new ArrayList<>();
+	private static ArrayList<Puerto> listaPuertos = new ArrayList<>();
 	public static void main(String[] args) throws FileNotFoundException{
 		Scanner s = new Scanner(System.in);
 		cargarArchivos();
@@ -16,6 +18,17 @@ public class Main {
 	private static void cargarArchivos() throws FileNotFoundException{
 		Scanner u = new Scanner(new File("usuarios.txt"));
 		cargarUsers(u);
+		u.close();
+		Scanner l = new Scanner(new File("pcs.txt"));
+		cargarPCS(l);
+		l.close();
+		Scanner p = new Scanner(new File("puertos.txt"));
+		cargarPuertos(p);
+		p.close();
+		Scanner v = new Scanner(new File("vulnerabilidades.txt"));
+		cargarVulnerabilidad(v);
+		v.close();
+		System.out.println("Archivos cargados!");
 	}
 
 	private static void cargarUsers(Scanner u) {
@@ -29,7 +42,39 @@ public class Main {
 			listaUsuarios.add(user);
 		}
 	}
-
+	private static void cargarPCS(Scanner l) {
+		PC pc = null;
+		while (l.hasNextLine()) {
+			String[] partes = l.nextLine().split("|");
+			String id = partes[0];
+			String ip = partes[1];
+			String so = partes[2];
+			pc = new PC(id, ip, so);
+			listaPC.add(pc);
+		}
+	}
+	private static void cargarPuertos(Scanner p) {
+		while(p.hasNextLine()) {
+			String[] partes = p.nextLine().split(";");
+			for(PC pc:listaPC){
+				if (pc.getID().equals(partes[0])) {
+					pc.addPuerto(Integer.parseInt(partes[1]), partes[2]);
+					break;
+				}
+			}
+		}
+	}
+	private static void cargarVulnerabilidad(Scanner p) {
+		Puerto puerto = null;
+		while(p.hasNextLine()) {
+			String[] partes = p.nextLine().split("|");
+			int num = Integer.parseInt(partes[0]);
+			String nombre = partes[1];
+			String desc = partes[2];
+			puerto = new Puerto(num, nombre, desc);
+			listaPuertos.add(puerto);
+		}
+	}
 	private static void mostrarMenu(Scanner s) {
 		String status = "";
 		boolean encontrado = false;
