@@ -54,7 +54,7 @@ public class Main {
 			}
 			switch(status) {
 			case "ADMIN":
-				exit = menuAdmin();
+				exit = menuAdmin(s);
 				break;
 			case "USER":
 				exit = menuUser();
@@ -70,9 +70,58 @@ public class Main {
 		return true;
 	}
 
-	private static boolean menuAdmin() {
+	private static boolean menuAdmin(Scanner s) {
 		System.out.println("Encontrado!");
+		String opcion = "";
+		do {
+			System.out.print("===============================\r\n"
+					+ "Menu Admin:\r\n"
+					+ "1. Mostrar lista completa de PCs.\r\n"
+					+ "2. Agregar un PC a la lista.\r\n"
+					+ "3. Eliminar un PC de la lista.\r\n"
+					+ "4. Mostrar clasificacion de PCS segun riesgo.\r\n"
+					+ "0. Volver al menu anterior.\r\n"
+					+ "===============================\r\n"
+					+ "Ingrese su opcion: ");
+			opcion = s.nextLine();
+			switch (opcion) {
+			case "1": 
+				mostrarAdminPC();
+			case "2": 
+				agregarPC(s);
+			case "3": 
+				eliminarPC(s);
+			case "4":
+				mostrarClasificacion();
+			case "0":
+				System.out.println("Volviendo al menu...");
+				break;
+			default:
+				System.out.print("Opcion invalida, reingrese: ");;
+			}
+			
+		} while (!opcion.equals("0"));
 		return true;
+		
+	}
+
+	private static void mostrarClasificacion() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void eliminarPC(Scanner s) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void agregarPC(Scanner s) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void mostrarAdminPC() {
+		// TODO Auto-generated method stub
 		
 	}
 
