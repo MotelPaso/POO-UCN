@@ -57,7 +57,7 @@ public class Main {
 				exit = menuAdmin(s);
 				break;
 			case "USER":
-				exit = menuUser();
+				exit = menuUser(s);
 				break;
 			}
 		} while (!exit);
@@ -65,12 +65,101 @@ public class Main {
 		
 	}
 
-	private static boolean menuUser() {
+	private static boolean menuUser(Scanner s) {
 		System.out.println("Encontrado!, user");
+				
+		String  opcion ;
+		
+
+		do {
+			
+			System.out.println("**Menu**\r\n"
+					+ "0. salir\r\n"
+					+ "1. Ver lista de PCs\r\n"
+					+ "2. Escanear un PC\r\n"
+					+ "3. Ver total de puertos abiertos en todos los PCs de la red\r\n"
+					+ "4. Ordenar PCs según ip\r\n");
+			System.out.print("ingrese opcion: ");
+			
+			
+			opcion = s.nextLine();
+			
+			
+			
+			switch(opcion) {
+			
+			case "1":{
+				
+				revisarPC();
+				break;
+			}
+			
+			case "2":{
+				
+				escanearPC();
+				break;
+			}
+			
+			case "3":{
+				
+				verPuertos();
+				break;
+			}
+			
+			case "4":{
+				
+				ordenarIPs();
+				break;
+				
+			}
+			
+			case "0":{
+				System.out.println("volviendo al menu");
+				break;
+				
+			}
+			
+			default:{
+				System.out.println("Opcion INVALIDA!!!!");
+			}
+			
+			
+			}
+			
+			
+			
+		} while (!opcion.equals("0"));
+		
+		
+		
+		
+		
 		return true;
 	}
 
 	private static boolean menuAdmin(Scanner s) {
+	private static void ordenarIPs() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void verPuertos() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static void escanearPC() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	private static void revisarPC() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private static boolean menuAdmin() {
 		System.out.println("Encontrado!");
 		String opcion = "";
 		do {
