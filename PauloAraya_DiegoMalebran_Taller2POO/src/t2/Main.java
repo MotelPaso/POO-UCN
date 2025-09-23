@@ -137,7 +137,6 @@ public class Main {
 		return true;
 	}
 
-	private static boolean menuAdmin(Scanner s) {
 	private static void ordenarIPs() {
 		// TODO Auto-generated method stub
 		
@@ -159,7 +158,7 @@ public class Main {
 		
 	}
 
-	private static boolean menuAdmin() {
+	private static boolean menuAdmin(Scanner s) {
 		System.out.println("Encontrado!");
 		String opcion = "";
 		do {
