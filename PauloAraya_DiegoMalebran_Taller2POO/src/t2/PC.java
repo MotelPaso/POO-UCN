@@ -16,7 +16,7 @@ public class PC {
 	}
 	
 	public void addPuerto(int puerto, String status) {
-		if (status.equals("abierto")) {
+		if (status.equals("Abierto")) {
 			this.puertosAbiertos.add(puerto);
 		}
 		else {
@@ -46,6 +46,12 @@ public class PC {
 
 	public void setSistema(String sistema) {
 		this.sistema = sistema;
+	}
+
+	@Override
+	public String toString() {
+		return "PC [ID=" + ID + ", IP=" + IP + ", sistema=" + sistema + ", puertosAbiertos=" + puertosAbiertos
+				+ ", puertosCerrados=" + puertosCerrados + "]";
 	}
 	
 	
