@@ -224,10 +224,13 @@ public class Main {
 			switch(opcion) {
 			case "1":
 				agregarPC(s);
+				break;
 			case "2":
 				eliminarPC(s);
+				break;
 			case "0":
-				System.out.println("Volviendo al menu");
+				System.out.println("Volviendo al menu...");
+				break;
 			default:
 				System.out.println("Opcion invalida... Vuelva a elegir!");
 			}
@@ -236,25 +239,44 @@ public class Main {
     }
     
     private static void agregarPC(Scanner s) {
-    	String id = "PC0";
-    	if (listaPC.size() < 10){
-    		id += "0";
-    	}
-    	id += listaPC.size();
+    	String ultimoPC = listaPC.get(listaPC.size()-1).getID();
+    	int ultimaId = Integer.parseInt(ultimoPC.substring(2)) + 1;
+    	String id = "PC0" + ultimaId; 
     	System.out.print("Ingrese su ip: ");
     	String ip = s.nextLine();
-    	System.out.print("\nIngrese su Sistema Operativo: ");
+    	System.out.print("Ingrese su Sistema Operativo: ");
     	String SO = s.nextLine();
     	PC nuevo = new PC(id, ip, SO);
-    	System.out.println("\nLos datos de su nuevo pc son:");
+    	System.out.println("Los datos de su nuevo pc son:");
     	System.out.println(nuevo.toString());
     	System.out.println("Desea agregar puertos?");
     	// TODO: Add puertos abiertos o cerrados
+    	listaPC.add(nuevo);
     	System.out.println("Volviendo al menu...");
     }
     
     private static void eliminarPC(Scanner s) {
     	
+    	mostrarAdminPC();
+    	System.out.print("Ingrese el id del pc que desea eliminar con este formato: PCXXX ");
+    	String busqueda = s.nextLine();
+    	if (!busqueda.contains("PC0")) {
+    		System.out.println("Id no valida, debe ser del formato PCXXX");
+    	}
+    	else {
+    		boolean encontrado = false;
+    		for(PC pc: listaPC ) {
+    			if (pc.getID().equals(busqueda)){
+    				System.out.println(pc.getID()+ "eliminado.");
+    				listaPC.remove(pc);
+    				encontrado = true;
+    				break;
+    			}
+    		}
+    		if (!encontrado) {
+    			System.out.println("Id no encontrada...");
+    		}
+    	}
     }
     private static void mostrarClasificacion() {
     	// TODO Auto-generated method stub
