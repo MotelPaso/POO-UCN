@@ -189,11 +189,9 @@ public class Main {
                 case "1":
                     mostrarAdminPC();
                 case "2":
-                    agregarPC(s);
+                    administrarPC(s);
                 case "3":
-                    eliminarPC(s);
-                case "4":
-                    mostrarClasificacion();
+                	mostrarClasificacion();
                 case "0":
                     break;
                 default:
@@ -212,16 +210,38 @@ public class Main {
 			System.out.println(pc);
 		}
     }
-    private static void agregarPC(Scanner s) {
-    	// TODO Auto-generated method stub
+    private static void administrarPC(Scanner s) {
+    	String opcion = "";
+    	do {
+			System.out.print("=====================\r\n"
+					+ "Administración de PC\r\n"
+					+ "=====================\r\n"
+					+ "1. Agregar un PC\r\n"
+					+ "2. Eliminar un PC\r\n"
+					+ "0. Volver al menu:\r\n"
+					+ "Elija su opcion: ");
+			opcion = s.nextLine();
+			switch(opcion) {
+			case "1":
+				agregarPC(s);
+			case "2":
+				eliminarPC(s);
+			case "0":
+				System.out.println("Volviendo al menu");
+			default:
+				System.out.println("Opcion invalida... Vuelva a elegir!");
+			}
+		} while (!opcion.equals("0"));
     	
     }
-    private static void eliminarPC(Scanner s) {
-        // TODO Auto-generated method stub
-
+    
+    private static void agregarPC(Scanner s) {
+    	
     }
-
-
+    
+    private static void eliminarPC(Scanner s) {
+    	
+    }
     private static void mostrarClasificacion() {
     	// TODO Auto-generated method stub
     	
