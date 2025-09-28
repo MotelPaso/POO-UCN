@@ -236,7 +236,21 @@ public class Main {
     }
     
     private static void agregarPC(Scanner s) {
-    	
+    	String id = "PC0";
+    	if (listaPC.size() < 10){
+    		id += "0";
+    	}
+    	id += listaPC.size();
+    	System.out.print("Ingrese su ip: ");
+    	String ip = s.nextLine();
+    	System.out.print("\nIngrese su Sistema Operativo: ");
+    	String SO = s.nextLine();
+    	PC nuevo = new PC(id, ip, SO);
+    	System.out.println("\nLos datos de su nuevo pc son:");
+    	System.out.println(nuevo.toString());
+    	System.out.println("Desea agregar puertos?");
+    	// TODO: Add puertos abiertos o cerrados
+    	System.out.println("Volviendo al menu...");
     }
     
     private static void eliminarPC(Scanner s) {
