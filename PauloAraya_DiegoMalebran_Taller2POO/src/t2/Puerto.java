@@ -4,7 +4,6 @@ public class Puerto {
 	private int puerto;
 	private String nombre;
 	private String desc;
-	private boolean estado;
 	
 	public Puerto(int puerto, String nombre, String desc) {
 		this.puerto = puerto;
@@ -12,13 +11,11 @@ public class Puerto {
 		this.desc = desc;
 	}
 
-	public int getPuerto() {
+	
+	public int getID() {
 		return puerto;
 	}
 
-	public void setPuerto(int puerto) {
-		this.puerto = puerto;
-	}
 
 	public String getNombre() {
 		return nombre;

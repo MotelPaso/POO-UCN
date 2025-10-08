@@ -4,8 +4,8 @@ public class PC {
 	private String ID;
 	private String IP;
 	private String sistema;
-	private ArrayList<Integer> puertosAbiertos;
-	private ArrayList<Integer> puertosCerrados;
+	private ArrayList<Puerto> puertosAbiertos;
+	private ArrayList<Puerto> puertosCerrados;
 	
 	public PC(String ID, String IP, String sistema) {;
 		this.ID = ID;
@@ -15,7 +15,7 @@ public class PC {
 		this.puertosCerrados = new ArrayList<>();
 	}
 	
-	public void addPuerto(int puerto, String status) {
+	public void addPuerto(Puerto puerto, String status) {
 		if (status.equals("Abierto")) {
 			this.puertosAbiertos.add(puerto);
 		}

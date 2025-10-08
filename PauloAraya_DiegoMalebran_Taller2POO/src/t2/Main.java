@@ -26,12 +26,12 @@ public class Main {
         Scanner l = new Scanner(new File("pcs.txt"));
         cargarPCS(l);
         l.close();
-        Scanner p = new Scanner(new File("puertos.txt"));
-        cargarPuertos(p); // añadir los puertos a cada PC
-        p.close();
         Scanner v = new Scanner(new File("vulnerabilidades.txt"));
-        cargarVulnerabilidad(v);
+        cargarPuertos(v); // meter puertos a ArrayList
         v.close();
+        Scanner p = new Scanner(new File("puertos.txt"));
+        addPuertosAPC(p); // añadir los puertos a cada PC
+        p.close();
         System.out.println("Archivos cargados!");
     }
 
@@ -60,21 +60,8 @@ public class Main {
             listaPC.add(pc);
         }
     }
-
+    
     private static void cargarPuertos(Scanner p) {
-        while (p.hasNextLine()) {
-            String[] partes = p.nextLine().split("\\|");
-            for (PC pc : listaPC) {
-                if (pc.getID().equals(partes[0])) { // si la id es igual a la id del archivo
-                    pc.addPuerto(Integer.parseInt(partes[1]), partes[2]);
-                    // addPuerto(numeroPuerto, abierto/cerrado)
-                    break;
-                }
-            }
-        }
-    }
-
-    private static void cargarVulnerabilidad(Scanner p) {
         Puerto puerto = null;
         while (p.hasNextLine()) {
             String[] partes = p.nextLine().split("\\|");
@@ -85,6 +72,30 @@ public class Main {
             listaPuertos.add(puerto);
         }
     }
+    
+    private static void addPuertosAPC(Scanner p) {
+        while (p.hasNextLine()) {
+            String[] partes = p.nextLine().split("\\|");
+            int idPuerto = Integer.parseInt(partes[1]);
+            String estado = partes[2];
+            Puerto puerto = null;
+            
+            for (Puerto port: listaPuertos) { // buscamos el puerto
+            	if (port.getID() == idPuerto) {
+            		puerto = port; // lo asignamos a una variable
+            		break;
+            	}
+            }
+            for (PC pc : listaPC) {
+                if (pc.getID().equals(partes[0])) { // si la id es igual a la id del archivo
+                    pc.addPuerto(puerto, estado); // lo añadimos a su respectivo pc
+                    break;
+                }
+            }
+        }
+    }
+
+    
 
     private static void mostrarMenu(Scanner s) {
     	// Para todos los menus se utilizan strings, aunque se pida un numero
