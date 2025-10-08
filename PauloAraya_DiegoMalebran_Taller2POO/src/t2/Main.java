@@ -155,7 +155,7 @@ public class Main {
             opcion = s.nextLine();
             switch (opcion) {
                 case "1": {
-                    revisarPC();
+                    mostrarPC();
                     break;
                 }
                 case "2": {
@@ -180,8 +180,10 @@ public class Main {
         } while (!opcion.equals("0"));
         return true;
     }
-    private static void revisarPC() {
-    	// TODO Auto-generated method stub
+    private static void mostrarPC() {
+    	for (PC pc : listaPC) {
+    		pc.mostrar();
+    	}
     	
     }
     private static void escanearPC() {

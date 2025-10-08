@@ -6,6 +6,7 @@ public class PC {
 	private String sistema;
 	private ArrayList<Puerto> puertosAbiertos;
 	private ArrayList<Puerto> puertosCerrados;
+	private int riesgo;
 	
 	public PC(String ID, String IP, String sistema) {;
 		this.ID = ID;
@@ -48,6 +49,23 @@ public class PC {
 		this.sistema = sistema;
 	}
 
+	public void setRiesgo(int riesgo) {
+		this.riesgo = riesgo;
+	}
+	
+	public void mostrar() {
+		System.out.println(this.ID+ ":");
+		System.out.println(this.IP+ ": Sistema Operativo: " + this.sistema);
+		System.out.print("Puertos Abiertos: ");
+		for(Puerto puerto: puertosAbiertos) {
+			System.out.print(puerto.getID() +"; ");
+		}
+		System.out.print("\nPuertos Cerrados: ");
+		for(Puerto puerto: puertosCerrados) {
+			System.out.print(puerto.getID() +"; ");
+		}
+		System.out.println();
+	}
 	@Override
 	public String toString() {
 		return "PC [ID=" + ID + ", IP=" + IP + ", sistema=" + sistema + ", puertosAbiertos=" + puertosAbiertos
