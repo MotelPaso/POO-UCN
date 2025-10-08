@@ -4,8 +4,11 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Base64;
+import java.security.MessageDigest;
 
 public class Main {
+	// inicializar listas utiles
     private static ArrayList<User> listaUsuarios = new ArrayList<>();
     private static ArrayList<PC> listaPC = new ArrayList<>();
     private static ArrayList<Puerto> listaPuertos = new ArrayList<>();
@@ -15,7 +18,7 @@ public class Main {
         cargarArchivos();
         mostrarMenu(s);
     }
-
+    // leer cada archivo por separado
     private static void cargarArchivos() throws FileNotFoundException {
         Scanner u = new Scanner(new File("usuarios.txt"));
         cargarUsers(u);
@@ -24,7 +27,7 @@ public class Main {
         cargarPCS(l);
         l.close();
         Scanner p = new Scanner(new File("puertos.txt"));
-        cargarPuertos(p);
+        cargarPuertos(p); // añadir los puertos a cada PC
         p.close();
         Scanner v = new Scanner(new File("vulnerabilidades.txt"));
         cargarVulnerabilidad(v);
@@ -33,11 +36,11 @@ public class Main {
     }
 
     private static void cargarUsers(Scanner u) {
-        User user = null; // quitar error en add a lista
+        User user = null; // placeholder para que exista "algo" que meterle a la lista
         while (u.hasNextLine()) {
             String[] partes = u.nextLine().split(";");
             String username = partes[0];
-            String contra = partes[1];
+            String contra = partes[1]; // hashed
             String rol = partes[2];
             user = new User(username, contra, rol);
             listaUsuarios.add(user);
@@ -47,6 +50,8 @@ public class Main {
     private static void cargarPCS(Scanner l) {
         PC pc = null;
         while (l.hasNextLine()) {
+        	// se pone \\ porque el | es un operador en java
+        	// si no se pone se toma literal y no lee bien el archivo
             String[] partes = l.nextLine().split("\\|");
             String id = partes[0];
             String ip = partes[1];
@@ -60,8 +65,9 @@ public class Main {
         while (p.hasNextLine()) {
             String[] partes = p.nextLine().split("\\|");
             for (PC pc : listaPC) {
-                if (pc.getID().equals(partes[0])) {
+                if (pc.getID().equals(partes[0])) { // si la id es igual a la id del archivo
                     pc.addPuerto(Integer.parseInt(partes[1]), partes[2]);
+                    // addPuerto(numeroPuerto, abierto/cerrado)
                     break;
                 }
             }
@@ -81,6 +87,8 @@ public class Main {
     }
 
     private static void mostrarMenu(Scanner s) {
+    	// Para todos los menus se utilizan strings, aunque se pida un numero
+    	// esto es para evitar excepciones y mantener la logica concisa
         String status = "";
         boolean encontrado = false;
         boolean exit = false;
@@ -88,10 +96,14 @@ public class Main {
                 + "Ingrese su usuario: ");
         String user = s.nextLine();
         do {
+        	// TODO: Incluir uso de contraseña
+        	// un hashmap serviria bastante, pero no se puede utilizar...
             for (User u : listaUsuarios) {
                 if (u.getUsername().equals(user)) {
                     encontrado = true;
-                    status = u.getAdmin();
+                    status = u.getAdmin(); 
+                    // revisamos el nivel del usuario para mandarlo a cada
+                    // menu
                 }
             }
 
@@ -99,9 +111,11 @@ public class Main {
                 System.out.println("Usuario no encontrado, reingrese el usuario o ingrese 0 para salir.");
                 user = s.nextLine();
             }
+            
             if (user.equals("0")) {
                 exit = true;
             }
+            
             switch (status) {
                 case "ADMIN":
                     exit = menuAdmin(s);
@@ -111,12 +125,13 @@ public class Main {
                     break;
             }
         } while (!exit);
+        // utilizamos !exit para que immediatamente se salga del programa al salir
+        // del menuAdmin/menuUser.
         System.out.println("Adios!");
 
     }
-
     private static boolean menuUser(Scanner s) {
-        System.out.println("Encontrado!, user");
+        System.out.println("Encontrado!, user"); // TODO: quitar
         String opcion;
         do {
             System.out.println("**Menu**\r\n"
@@ -188,17 +203,18 @@ public class Main {
             switch (opcion) {
                 case "1":
                     mostrarAdminPC();
+                    break;
                 case "2":
                     administrarPC(s);
+                    break;
                 case "3":
                 	mostrarClasificacion();
+                	break;
                 case "0":
                     break;
                 default:
                     System.out.print("Opcion invalida, reingrese: ");
-                    ;
             }
-
         } while (!opcion.equals("0"));
         return true;
 
@@ -240,8 +256,9 @@ public class Main {
     
     private static void agregarPC(Scanner s) {
     	String ultimoPC = listaPC.get(listaPC.size()-1).getID();
+    	// la id de los pc es PCXXX, asi que quitamos el PC, dejando solo numeros
     	int ultimaId = Integer.parseInt(ultimoPC.substring(2)) + 1;
-    	String id = "PC0" + ultimaId; 
+    	String id = "PC0" + ultimaId; // juntamos otra vez el PC con los numeros
     	System.out.print("Ingrese su ip: ");
     	String ip = s.nextLine();
     	System.out.print("Ingrese su Sistema Operativo: ");
@@ -256,7 +273,6 @@ public class Main {
     }
     
     private static void eliminarPC(Scanner s) {
-    	
     	mostrarAdminPC();
     	System.out.print("Ingrese el id del pc que desea eliminar con este formato: PCXXX ");
     	String busqueda = s.nextLine();
@@ -268,7 +284,7 @@ public class Main {
     		for(PC pc: listaPC ) {
     			if (pc.getID().equals(busqueda)){
     				System.out.println(pc.getID()+ "eliminado.");
-    				listaPC.remove(pc);
+    				listaPC.remove(pc); // ya no se puede acceder el pc.
     				encontrado = true;
     				break;
     			}
