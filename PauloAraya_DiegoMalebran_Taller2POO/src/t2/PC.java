@@ -47,7 +47,7 @@ public class PC {
 	}
 	
 	public String getRiesgo() {
-		return "Nivel de Riesgo: " + this.riesgo;
+		return this.riesgo;
 	}
 	
 	public ArrayList<Puerto> getPuertosAbiertos(){
@@ -60,12 +60,16 @@ public class PC {
 		switch(vulnerabilidades) {
 		case 0, 1:
 			this.setRiesgo("Bajo");
+			break;
 		case 2:
 			this.setRiesgo("Medio");
+			break;
 		case 3:
 			this.setRiesgo("Alto");
+			break;
 		default:
 			this.setRiesgo("Alto");
+			break;
 		}
 	}
 	
@@ -80,7 +84,7 @@ public class PC {
 		for(Puerto puerto: puertosCerrados) {
 			System.out.print(puerto.getID() +"; ");
 		}
-		System.out.println();
+		System.out.println("Nivel de Riesgo: " + this.riesgo);
 	}
 	public String getInfoPC() {
 		String open = "";
@@ -95,7 +99,7 @@ public class PC {
 				"\nIP: " + this.IP + " SO: " + this.sistema + 
 				"\nPuertos abiertos: " + open + 
 				"\nPuertos cerrados: " + closed +
-				"\n" + this.getRiesgo();
+				"\nNivel de Riesgo: " + this.riesgo;
 	}
 	@Override
 	public String toString() {

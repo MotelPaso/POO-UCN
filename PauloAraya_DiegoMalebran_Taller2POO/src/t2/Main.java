@@ -186,6 +186,7 @@ public class Main {
     }
     private static void mostrarPC() {
     	for (PC pc : listaPC) {
+    		pc.calcularRiesgo();
     		pc.mostrar();
     	}
     	
@@ -270,9 +271,8 @@ public class Main {
             System.out.print("===============================\r\n"
                     + "Menu Admin:\r\n"
                     + "1. Mostrar lista completa de PCs.\r\n"
-                    + "2. Agregar un PC a la lista.\r\n"
-                    + "3. Eliminar un PC de la lista.\r\n"
-                    + "4. Mostrar clasificacion de PCS segun riesgo.\r\n"
+                    + "2. Administrar PCs\r\n"
+                    + "3. Mostrar clasificacion de PCS segun riesgo.\r\n"
                     + "0. Volver al menu anterior.\r\n"
                     + "===============================\r\n"
                     + "Ingrese su opcion: ");
@@ -372,7 +372,34 @@ public class Main {
     	}
     }
     private static void mostrarClasificacion() {
-    	// TODO Auto-generated method stub
+    	ArrayList<PC> riesgoBajo = new ArrayList<>();
+    	ArrayList<PC> riesgoMedio = new ArrayList<>();
+    	ArrayList<PC> riesgoAlto = new ArrayList<>();
+    	
+    	for(PC pc: listaPC) {
+    		pc.calcularRiesgo();
+    		String riesgo = pc.getRiesgo();
+    		switch(riesgo) {
+    		case "Bajo":
+    			riesgoBajo.add(pc);
+    		case "Medio":
+    			riesgoMedio.add(pc);
+    		case "Alto":
+    			riesgoAlto.add(pc);
+    		}
+    	}
+    	System.out.println("PC de bajo riesgo:");
+    	for(PC pc: riesgoBajo) {
+    		pc.mostrar();
+    	}
+    	System.out.println("==============\nPC de medio riesgo:");
+    	for(PC pc: riesgoMedio) {
+    		pc.mostrar();
+    	}
+    	System.out.println("==============\nPC de alto riesgo:");
+    	for(PC pc: riesgoAlto) {
+    		pc.mostrar();
+    	}
     	
     }
 
