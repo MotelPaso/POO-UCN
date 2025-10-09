@@ -226,7 +226,7 @@ public class Main {
     		if (!reportes.exists()) {
     			reportes.createNewFile();
     		}
-    		escritor.write(escaneo); 
+    		escritor.write(escaneo);
     		escritor.write("====================");
     		escritor.close();
 		} catch (Exception e) {
@@ -238,7 +238,25 @@ public class Main {
     }
 
     private static void verPuertos() {
-        // TODO Auto-generated method stub
+        ArrayList<Puerto> puertosAbiertos = new ArrayList<>();
+        for(PC pc: listaPC) {
+        	for(Puerto port: pc.getPuertosAbiertos()) {
+        		/* 
+        		 * lo hacemos asi para estar seguros que los puertos estan abiertos.
+        		 * podria ser que algun puerto no este abierto en ningun PC
+        		 * y que este en listaPuertos.
+        		 */
+        		if(!puertosAbiertos.contains(port)) {
+        			puertosAbiertos.add(port);
+        		}
+        	}
+        }
+        System.out.println("Listado de puertos abiertos:");
+        for(Puerto port: listaPuertos) {
+        	if (puertosAbiertos.contains(port)) {
+        		port.mostrar();
+        	}
+        }
 
     }
     private static void ordenarIPs() {

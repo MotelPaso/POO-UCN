@@ -30,10 +30,6 @@ public class PC {
 		return ID;
 	}
 
-	public void setID(String iD) {
-		ID = iD;
-	}
-
 	public String getIP() {
 		return IP;
 	}
@@ -46,16 +42,17 @@ public class PC {
 		return sistema;
 	}
 
-	public void setSistema(String sistema) {
-		this.sistema = sistema;
-	}
-
 	public void setRiesgo(String riesgo) {
 		this.riesgo = riesgo;
 	}
 	
 	public String getRiesgo() {
 		return "Nivel de Riesgo: " + this.riesgo;
+	}
+	
+	public ArrayList<Puerto> getPuertosAbiertos(){
+		return this.puertosAbiertos;
+		
 	}
 	
 	public void calcularRiesgo() {

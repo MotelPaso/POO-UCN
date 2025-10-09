@@ -33,5 +33,10 @@ public class Puerto {
 		this.desc = desc;
 	}
 	
+	public void mostrar() {
+		System.out.println(this.puerto + " " + this.nombre 
+				+ "\nDescripcion: " + this.desc);
+	}
+	
 	
 }
