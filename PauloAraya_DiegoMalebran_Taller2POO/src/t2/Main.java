@@ -261,10 +261,56 @@ public class Main {
 
     }
     private static void ordenarIPs() {
-    	// TODO Auto-generated method stub
+
+    	int n = listaPC.size();
+    	boolean intercambio;
     	
+    	for (int i = 0; i < n-1; i++) {
+    		intercambio = false;
+    		
+    		for (int j = 0; j < n-i-1; j++) {
+    			PC pc1 = listaPC.get(j);
+    			PC pc2 = listaPC.get(j+1);
+    			
+    			if(compararips(pc1.getIP(),pc2.getIP())>0) {
+    				listaPC.set(j, pc2);
+    				listaPC.set(j+1, pc1);
+    				intercambio = true;	
+    		}
+    		}
+    		
+    		if(!intercambio) {
+    			break;
+    		}
+		}    	
     }
-    private static boolean menuAdmin(Scanner s) {
+    private static int compararips(String ip, String ip2) {
+    	
+    	String [] p1 = ip.split("\\.");
+    	String [] p2 = ip2.split("\\.");
+
+    	ArrayList<Integer> n1 = new ArrayList<>();
+    	ArrayList<Integer> n2 = new ArrayList<>();
+
+    	for (int i = 0; i < 4; i++) {
+            n1.add(Integer.parseInt(p1[i]));
+            n2.add(Integer.parseInt(p2[i]));
+        }
+    	
+    	for (int i = 0; i < 4; i++) {
+            int num1 = n1.get(i);
+            int num2 = n2.get(i);
+
+            if (num1 < num2) {
+                return -1;
+            }
+            if (num1 > num2) {
+                return 1;
+            }
+        }
+    	return 0;
+	}
+	private static boolean menuAdmin(Scanner s) {
         System.out.println("Encontrado!");
         String opcion = "";
         do {
