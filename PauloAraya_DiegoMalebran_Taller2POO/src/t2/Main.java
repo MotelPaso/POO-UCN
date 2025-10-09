@@ -4,6 +4,8 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Base64;
 import java.security.MessageDigest;
 
@@ -13,7 +15,7 @@ public class Main {
     private static ArrayList<PC> listaPC = new ArrayList<>();
     private static ArrayList<Puerto> listaPuertos = new ArrayList<>();
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws FileNotFoundException, IOException {
         Scanner s = new Scanner(System.in);
         cargarArchivos();
         mostrarMenu(s);
@@ -97,7 +99,7 @@ public class Main {
 
     
 
-    private static void mostrarMenu(Scanner s) {
+    private static void mostrarMenu(Scanner s) throws IOException {
     	// Para todos los menus se utilizan strings, aunque se pida un numero
     	// esto es para evitar excepciones y mantener la logica concisa
         String status = "";
@@ -106,11 +108,13 @@ public class Main {
         System.out.print("Bienvenido a SecureNet LTDA\r\n"
                 + "Ingrese su usuario: ");
         String user = s.nextLine();
+        User usuarioActual = null;
         do {
         	// TODO: Incluir uso de contraseña
         	// un hashmap serviria bastante, pero no se puede utilizar...
             for (User u : listaUsuarios) {
                 if (u.getUsername().equals(user)) {
+                	usuarioActual = u;
                     encontrado = true;
                     status = u.getAdmin(); 
                     // revisamos el nivel del usuario para mandarlo a cada
@@ -132,7 +136,7 @@ public class Main {
                     exit = menuAdmin(s);
                     break;
                 case "USER":
-                    exit = menuUser(s);
+                    exit = menuUser(s, usuarioActual);
                     break;
             }
         } while (!exit);
@@ -141,7 +145,7 @@ public class Main {
         System.out.println("Adios!");
 
     }
-    private static boolean menuUser(Scanner s) {
+    private static boolean menuUser(Scanner s, User usuarioActual) throws IOException {
         System.out.println("Encontrado!, user"); // TODO: quitar
         String opcion;
         do {
@@ -159,7 +163,7 @@ public class Main {
                     break;
                 }
                 case "2": {
-                    escanearPC();
+                    escanearPC(s, usuarioActual);
                     break;
                 }
                 case "3": {
@@ -186,9 +190,51 @@ public class Main {
     	}
     	
     }
-    private static void escanearPC() {
-    	// TODO Auto-generated method stub
+    private static void escanearPC(Scanner s, User usuarioActual) throws IOException {
+    	mostrarPC();
+    	System.out.println("Elige un pc con este formato PCXXX");
+    	String opcion = s.nextLine();
+    	boolean encontrado = false;
+    	PC escaneado = null;
+    	for (PC pc: listaPC) {
+    		if (opcion.equals(pc.getID())){
+    			encontrado = true;
+    			escaneado = pc;
+    		}
+    	}
+    	if (!encontrado) {
+    		System.out.println("PC no encontrado... Volviendo al menu principal");
+    		return;
+    	}
+    	System.out.println("Iniciando escaneo...");
+    	escaneado.calcularRiesgo(); // el riesgo puede haber cambiado 
+    	String usuario = usuarioActual.getUsername();
+    	String fecha = "";
+    	String datosPC = escaneado.getInfoPC();
+    	String escaneo ="Fecha escaneo: " + fecha + 
+    			"\nNombre usuario: " + usuario + 
+    			"\nDatos del PC:\n" + datosPC +
+    			"\n";
+    	System.out.println("Escaneo terminado, mostrando datos...");
+    	System.out.print(escaneo);
+    	System.out.println("Exportando datos a reportes.txt");
     	
+    	try {
+    		File reportes = new File("reportes.txt");
+    		FileWriter escritor = new FileWriter(reportes, true); 
+    		// true significa que va a añadir al final del archivo
+    		if (!reportes.exists()) {
+    			reportes.createNewFile();
+    		}
+    		escritor.write(escaneo); 
+    		escritor.write("====================");
+    		escritor.close();
+		} catch (Exception e) {
+			System.out.println("Ha ocurrido un error con la escritura al archivo.");
+			System.out.println("Revisa si existe en el path ./taller2/reportes.txt");
+		}
+    	
+    	System.out.println("Datos exportados exitosamente!");
     }
 
     private static void verPuertos() {

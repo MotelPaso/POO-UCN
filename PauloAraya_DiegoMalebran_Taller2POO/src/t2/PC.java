@@ -6,7 +6,7 @@ public class PC {
 	private String sistema;
 	private ArrayList<Puerto> puertosAbiertos;
 	private ArrayList<Puerto> puertosCerrados;
-	private int riesgo;
+	private String riesgo;
 	
 	public PC(String ID, String IP, String sistema) {;
 		this.ID = ID;
@@ -14,6 +14,7 @@ public class PC {
 		this.sistema = sistema;
 		this.puertosAbiertos = new ArrayList<>();
 		this.puertosCerrados = new ArrayList<>();
+		this.riesgo = "";
 	}
 	
 	public void addPuerto(Puerto puerto, String status) {
@@ -49,8 +50,26 @@ public class PC {
 		this.sistema = sistema;
 	}
 
-	public void setRiesgo(int riesgo) {
+	public void setRiesgo(String riesgo) {
 		this.riesgo = riesgo;
+	}
+	
+	public String getRiesgo() {
+		return "Nivel de Riesgo: " + this.riesgo;
+	}
+	
+	public void calcularRiesgo() {
+		int vulnerabilidades = this.puertosAbiertos.size();
+		switch(vulnerabilidades) {
+		case 0, 1:
+			this.setRiesgo("Bajo");
+		case 2:
+			this.setRiesgo("Medio");
+		case 3:
+			this.setRiesgo("Alto");
+		default:
+			this.setRiesgo("Alto");
+		}
 	}
 	
 	public void mostrar() {
@@ -65,6 +84,21 @@ public class PC {
 			System.out.print(puerto.getID() +"; ");
 		}
 		System.out.println();
+	}
+	public String getInfoPC() {
+		String open = "";
+		String closed = "";
+		for(Puerto puerto: puertosAbiertos) {
+			open += puerto.getID() + "; ";
+		}
+		for(Puerto puerto: puertosCerrados) {
+			closed += puerto.getID() + "; ";
+		}
+		return this.ID + 
+				"\nIP: " + this.IP + " SO: " + this.sistema + 
+				"\nPuertos abiertos: " + open + 
+				"\nPuertos cerrados: " + closed +
+				"\n" + this.getRiesgo();
 	}
 	@Override
 	public String toString() {
