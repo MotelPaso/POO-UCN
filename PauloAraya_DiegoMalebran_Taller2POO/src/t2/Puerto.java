@@ -10,27 +10,15 @@ public class Puerto {
 		this.nombre = nombre;
 		this.desc = desc;
 	}
-
-	
 	public int getID() {
 		return puerto;
 	}
-
-
 	public String getNombre() {
 		return nombre;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
 	public String getDesc() {
 		return desc;
-	}
-
-	public void setDesc(String desc) {
-		this.desc = desc;
 	}
 	
 	public void mostrar() {

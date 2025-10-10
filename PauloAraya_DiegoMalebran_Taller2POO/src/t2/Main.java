@@ -4,13 +4,14 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
+import java.io.FileWriter; // para escribirle al archivo
 import java.io.IOException;
+import java.time.LocalDate; // para mostrar la fecha de hoy
 import java.util.Base64;
 import java.security.MessageDigest;
 
 public class Main {
-    // inicializar listas utiles
+    // inicializar listas de objetos
     private static ArrayList<User> listaUsuarios = new ArrayList<>();
     private static ArrayList<PC> listaPC = new ArrayList<>();
     private static ArrayList<Puerto> listaPuertos = new ArrayList<>();
@@ -24,7 +25,7 @@ public class Main {
     // leer cada archivo por separado
     private static void cargarArchivos() throws FileNotFoundException {
         Scanner u = new Scanner(new File("usuarios.txt"));
-        cargarUsers(u);
+        cargarUsers(u); 
         u.close();
         Scanner l = new Scanner(new File("pcs.txt"));
         cargarPCS(l);
@@ -60,7 +61,8 @@ public class Main {
             String ip = partes[1];
             String so = partes[2];
             pc = new PC(id, ip, so);
-            pc.calcularClase(); // la clase solo puede cambiar una vez.
+            pc.calcularClase(); 
+            // se hace aqui porque no puede cambiar la ip de un computador
             listaPC.add(pc);
         }
     }
@@ -114,11 +116,10 @@ public class Main {
             // un hashmap serviria bastante, pero no se puede utilizar...
             for (User u : listaUsuarios) {
                 if (u.getUsername().equals(user)) {
-                    usuarioActual = u;
+                    usuarioActual = u; // para el log
                     encontrado = true;
                     status = u.getAdmin();
-                    // revisamos el nivel del usuario para mandarlo a cada
-                    // menu
+                    // revisamos el nivel del usuario para mandarlo a su respectivo menu
                 }
             }
 
@@ -210,7 +211,7 @@ public class Main {
             return;
         }
         System.out.println("Iniciando escaneo...");
-        escaneado.calcularRiesgo(); // el riesgo puede haber cambiado
+        escaneado.calcularRiesgo();
         String usuario = usuarioActual.getUsername();
         String fecha = "";
         String datosPC = escaneado.getInfoPC();
@@ -356,9 +357,11 @@ public class Main {
         String SO = s.nextLine();
         PC nuevo = new PC(id, ip, SO);
         System.out.println("Los datos de su nuevo pc son:");
-        System.out.println(nuevo.toString());
-        System.out.println("Desea agregar puertos?");
+        nuevo.mostrar();
+        System.out.println("Desea agregar puertos? (Y/N)");
         // TODO: Add puertos abiertos o cerrados
+        nuevo.calcularClase();
+        nuevo.calcularRiesgo();
         listaPC.add(nuevo);
         System.out.println("Volviendo al menu...");
     }
@@ -367,7 +370,7 @@ public class Main {
         mostrarAdminPC();
         System.out.print("Ingrese el id del pc que desea eliminar con este formato: PCXXX ");
         String busqueda = s.nextLine();
-        if (!busqueda.contains("PC0")) {
+        if (!busqueda.contains("PC")) { // tiene que si o si tener un PC
             System.out.println("Id no valida, debe ser del formato PCXXX");
         } else {
             boolean encontrado = false;

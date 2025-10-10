@@ -34,8 +34,4 @@ public class User {
 	public void setAdmin(String admin) {
 		this.admin = admin;
 	}
-
-	
-	
-	
 }
