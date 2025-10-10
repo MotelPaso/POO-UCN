@@ -363,7 +363,23 @@ public class Main {
         System.out.println("Los datos de su nuevo pc son:");
         nuevo.mostrar();
         System.out.println("Desea agregar puertos? (Y/N)");
-        // TODO: Add puertos abiertos o cerrados
+        String opcion = s.nextLine();
+        if (opcion.equals("Y")) {
+        	System.out.println("Mostrando lista de puertos: ");
+        	for (Puerto port: listaPuertos) {
+        		port.mostrar();
+        	}
+        	int[] portNumbers = new int[listaPuertos.size()];
+        	int i = 0;
+        	int numPort = 0;
+        	do {
+        		System.out.print("Ingrese su numero: ");
+        		numPort = s.nextInt();
+        		s.nextLine();
+        		portNumbers[i] = numPort;
+        		i++;
+        	} while (numPort != -1);
+        }
         nuevo.calcularClase();
         nuevo.calcularRiesgo();
         listaPC.add(nuevo);
