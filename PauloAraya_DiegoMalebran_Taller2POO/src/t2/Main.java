@@ -6,9 +6,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter; // para escribirle al archivo
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException; // para la contraseña
 import java.time.LocalDate; // para mostrar la fecha de hoy
-import java.util.Base64;
-import java.security.MessageDigest;
+
 
 public class Main {
     // inicializar listas de objetos
@@ -16,7 +16,7 @@ public class Main {
     private static ArrayList<PC> listaPC = new ArrayList<>();
     private static ArrayList<Puerto> listaPuertos = new ArrayList<>();
 
-    public static void main(String[] args) throws FileNotFoundException, IOException {
+    public static void main(String[] args) throws FileNotFoundException, IOException, NoSuchAlgorithmException {
         Scanner s = new Scanner(System.in);
         cargarArchivos();
         mostrarMenu(s);
@@ -101,7 +101,7 @@ public class Main {
         }
     }
 
-    private static void mostrarMenu(Scanner s) throws IOException {
+    private static void mostrarMenu(Scanner s) throws IOException, NoSuchAlgorithmException {
         // Para todos los menus se utilizan strings, aunque se pida un numero
         // esto es para evitar excepciones y mantener la logica concisa
         String status = "";
@@ -112,20 +112,22 @@ public class Main {
         String user = s.nextLine();
         User usuarioActual = null;
         do {
-            // TODO: Incluir uso de contraseña
-            // un hashmap serviria bastante, pero no se puede utilizar...
             for (User u : listaUsuarios) {
                 if (u.getUsername().equals(user)) {
                     usuarioActual = u; // para el log
-                    encontrado = true;
-                    status = u.getAdmin();
+                    encontrado = usuarioActual.revisarContraseña(s);
+                    break;
                     // revisamos el nivel del usuario para mandarlo a su respectivo menu
                 }
             }
 
             if (!encontrado) {
-                System.out.println("Usuario no encontrado, reingrese el usuario o ingrese 0 para salir.");
+                System.out.println("Credenciales incorrectas, reingrese el usuario o ingrese 0 para salir.");
                 user = s.nextLine();
+            }
+            else {
+            	System.out.println("Iniciando sesion...");
+            	status = usuarioActual.getAdmin();
             }
 
             if (user.equals("0")) {
@@ -139,6 +141,8 @@ public class Main {
                 case "USER":
                     exit = menuUser(s, usuarioActual);
                     break;
+                default:
+                	break;
             }
         } while (!exit);
         // utilizamos !exit para que immediatamente se salga del programa al salir
@@ -287,7 +291,7 @@ public class Main {
                     + "1. Mostrar lista completa de PCs.\r\n"
                     + "2. Administrar PCs\r\n"
                     + "3. Mostrar clasificacion de PCS segun riesgo.\r\n"
-                    + "0. Volver al menu anterior.\r\n"
+                    + "0. Salir.\r\n"
                     + "===============================\r\n"
                     + "Ingrese su opcion: ");
             opcion = s.nextLine();

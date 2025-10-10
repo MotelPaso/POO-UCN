@@ -1,5 +1,11 @@
 package t2;
 
+import java.util.Scanner;
+import java.util.Base64;
+import java.util.Base64.Encoder;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 public class User {
 	private String username;
 	private String contra;
@@ -33,5 +39,20 @@ public class User {
 
 	public void setAdmin(String admin) {
 		this.admin = admin;
+	}
+	
+	public boolean revisarContraseña(Scanner s) throws NoSuchAlgorithmException {
+		System.out.print("Ingrese su contraseña: ");
+		String contraseña = s.nextLine();
+		
+		MessageDigest sha = MessageDigest.getInstance("SHA-256");
+		byte[] hashed256 = sha.digest(contraseña.getBytes()); // primero, se hashea a SHA-256
+		Encoder encoder = Base64.getEncoder();
+		String hashed = encoder.encodeToString(hashed256); // luego, se pasa a Base64.
+		
+		if (hashed.equals(this.contra)) { // revisamos si son iguales
+			return true;
+		}
+		return false;
 	}
 }
