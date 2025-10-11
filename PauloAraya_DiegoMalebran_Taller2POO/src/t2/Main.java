@@ -1,5 +1,9 @@
 package t2;
 
+//Diego Malebrán 21661740-1
+//Paulo Araya 21.918.080-2 
+//ICCI
+
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.File;
