@@ -57,6 +57,10 @@ public class PC {
 		
 	}
 	
+	public void setPuertosAbiertos(ArrayList<Puerto> puertosAbiertos) {
+		this.puertosAbiertos = puertosAbiertos;
+	}
+	
 	public String getClase() {
 		return this.clase;
 	}
@@ -95,6 +99,10 @@ public class PC {
 	public void mostrar() {
 		System.out.println(this.ID+ ":");
 		System.out.println(this.IP+ ": Sistema Operativo: " + this.sistema);
+	}
+	
+	public void mostrarAdmin() {
+		mostrar();
 		System.out.print("Puertos Abiertos: ");
 		for(Puerto puerto: puertosAbiertos) {
 			System.out.print(puerto.getID() +"; ");
@@ -103,7 +111,7 @@ public class PC {
 		for(Puerto puerto: puertosCerrados) {
 			System.out.print(puerto.getID() +"; ");
 		}
-		System.out.println("Nivel de Riesgo: " + this.riesgo);
+		System.out.println("\nNivel de Riesgo: " + this.riesgo);
 		System.out.println("Clase: " + this.clase);
 	}
 	public String getInfoPC() {

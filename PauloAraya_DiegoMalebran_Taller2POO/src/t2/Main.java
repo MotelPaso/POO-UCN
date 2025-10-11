@@ -192,14 +192,12 @@ public class Main {
 
     private static void mostrarPC() {
         for (PC pc : listaPC) {
-            pc.calcularRiesgo();
             pc.mostrar();
         }
-
     }
 
     private static void escanearPC(Scanner s, User usuarioActual) throws IOException {
-        mostrarPC();
+        mostrarPC(); // muestra todos los pcs
         System.out.println("Elige un pc con este formato PCXXX");
         String opcion = s.nextLine();
         boolean encontrado = false;
@@ -215,14 +213,14 @@ public class Main {
             return;
         }
         System.out.println("Iniciando escaneo...");
-        escaneado.calcularRiesgo();
+        escaneado.calcularRiesgo(); // se calcula el riesgo
         String usuario = usuarioActual.getUsername();
-        String fecha = "";
+        LocalDate fecha = LocalDate.now(); // Añade la fecha de hoy
         String datosPC = escaneado.getInfoPC();
         String escaneo = "Fecha escaneo: " + fecha +
                 "\nNombre usuario: " + usuario +
                 "\nDatos del PC:\n" + datosPC +
-                "\n";
+                "\n"; // se guardan todos los datos de forma String
         System.out.println("Escaneo terminado, mostrando datos...");
         System.out.print(escaneo);
         System.out.println("Exportando datos a reportes.txt");
@@ -235,7 +233,7 @@ public class Main {
                 reportes.createNewFile();
             }
             escritor.write(escaneo);
-            escritor.write("====================");
+            escritor.write("====================\n");
             escritor.close();
         } catch (Exception e) {
             System.out.println("Ha ocurrido un error con la escritura al archivo.");
@@ -279,11 +277,12 @@ public class Main {
         System.out.println("PCs ordenados por su clase:");
         for (PC pc: listaPCOrdenIP) {
         	pc.mostrar();
+        	System.out.println("Clase: " + pc.getClase());
         }
     }
 
     private static boolean menuAdmin(Scanner s) {
-        System.out.println("Encontrado!");
+    	// recordar que se trabaja en string para evitar excepciones
         String opcion = "";
         do {
             System.out.print("===============================\r\n"
@@ -308,7 +307,7 @@ public class Main {
                 case "0":
                     break;
                 default:
-                    System.out.print("Opcion invalida, reingrese: ");
+                    System.out.print("Opcion invalida, reingrese.");
             }
         } while (!opcion.equals("0"));
         return true;
@@ -318,11 +317,12 @@ public class Main {
     private static void mostrarAdminPC() {
         System.out.println("Mostrando lista de PCs...");
         for (PC pc : listaPC) {
-            pc.mostrar();
+            pc.mostrarAdmin();
         }
     }
 
     private static void administrarPC(Scanner s) {
+    	// creamos un submenu para mejorar la experiencia de uso :)
         String opcion = "";
         do {
             System.out.print("=====================\r\n"
@@ -330,7 +330,7 @@ public class Main {
                     + "=====================\r\n"
                     + "1. Agregar un PC\r\n"
                     + "2. Eliminar un PC\r\n"
-                    + "0. Volver al menu:\r\n"
+                    + "0. Volver al menu\r\n"
                     + "Elija su opcion: ");
             opcion = s.nextLine();
             switch (opcion) {
@@ -364,24 +364,32 @@ public class Main {
         nuevo.mostrar();
         System.out.println("Desea agregar puertos? (Y/N)");
         String opcion = s.nextLine();
-        if (opcion.equals("Y")) {
-        	System.out.println("Mostrando lista de puertos: ");
+        if (opcion.equals("Y")) { 
+        	System.out.println("Mostrando lista de puertos disponibles: ");
         	for (Puerto port: listaPuertos) {
         		port.mostrar();
         	}
-        	int[] portNumbers = new int[listaPuertos.size()];
-        	int i = 0;
-        	int numPort = 0;
+        	ArrayList<Puerto> puertosAbiertos = new ArrayList<>();
+        	int numPort = 0; 
+        	
         	do {
-        		System.out.print("Ingrese su numero: ");
+        		System.out.print("Ingrese los puertos que desea abrir, ingrese -1 para terminar: ");
         		numPort = s.nextInt();
         		s.nextLine();
-        		portNumbers[i] = numPort;
-        		i++;
+        		for(Puerto port: listaPuertos) {
+        			if (port.getID() == numPort && !puertosAbiertos.contains(port)) {
+        				// si existe el puerto y si no esta ya abierto
+        				puertosAbiertos.add(port);
+        			}
+        		}
         	} while (numPort != -1);
+        	nuevo.setPuertosAbiertos(puertosAbiertos);
         }
         nuevo.calcularClase();
         nuevo.calcularRiesgo();
+        System.out.println("Los datos avanzados de su pc son: ");
+        nuevo.mostrarAdmin();
+        
         listaPC.add(nuevo);
         System.out.println("Volviendo al menu...");
     }
@@ -390,7 +398,7 @@ public class Main {
         mostrarAdminPC();
         System.out.print("Ingrese el id del pc que desea eliminar con este formato: PCXXX ");
         String busqueda = s.nextLine();
-        if (!busqueda.contains("PC")) { // tiene que si o si tener un PC
+        if (!busqueda.contains("PC")) { // tiene que si o si tener PCXXX
             System.out.println("Id no valida, debe ser del formato PCXXX");
         } else {
             boolean encontrado = false;
@@ -409,33 +417,38 @@ public class Main {
     }
 
     private static void mostrarClasificacion() {
+    	// mostramos la clasificacion de cada pc
+    	// dependiendo de su cantidad de puertosAbiertos
         ArrayList<PC> riesgoBajo = new ArrayList<>();
         ArrayList<PC> riesgoMedio = new ArrayList<>();
         ArrayList<PC> riesgoAlto = new ArrayList<>();
 
         for (PC pc : listaPC) {
-            pc.calcularRiesgo();
-            String riesgo = pc.getRiesgo();
-            switch (riesgo) {
-                case "Bajo":
-                    riesgoBajo.add(pc);
-                case "Medio":
-                    riesgoMedio.add(pc);
-                case "Alto":
-                    riesgoAlto.add(pc);
+    		pc.calcularRiesgo();
+    		String riesgo = pc.getRiesgo();
+    		switch (riesgo) {
+        		case "Bajo":
+        			riesgoBajo.add(pc);
+        			break;
+        		case "Medio":
+        			riesgoMedio.add(pc);
+        			break;
+        		case "Alto":
+        			riesgoAlto.add(pc);
+        			break;
             }
         }
         System.out.println("PC de bajo riesgo:");
         for (PC pc : riesgoBajo) {
-            pc.mostrar();
+            pc.mostrarAdmin();
         }
         System.out.println("==============\nPC de medio riesgo:");
         for (PC pc : riesgoMedio) {
-            pc.mostrar();
+            pc.mostrarAdmin();
         }
         System.out.println("==============\nPC de alto riesgo:");
         for (PC pc : riesgoAlto) {
-            pc.mostrar();
+            pc.mostrarAdmin();
         }
 
     }
