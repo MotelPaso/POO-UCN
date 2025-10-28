@@ -24,7 +24,7 @@ public class SistemaImpl implements Sistema{
 	}
 
 	@Override
-	public void crearusuarios(String[] p) {
+	public void crearUsuarios(String[] p) {
 		
 		Usuario u = factoryUsuarios.crear(p);
 		if (u != null) { 
@@ -36,10 +36,9 @@ public class SistemaImpl implements Sistema{
 	}
 
 	@Override
-	public void guardarproyectos(String id, String nombre, String responsable) {
+	public void guardarProyectos(String id, String nombre, String responsable) {
 
 		Usuario usuario = buscarresponsable(responsable);
-		
 		Proyecto p = new Proyecto(id, nombre, usuario);
 		proyectos.add(p);
 		
@@ -56,7 +55,7 @@ public class SistemaImpl implements Sistema{
 	}
 
 	@Override
-	public void guardartareas(String[] p) {
+	public void guardarTareas(String[] p) {
 		
 		String proyecto= p[0];
 		String id = p[1];
@@ -102,7 +101,6 @@ public class SistemaImpl implements Sistema{
 	    return null;
 	}
 
-	
 	@Override
 	public String verProyectosDisponibles() {
 	    String resultado = "--- Lista de Proyectos ---\n"; 
@@ -119,4 +117,7 @@ public class SistemaImpl implements Sistema{
 	    
 	    return resultado; 
 	}
+
+
 }
+

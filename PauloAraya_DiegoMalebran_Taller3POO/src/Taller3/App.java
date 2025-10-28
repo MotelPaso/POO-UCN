@@ -70,8 +70,32 @@ public class App {
 	        	
 	        }
 	        
-	        
-	        
+	        case "2":{
+	        	
+	        	System.out.println("Quieres Agregar o Eliminar: ");
+	        	
+	        	String respuesta = s.nextLine().toLowerCase();
+	        	
+	        	
+	        	switch(respuesta) {
+	        	
+	        	
+	        		case "eliminar":{
+	        			
+	        	   		String listaProyectos = sistema.verProyectosDisponibles();
+		        		System.out.println(listaProyectos);
+	        			
+		        		break;
+	        		
+
+	        		}
+	        	
+	        	}
+	        	
+	        	
+	        	break;
+	        	
+	       }
 	        }
 
 		}while(!opcion.equals("0"));
@@ -90,7 +114,7 @@ public class App {
 		while(s.hasNextLine()) {
 			
 			String [] p = s.nextLine().strip().split("\\|");
-			sistema.crearusuarios(p);
+			sistema.crearUsuarios(p);
 		}
 		
 		s.close();
@@ -98,17 +122,15 @@ public class App {
 		s = new Scanner(new File("proyectos.txt"));
 		
 		while(s.hasNextLine()) {
-			
-			
-			
+						
 			String [] pp = s.nextLine().strip().split("\\|");
 		
-	
-				String id = pp[0];
-				String nombre = pp[1];
-				String responsable = pp[2];
-				
-				sistema.guardarproyectos(id,nombre,responsable);
+
+			String id = pp[0];
+			String nombre = pp[1];
+			String responsable = pp[2];
+			
+			sistema.guardarProyectos(id,nombre,responsable);
 				
 			
 			
@@ -124,7 +146,7 @@ public class App {
 			
 			String [] p = s.nextLine().strip().split("\\|");
 			
-			sistema.guardartareas(p);
+			sistema.guardarTareas(p);
 			
 		}
 	}
