@@ -2,11 +2,11 @@ package Taller3;
 
 import java.time.LocalDate;
 
-public abstract class  Tarea {
+public abstract class Tarea {
 	
 	private Proyecto proyecto;
 	private Usuario responsable;
-	private String id,tipo,descripcion,estado,complejidad;
+	private String id, tipo, descripcion, estado, complejidad;
 	private LocalDate fecha;
 	public Tarea(Proyecto proyecto, Usuario responsable, String id, String tipo, String descripcion, String estado,
 			String complejidad, LocalDate fecha) {

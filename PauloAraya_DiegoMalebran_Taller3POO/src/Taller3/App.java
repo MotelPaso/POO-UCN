@@ -10,29 +10,60 @@ public class App {
 		Sistema sistema = SistemaImpl.getInstancia();
 		cargarArchivos(sistema);
 		menu(sistema);
-		
-		
 	}
 
+	private static void cargarArchivos(Sistema sistema) throws FileNotFoundException {
+		// Leer cada archivo y guardar los usuarios, proyectos y tareas.
+		Scanner s = new Scanner(new File("usuarios.txt")); 
+		while(s.hasNextLine()) {
+			
+			String [] p = s.nextLine().strip().split("\\|");
+			sistema.crearUsuarios(p);
+		}
+		s.close();
+		
+		s = new Scanner(new File("proyectos.txt"));
+		while(s.hasNextLine()) {
+				
+			String [] pp = s.nextLine().strip().split("\\|");
+			String id = pp[0];
+			String nombre = pp[1];
+			String responsable = pp[2];
+			
+			sistema.guardarProyectos(id,nombre,responsable);
+		}
+		s.close();
+		
+		s = new Scanner(new File("tareas.txt"));
+		while(s.hasNextLine()) {
+			String [] p = s.nextLine().strip().split("\\|");
+			sistema.guardarTareas(p);
+		}
+		s.close();
+	}
+	
+	
+	
 	private static void menu(Sistema sistema) {
 		
 		Scanner s = new Scanner(System.in);
 		
 		Usuario logueado = null;
-		
+		System.out.println("--- INICIO DE SESIÓN ---");
 		do {
 			
-			System.out.println("--- INICIO DE SESIÓN ---");
 	        System.out.print("Username: ");
 	        String username = s.nextLine();
 	        System.out.print("Contraseña: ");
 	        String password = s.nextLine();
 	        
 	        logueado = sistema.login(username, password);
+	        
+	        if (logueado == null) {
+	        	System.out.println("Credenciales incorrectas, vuelva a ingresar.");
+	        }
 			
-			
-			
-		}while(logueado == null);
+		} while (logueado == null);
 		
 		System.out.println("¡Bienvenido, " + logueado.getUsername() + "!");
 		
@@ -41,18 +72,13 @@ public class App {
 		} else { 
 		    menuColaborador(sistema, (Colaborador) logueado, s);
 		}
-			
-
 	}
 
 	private static void menuColaborador(Sistema sistema, Colaborador logueado, Scanner s) {
 	
-		String opcion ;
-		
+		String opcion;
 		do {
-			
-			System.out.println();
-			System.out.println("--- MENÚ COLABORADOR ---");
+			System.out.println("\n--- MENÚ COLABORADOR ---");
 	        System.out.println("1 Ver proyectos disponibles");
 	        System.out.println("2 Ver tareas asignadas");   
 	        System.out.println("3 Actualizar estado de una tarea"); 
@@ -61,44 +87,36 @@ public class App {
 	        opcion = s.nextLine();
 	        
 	        switch(opcion) {
-	        
-	        case "1":{
-	        	
-	        	String listaProyectos = sistema.verProyectosDisponibles();
-                System.out.println(listaProyectos);
-                break;
-	        	
+		        case "1":{
+	                System.out.println(sistema.verProyectosDisponibles());
+	                break;
+		        }
+		        case "2":{
+		        	// TODO: Mover a funcion aparte
+		        	System.out.println("Quieres Agregar o Eliminar: ");
+		        	String respuesta = s.nextLine().toLowerCase();
+		        	switch(respuesta) {
+		        		case "eliminar":{
+			        		System.out.println(sistema.verProyectosDisponibles());
+			        		break;
+		        		}
+		        		case "agregar":{
+		        			//TODO: agregar
+		        			break;
+		        		}
+		        		default: System.out.println("Opcion no encontrada, volviendo al menu...");
+		        	}
+		        	break; 	
+		        }
+		        case "3":{
+		        	//TODO: Actualizar tareas.
+		        }
+		        case "0":{
+		        	System.out.println("Adios!");
+		        }
+		        default: System.out.println("Opcion no encontrada, volviendo al menu...");
 	        }
-	        
-	        case "2":{
-	        	
-	        	System.out.println("Quieres Agregar o Eliminar: ");
-	        	
-	        	String respuesta = s.nextLine().toLowerCase();
-	        	
-	        	
-	        	switch(respuesta) {
-	        	
-	        	
-	        		case "eliminar":{
-	        			
-	        	   		String listaProyectos = sistema.verProyectosDisponibles();
-		        		System.out.println(listaProyectos);
-	        			
-		        		break;
-	        		
-
-	        		}
-	        	
-	        	}
-	        	
-	        	
-	        	break;
-	        	
-	       }
-	        }
-
-		}while(!opcion.equals("0"));
+		} while (!opcion.equals("0"));
 		
 	}
 
@@ -107,48 +125,6 @@ public class App {
 		
 	}
 
-	private static void cargarArchivos(Sistema sistema) throws FileNotFoundException {
-		
-		Scanner s = new Scanner(new File("usuarios.txt"));
-		
-		while(s.hasNextLine()) {
-			
-			String [] p = s.nextLine().strip().split("\\|");
-			sistema.crearUsuarios(p);
-		}
-		
-		s.close();
-		
-		s = new Scanner(new File("proyectos.txt"));
-		
-		while(s.hasNextLine()) {
-						
-			String [] pp = s.nextLine().strip().split("\\|");
-		
-
-			String id = pp[0];
-			String nombre = pp[1];
-			String responsable = pp[2];
-			
-			sistema.guardarProyectos(id,nombre,responsable);
-				
-			
-			
-		}
-		
-		s.close();
-		
-		s= new Scanner(new File("tareas.txt"));
-		
-		
-		while(s.hasNextLine()) {
-			
-			
-			String [] p = s.nextLine().strip().split("\\|");
-			
-			sistema.guardarTareas(p);
-			
-		}
-	}
+	
 
 }

@@ -15,14 +15,15 @@ public class factoryUsuarios {
 			return new Administrador(user, contra, rol);
 			
 		}
-		case"colaborador":{
+		case "colaborador":{
 			
 			return new Colaborador(user, contra, rol);
 			
 		}	
 		
 		default: {
-            System.err.println("Advertencia: Rol desconocido o no válido: " + rol);
+			// TODO: Refactor
+            System.out.println("Advertencia: Rol desconocido o no válido: " + rol);
             return null;
         }
 		
