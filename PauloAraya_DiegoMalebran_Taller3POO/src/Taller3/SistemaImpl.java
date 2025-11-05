@@ -1,6 +1,5 @@
 package Taller3;
 
-import java.time.LocalDate;
 import java.util.*;
 
 public class SistemaImpl implements Sistema{
@@ -40,26 +39,14 @@ public class SistemaImpl implements Sistema{
 	}
 
 	@Override
-	public void guardarTareas(String[] p) {
-		
-		// TODO: finish
-		
-		String proyecto= p[0];
-		String id = p[1];
-		String tipo = p[2];
-		String descripcion = p[3];
-		String estado = p[4];
-		String responsable = p[5];
-		String complejidad = p[6];
-		LocalDate fecha = LocalDate.parse(p[7]);
-				
-		//Usuario usuario = buscarresponsable(responsable);
-		//Proyecto proyeto = buscarproyecto(proyecto);
+	public void guardarTareas(String[] datos) {
 
-		//Tarea t = new Tarea(proyeto, usuario, id, tipo, descripcion, estado, complejidad, fecha);
+		Proyecto proyecto = buscarProyecto(datos[0]);
+		Usuario responsable = buscarUsuario(datos[5]);
 		
-		//tareas.add(t);
-				
+		Tarea t = FactoryTareas.crearTarea(proyecto, responsable, datos);
+		listaTareas.add(t);
+
 	}
 
 	private Proyecto buscarProyecto(String proyecto) {

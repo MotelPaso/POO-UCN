@@ -1,15 +1,12 @@
 package Taller3;
 
-import java.time.LocalDate;
-
 public abstract class Tarea {
 	
-	private Proyecto proyecto;
-	private Usuario responsable;
-	private String id, tipo, descripcion, estado, complejidad;
-	private LocalDate fecha;
-	public Tarea(Proyecto proyecto, Usuario responsable, String id, String tipo, String descripcion, String estado,
-			String complejidad, LocalDate fecha) {
+	protected Proyecto proyecto;
+	protected Usuario responsable;
+	protected String id, tipo, descripcion, estado, complejidad, fecha;
+	protected Tarea(Proyecto proyecto, Usuario responsable, String id, String tipo, String descripcion, String estado,
+			String complejidad, String fecha2) {
 		this.proyecto = proyecto;
 		this.responsable = responsable;
 		this.id = id;
@@ -17,7 +14,7 @@ public abstract class Tarea {
 		this.descripcion = descripcion;
 		this.estado = estado;
 		this.complejidad = complejidad;
-		this.fecha = fecha;
+		this.fecha = fecha2;
 	}
 	public Proyecto getProyecto() {
 		return proyecto;
@@ -60,12 +57,6 @@ public abstract class Tarea {
 	}
 	public void setComplejidad(String complejidad) {
 		this.complejidad = complejidad;
-	}
-	public LocalDate getFecha() {
-		return fecha;
-	}
-	public void setFecha(LocalDate fecha) {
-		this.fecha = fecha;
 	}
 	
 
