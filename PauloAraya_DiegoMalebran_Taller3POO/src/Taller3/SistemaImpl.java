@@ -1,6 +1,6 @@
 package Taller3;
 
-import java.util.*;
+import java.util.ArrayList;
 
 public class SistemaImpl implements Sistema{
 	
@@ -32,22 +32,16 @@ public class SistemaImpl implements Sistema{
 
 		String id = pp[0];
 		String nombre = pp[1];
-		String responsable = pp[2];
+		String responsable = pp[2]; 
+		// como hay usuarios que no existen en el archivo usuarios.txt
+		// guardamos el responsable como string.
 		
+
 		Proyecto p = new Proyecto(id, nombre, responsable);
 		listaProyectos.add(p);
 	}
 
-	@Override
-	public void guardarTareas(String[] datos) {
-
-		Proyecto proyecto = buscarProyecto(datos[0]);
-		Usuario responsable = buscarUsuario(datos[5]);
-		
-		Tarea t = FactoryTareas.crearTarea(proyecto, responsable, datos);
-		listaTareas.add(t);
-
-	}
+	
 
 	private Proyecto buscarProyecto(String proyecto) {
 		for (Proyecto p : listaProyectos) {
@@ -59,15 +53,14 @@ public class SistemaImpl implements Sistema{
 	}
 
 	@Override
-	public boolean login(String username, String password) {
+	public Usuario login(String username, String password) {
 		// TODO: hashing
 		Usuario usuario = buscarUsuario(username);
-	    
-	    if (usuario != null ) { // si el usuario existe
-	        return true;
-	    }
-	    
-	    return false;
+		
+		if (usuario != null && usuario.getContraseña().equals(password)) {
+			return usuario;
+		}
+	    return null;
 	}
 
 
@@ -94,6 +87,60 @@ public class SistemaImpl implements Sistema{
 				return user;
 			}
 		}
+		return null;
+	}
+
+	
+	// funciones de tareas
+	
+	@Override
+	public void guardarTareas(String[] datos) {
+
+		Proyecto proyecto = buscarProyecto(datos[0]);
+		Usuario responsable = buscarUsuario(datos[5]);
+		
+		Tarea t = FactoryTareas.crearTarea(proyecto, responsable, datos);
+		listaTareas.add(t);
+		responsable.addTarea(t);
+
+	}
+
+	@Override
+	public String getTareasAsignadas(Colaborador colab) {
+		ArrayList<Tarea> tareasAsignadas = colab.getTareasAsignadas();
+		String datos = "\nTareas asignadas a " + colab.getUsername() + "\n";
+		for (Tarea tarea : tareasAsignadas) {
+			datos += tarea.toString() + "\n";
+		}
+		return datos;
+	}
+
+	@Override
+	public String cambioEstadoTarea(String idTarea, String nuevoEstado, Colaborador colab) {
+		// pasar numero a estado
+		nuevoEstado = switch (nuevoEstado) {
+		case "1" -> "Pendiente";
+		case "2" -> "En progreso";
+		case "3" -> "Completada";
+		default -> "null";
+		};
+		for (Tarea tarea : listaTareas) {
+			if (tarea.getId().contains(idTarea) && colab.getTareasAsignadas().contains(tarea)) {
+				String estado = tarea.getEstado();
+				
+				if (estado.equals(nuevoEstado) || nuevoEstado.equals("null")) {
+					return "No se ha podido cambiar el estado...";
+				}
+				tarea.setEstado(nuevoEstado);
+				return "Estado cambiado existosamente \nNuevo estado: " + tarea.getEstado();
+			}
+		}
+		return "Tarea no asignada a este usuario! No la puedes modificar";
+	}
+
+	@Override
+	public String accionPorTarea(String idTarea) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 

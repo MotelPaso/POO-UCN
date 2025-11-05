@@ -9,7 +9,7 @@ public class App {
 
 		Sistema sistema = SistemaImpl.getInstancia();
 		cargarArchivos(sistema);
-		menu(sistema);
+		mostrarMenu(sistema);
 	}
 
 	private static void cargarArchivos(Sistema sistema) throws FileNotFoundException {
@@ -38,13 +38,11 @@ public class App {
 		s.close();
 	}
 	
-	
-	
-	private static void menu(Sistema sistema) {
+	private static void mostrarMenu(Sistema sistema) {
 		
 		Scanner s = new Scanner(System.in);
-		
 		Usuario logueado = null;
+		
 		System.out.println("--- INICIO DE SESIÓN ---");
 		do {
 			
@@ -63,11 +61,12 @@ public class App {
 		
 		System.out.println("¡Bienvenido, " + logueado.getUsername() + "!");
 		
-		if ("Administrador".equalsIgnoreCase(logueado.getRol())) {
-		    menuAdministrador(sistema, (Administrador) logueado, s);
-		} else { 
-		    menuColaborador(sistema, (Colaborador) logueado, s);
+		switch(logueado.getRol().toLowerCase()) {
+			case "administrador" -> menuAdministrador(sistema, (Administrador) logueado, s);
+			case "colaborador" -> menuColaborador(sistema, (Colaborador) logueado, s);
+			default -> System.out.println("Rol no encontrado en nuestro sistema\n Adios!");
 		}
+		
 	}
 
 	private static void menuColaborador(Sistema sistema, Colaborador logueado, Scanner s) {
@@ -75,10 +74,11 @@ public class App {
 		String opcion;
 		do {
 			System.out.println("\n--- MENÚ COLABORADOR ---");
-	        System.out.println("1 Ver proyectos disponibles");
-	        System.out.println("2 Ver tareas asignadas");   
-	        System.out.println("3 Actualizar estado de una tarea"); 
-	        System.out.println("0 Cerrar Sesión");
+	        System.out.println("1. Ver proyectos disponibles");
+	        System.out.println("2. Ver tareas asignadas");   
+	        System.out.println("3. Actualizar estado de una tarea"); 
+	        System.out.println("4. Acciones con respecto a una tarea");
+	        System.out.println("0. Cerrar Sesión");
 	        System.out.print("Seleccione una opción: ");
 	        opcion = s.nextLine();
 	        
@@ -88,27 +88,33 @@ public class App {
 	                break;
 		        }
 		        case "2":{
-		        	// TODO: Mover a funcion aparte
-		        	System.out.println("Quieres Agregar o Eliminar: ");
-		        	String respuesta = s.nextLine().toLowerCase();
-		        	switch(respuesta) {
-		        		case "eliminar":{
-			        		System.out.println(sistema.verProyectosDisponibles());
-			        		break;
-		        		}
-		        		case "agregar":{
-		        			//TODO: agregar
-		        			break;
-		        		}
-		        		default: System.out.println("Opcion no encontrada, volviendo al menu...");
-		        	}
-		        	break; 	
+		        	System.out.print(sistema.getTareasAsignadas(logueado));
+		        	break;
 		        }
 		        case "3":{
-		        	//TODO: Actualizar tareas.
+		        	System.out.println(sistema.getTareasAsignadas(logueado));
+		        	System.out.print("Elige una tarea por su id: ");
+		        	String tarea = s.nextLine();
+		        	System.out.println("Estados:\r\n"
+		        			+ "1. Pendiente\r\n"
+		        			+ "2. En Progreso\r\n"
+		        			+ "3. Completada");
+		        	System.out.print("Ingrese opcion (numero): ");
+		        	String nuevoEstado = s.nextLine();
+		        	System.out.println(sistema.cambioEstadoTarea(tarea, nuevoEstado, logueado));
+		        	break;
+		        }
+		        
+		        case "4":{
+		        	System.out.println(sistema.getTareasAsignadas(logueado));
+		        	System.out.print("Elige una tarea por su id: ");
+		        	String tarea = s.nextLine();
+		        	System.out.println(sistema.accionPorTarea(tarea));
+		        	break;
 		        }
 		        case "0":{
 		        	System.out.println("Adios!");
+		        	break;
 		        }
 		        default: System.out.println("Opcion no encontrada, volviendo al menu...");
 	        }
@@ -120,6 +126,26 @@ public class App {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	private static void menuTareas(Scanner s) {
+		System.out.println("Quieres Agregar o Eliminar: ");
+    	String respuesta = s.nextLine().toLowerCase();
+    	
+    	switch(respuesta) {
+    		case "eliminar" -> eliminarTarea(s);
+    		case "agregar" -> addTarea(s);
+    		default -> System.out.println("Opcion no encontrada, volviendo al menu...");
+    	}
+	}
+
+	private static void addTarea(Scanner s) {
+		
+	}
+
+	private static void eliminarTarea(Scanner s) {
+		
+	}
+
 
 	
 

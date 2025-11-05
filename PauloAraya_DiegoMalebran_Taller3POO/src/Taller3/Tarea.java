@@ -58,6 +58,15 @@ public abstract class Tarea {
 	public void setComplejidad(String complejidad) {
 		this.complejidad = complejidad;
 	}
+	@Override
+	public String toString() {
+		// TODO: Cambiar toString para algo mas bonito
+		return "Proyecto:" + proyecto.getNombre() +", id=" + id + ", tipo=" + tipo + ", descripcion=" + descripcion + ", estado=" + estado + ", complejidad=" + complejidad + ", fecha="+ fecha + "]";
+	}
+	
+	
+	
+	
 	
 
 	

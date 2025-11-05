@@ -1,5 +1,6 @@
 package Taller3;
 
+
 public abstract class Usuario {
 	
 	protected String Username,Contraseña,Rol;
@@ -33,4 +34,6 @@ public abstract class Usuario {
 	public void setRol(String rol) {
 		Rol = rol;
 	}
+
+	protected abstract void addTarea(Tarea t);
 }

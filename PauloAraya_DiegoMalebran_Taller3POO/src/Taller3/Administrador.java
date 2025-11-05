@@ -7,4 +7,8 @@ public class Administrador extends Usuario {
 		// TODO Auto-generated constructor stub
 	}
 
+	@Override
+	protected void addTarea(Tarea t) {
+	}
+
 }

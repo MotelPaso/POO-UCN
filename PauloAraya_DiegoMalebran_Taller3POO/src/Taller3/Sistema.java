@@ -12,5 +12,11 @@ public interface Sistema {
 
 	String verProyectosDisponibles();
 
+	String getTareasAsignadas(Colaborador colab);
+
+	String cambioEstadoTarea(String idTarea, String nuevoEstado, Colaborador colab);
+
+	String accionPorTarea(String idTarea);
+
 
 }
