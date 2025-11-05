@@ -26,11 +26,7 @@ public class App {
 		while(s.hasNextLine()) {
 				
 			String [] pp = s.nextLine().strip().split("\\|");
-			String id = pp[0];
-			String nombre = pp[1];
-			String responsable = pp[2];
-			
-			sistema.guardarProyectos(id,nombre,responsable);
+			sistema.guardarProyectos(pp);
 		}
 		s.close();
 		

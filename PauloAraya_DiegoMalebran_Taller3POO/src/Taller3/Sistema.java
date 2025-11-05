@@ -4,7 +4,7 @@ public interface Sistema {
 
 	void crearUsuarios(String[] p);
 
-	void guardarProyectos(String id, String nombre, String responsable);
+	void guardarProyectos(String[] p);
 
 	void guardarTareas(String[] p);
 

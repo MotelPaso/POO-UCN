@@ -6,9 +6,9 @@ import java.util.*;
 public class SistemaImpl implements Sistema{
 	
 	private static SistemaImpl Instancia;
-	private static ArrayList<Usuario>usuarios = new ArrayList<>();
-	private static ArrayList<Proyecto>proyectos = new ArrayList<>();
-	private static ArrayList<Tarea>tareas = new ArrayList<>();
+	private static ArrayList<Usuario> listaUsuarios = new ArrayList<>();
+	private static ArrayList<Proyecto> listaProyectos = new ArrayList<>();
+	private static ArrayList<Tarea> listaTareas = new ArrayList<>();
 
 	public SistemaImpl() {}
 
@@ -24,37 +24,19 @@ public class SistemaImpl implements Sistema{
 
 	@Override
 	public void crearUsuarios(String[] p) {
-		// TODO: Refactor
-		// es necesario el else?, se supone que todos los usuarios vienen del archivo y van a estar correctos
 		Usuario u = factoryUsuarios.crear(p);
-		if (u != null) { 
-	        usuarios.add(u);
-	    } else {
-	        System.err.println("Error Crítico: No se pudo crear el usuario a partir de la línea: " + Arrays.toString(p));
-	    }
-		
+		listaUsuarios.add(u);
 	}
 
 	@Override
-	public void guardarProyectos(String id, String nombre, String responsable) {
+	public void guardarProyectos(String[] pp) {
 
-		Usuario usuario = buscarResponsable(responsable);
-		// si el usuario no esta en la lista de usuarios, podria causar problemas
-		// probablemente sea mejor guardarlo como String
-		Proyecto p = new Proyecto(id, nombre, usuario);
-		proyectos.add(p);
-	}
-
-	private Usuario buscarResponsable(String responsable) {
-		// Si el usuario existe, devolverlo
-		// si no, return null
-		// TODO: Refactor
-	    for (Usuario u : usuarios) {
-	        if(u.getUsername().equalsIgnoreCase(responsable)) { 
-	            return u;
-	        }
-	    }
-	    return null;
+		String id = pp[0];
+		String nombre = pp[1];
+		String responsable = pp[2];
+		
+		Proyecto p = new Proyecto(id, nombre, responsable);
+		listaProyectos.add(p);
 	}
 
 	@Override
@@ -81,7 +63,7 @@ public class SistemaImpl implements Sistema{
 	}
 
 	private Proyecto buscarProyecto(String proyecto) {
-		for (Proyecto p : proyectos) {
+		for (Proyecto p : listaProyectos) {
 			if(p.getId().equalsIgnoreCase(proyecto)) {
 				return p;
 			}
@@ -90,27 +72,28 @@ public class SistemaImpl implements Sistema{
 	}
 
 	@Override
-	public Usuario login(String username, String password) {
+	public boolean login(String username, String password) {
 		// TODO: hashing
-		Usuario usuario = buscarResponsable(username); 
+		Usuario usuario = buscarUsuario(username);
 	    
-	    if (usuario != null && usuario.getContraseña().equals(password)) {
-	        return usuario;
+	    if (usuario != null ) { // si el usuario existe
+	        return true;
 	    }
 	    
-	    return null;
+	    return false;
 	}
+
 
 	@Override
 	public String verProyectosDisponibles() {
 	    String resultado = "--- Lista de Proyectos ---\n"; 
 
-	    for (Proyecto p : proyectos) {
+	    for (Proyecto p : listaProyectos) {
 	        resultado += "ID: " + p.getId() +" | Nombre: " + p.getNombre();
 	        
 	        // si tiene un responsable
 	        if (p.getResponsable() != null) {
-	            resultado += " | Responsable: " + p.getResponsable().getUsername();
+	            resultado += " | Responsable: " + p.getResponsable();
 	        }
 	        resultado += "\n";
 	    }
@@ -118,6 +101,14 @@ public class SistemaImpl implements Sistema{
 	    return resultado; 
 	}
 
+	private Usuario buscarUsuario(String username) {
+		for (Usuario user : listaUsuarios) {
+			if (user.getUsername().equals(username)){
+				return user;
+			}
+		}
+		return null;
+	}
 
 }
 

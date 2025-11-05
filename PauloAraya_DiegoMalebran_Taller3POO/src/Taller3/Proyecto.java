@@ -4,8 +4,8 @@ public class Proyecto {
 	
 	private String id;
 	private String nombre;
-	private Usuario responsable;
-	public Proyecto(String id, String nombre, Usuario responsable) {
+	private String responsable;
+	public Proyecto(String id, String nombre, String responsable) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -23,12 +23,13 @@ public class Proyecto {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public Usuario getResponsable() {
+	public String getResponsable() {
 		return responsable;
 	}
-	public void setResponsable(Usuario responsable) {
+	public void setResponsable(String responsable) {
 		this.responsable = responsable;
 	}
+	
 	
 	
 	
