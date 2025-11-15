@@ -9,7 +9,6 @@ public class Colaborador extends Usuario{
 	public Colaborador(String username, String contraseña, String rol) {
 		super(username, contraseña, rol);
 		this.tareasAsignadas = new ArrayList<>();
-		// TODO Auto-generated constructor stub
 	}
 	
 	public void addTarea(Tarea tarea) {

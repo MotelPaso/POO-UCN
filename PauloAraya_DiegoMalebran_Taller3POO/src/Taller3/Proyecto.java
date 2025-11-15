@@ -1,15 +1,17 @@
 package Taller3;
-
+import java.util.ArrayList;
 public class Proyecto {
 	
 	private String id;
 	private String nombre;
-	private String responsable;
-	public Proyecto(String id, String nombre, String responsable) {
+	private Usuario responsable;
+	private ArrayList<Tarea> tareasProyecto;
+	public Proyecto(String id, String nombre, Usuario responsable) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.responsable = responsable;
+		this.tareasProyecto = new ArrayList<>();
 	}
 	public String getId() {
 		return id;
@@ -23,12 +25,31 @@ public class Proyecto {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public String getResponsable() {
+	
+	public Usuario getResponsable() {
 		return responsable;
 	}
-	public void setResponsable(String responsable) {
+	public void setResponsable(Usuario responsable) {
 		this.responsable = responsable;
 	}
+	public ArrayList<Tarea> getTareasProyecto() {
+		return tareasProyecto;
+	}
+	public void addTarea(Tarea t) {
+		this.tareasProyecto.add(t);
+	}
+	
+	@Override
+	public String toString() {
+		String datos = "id: " + id + 
+				", Proyecto " + nombre + 
+				", de " + responsable;
+		
+		
+		return datos;
+	}
+	
+	
 	
 	
 	

@@ -9,6 +9,8 @@ public interface Sistema {
 	void guardarTareas(String[] p);
 
 	Usuario login(String username, String password);
+	
+	// Menu Colaborador
 
 	String verProyectosDisponibles();
 
@@ -18,5 +20,7 @@ public interface Sistema {
 
 	String accionPorTarea(String idTarea);
 
-
+	// Menu Administrador
+	
+	String mostrarProyectosyTareas();
 }

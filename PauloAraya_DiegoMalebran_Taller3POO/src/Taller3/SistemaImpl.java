@@ -32,11 +32,13 @@ public class SistemaImpl implements Sistema{
 
 		String id = pp[0];
 		String nombre = pp[1];
-		String responsable = pp[2]; 
-		// como hay usuarios que no existen en el archivo usuarios.txt
-		// guardamos el responsable como string.
+		Usuario responsable = buscarUsuario(pp[2]); 
 		
-
+		if (responsable == null) { // Si el usuario no existe en nuestra base de datos
+			String[] datosResponsable = {pp[2], "", "Administrador"};
+			responsable = factoryUsuarios.crear(datosResponsable); 
+			// Crearemos un nuevo usuario que no tocara nada por ahora
+		}
 		Proyecto p = new Proyecto(id, nombre, responsable);
 		listaProyectos.add(p);
 	}
@@ -89,8 +91,6 @@ public class SistemaImpl implements Sistema{
 		}
 		return null;
 	}
-
-	
 	// funciones de tareas
 	
 	@Override
@@ -102,6 +102,7 @@ public class SistemaImpl implements Sistema{
 		Tarea t = FactoryTareas.crearTarea(proyecto, responsable, datos);
 		listaTareas.add(t);
 		responsable.addTarea(t);
+		proyecto.addTarea(t);
 
 	}
 
@@ -142,6 +143,18 @@ public class SistemaImpl implements Sistema{
 	public String accionPorTarea(String idTarea) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public String mostrarProyectosyTareas() {
+		String datos = "";
+		for (Proyecto proyecto : listaProyectos) {
+			datos += proyecto.toString() + "\n";
+			for( Tarea tarea: proyecto.getTareasProyecto()) {
+				datos += tarea.toString() + "\n";
+			}
+		}
+		return datos;
 	}
 
 }
