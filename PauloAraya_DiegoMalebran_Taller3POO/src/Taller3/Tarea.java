@@ -58,6 +58,8 @@ public abstract class Tarea {
 	public void setComplejidad(String complejidad) {
 		this.complejidad = complejidad;
 	}
+	
+	public abstract void visitar(Visitor v);
 	@Override
 	public String toString() {
 		// TODO: Cambiar toString para algo mas bonito
