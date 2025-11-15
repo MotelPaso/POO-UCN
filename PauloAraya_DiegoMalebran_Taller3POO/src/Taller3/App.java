@@ -10,6 +10,7 @@ public class App {
 		Sistema sistema = SistemaImpl.getInstancia();
 		cargarArchivos(sistema);
 		mostrarMenu(sistema);
+		
 	}
 
 	private static void cargarArchivos(Sistema sistema) throws FileNotFoundException {
@@ -110,6 +111,7 @@ public class App {
 		        	System.out.print("Elige una tarea por su id: ");
 		        	String tarea = s.nextLine();
 		        	System.out.println(sistema.accionPorTarea(tarea));
+		        	// TODO: Visitor
 		        	break;
 		        }
 		        case "0":{
@@ -123,26 +125,83 @@ public class App {
 	}
 
 	private static void menuAdministrador(Sistema sistema, Administrador logueado, Scanner s) {
-		// TODO Auto-generated method stub
 		
+		String opcion = "";
+		do {
+			System.out.println("--- MENÚ ADMINISTRADOR ---\r\n"
+					+ "1. Ver lista completa de proyectos y tareas\r\n"
+					+ "2. Administrar proyectos\r\n"
+					+ "3. Administrar tareas\r\n"
+					+ "4. Asignar estrategia de priorización\r\n"
+					+ "5. Generar reporte de proyectos\r\n"
+					+ "0. Cerrar sesión.\r\n"
+					+ "\r\n"
+					+ "Ingrese su opción: ");
+			opcion = s.nextLine();
+			
+			switch (opcion) {
+			case "1": {
+				System.out.println(sistema.mostrarProyectosyTareas());
+				break;
+			}
+			case "2": {
+				System.out.println(sistema.mostrarProyectosyTareas());
+				menuAdminProyectos(sistema, s);
+				break;
+			}
+			case "3":{
+				menuAdminTareas(sistema, s);
+				break;
+			}
+			default:
+				throw new IllegalArgumentException("Unexpected value: " + opcion);
+			}
+			
+		} while (!opcion.equals("0"));
 	}
 	
-	private static void menuTareas(Scanner s) {
-		System.out.println("Quieres Agregar o Eliminar: ");
+	private static void menuAdminProyectos(Sistema sistema, Scanner s) {
+		System.out.println("Elige una opcion: \n " + 
+						"1. Agregar un proyecto \n" + 
+						"2. Eliminar un proyecto \n"
+						+ "Ingrese su opcion: ");
+		String respuesta = s.nextLine().toLowerCase();
+
+		switch (respuesta) {
+		case "1" -> eliminar(sistema, s, "proyecto");
+		case "2" -> agregar(sistema, s, "proyecto");
+		default -> System.out.println("Opcion no encontrada, volviendo al menu...");
+		}
+	}
+
+	private static void menuAdminTareas(Sistema sistema, Scanner s) {
+		System.out.println("Elige una opcion: \n " +
+						"1. Agregar una tarea \n" +
+						"2. Eliminar una tarea \n" +
+						"Ingrese su opcion: ");
     	String respuesta = s.nextLine().toLowerCase();
     	
     	switch(respuesta) {
-    		case "eliminar" -> eliminarTarea(s);
-    		case "agregar" -> addTarea(s);
+    		case "1" -> eliminar(sistema , s, "tarea");
+    		case "2" -> agregar(sistema, s, "tarea");
     		default -> System.out.println("Opcion no encontrada, volviendo al menu...");
     	}
 	}
 
-	private static void addTarea(Scanner s) {
-		
+	private static void agregar(Sistema sistema, Scanner s, String tipo) {
+		if (tipo.equalsIgnoreCase("proyecto")) {
+			// TODO: Agregar cosas
+		} else if (tipo.equalsIgnoreCase("tarea")) {
+			// TODO: Agregar cosas
+		}
 	}
 
-	private static void eliminarTarea(Scanner s) {
+	private static void eliminar(Sistema sistema, Scanner s, String tipo) {
+		if (tipo.equalsIgnoreCase("proyecto")) {
+			// TODO: Eliminar cosas
+		} else if (tipo.equalsIgnoreCase("tarea")) {
+			// TODO: Eliminar cosas
+		}
 		
 	}
 
