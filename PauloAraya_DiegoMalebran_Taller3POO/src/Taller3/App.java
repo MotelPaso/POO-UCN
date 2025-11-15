@@ -2,6 +2,7 @@ package Taller3;
 
 import java.util.*;
 import java.io.*;
+import java.time.LocalDate;
 
 public class App {
 
@@ -199,17 +200,37 @@ public class App {
 
 	private static void agregar(Sistema sistema, Scanner s, String tipo) {
 		if (tipo.equalsIgnoreCase("proyecto")) {
-			
+			System.out.print("Ingrese el nombre del nuevo proyecto: ");
+			String nombre = s.nextLine();
+			System.out.print("Ingrese su responsable: ");
+			String responsable = s.nextLine();
+			sistema.guardarProyectos(new String[] {"",nombre,responsable});
+			System.out.println("Proyecto creado exitosamente.");
 			
 		} else if (tipo.equalsIgnoreCase("tarea")) {
-			// TODO: Agregar cosas
+			System.out.println(sistema.mostrarProyectos());
+			System.out.println("Elija un proyecto por su id: ");
+			String idProyecto = s.nextLine();
+			System.out.print("Ingrese el tipo de la tarea: ");
+			String tipoTarea = s.nextLine();
+			System.out.print("Descripcion: ");
+			String descripcion = s.nextLine();
+			System.out.print("Estado Inicial: ");
+			String estado = s.nextLine();
+			System.out.print("Colaborador responsable: ");
+			String colab = s.nextLine();
+			System.out.println("Complejidad: ");
+			String complejidad = s.nextLine();
+			String fecha = LocalDate.now().toString();
+			sistema.guardarTareas(new String[] {idProyecto,"",tipoTarea, descripcion, estado, colab, complejidad, fecha});
+			System.out.println("Tarea creada exitosamente.");
 		}
 	}
 
 	private static void eliminar(Sistema sistema, Scanner s, String tipo) {
 		if (tipo.equalsIgnoreCase("proyecto")) {
 			System.out.println(sistema.mostrarProyectos());
-			System.out.println("Elige el proyecto por su id: ");
+			System.out.print("Elige el proyecto por su id: ");
 			String id = s.nextLine();
 			System.out.println("Esta seguro que quiere eliminar el proyecto? (Y/N)");
 			String respuesta = s.nextLine();
@@ -226,7 +247,7 @@ public class App {
 			
 		} else if (tipo.equalsIgnoreCase("tarea")) {
 			System.out.println(sistema.mostrarProyectosyTareas());
-			System.out.println("Elija la tarea por su id: ");
+			System.out.print("Elija la tarea por su id: ");
 			String id = s.nextLine();
 			System.out.println("Esta seguro que quiere eliminar la tarea? (Y/N)");
 			String respuesta = s.nextLine();

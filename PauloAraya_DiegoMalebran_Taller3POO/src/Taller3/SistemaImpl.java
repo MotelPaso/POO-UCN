@@ -30,9 +30,15 @@ public class SistemaImpl implements Sistema{
 	@Override
 	public void guardarProyectos(String[] pp) {
 
+		
+		
 		String id = pp[0];
 		String nombre = pp[1];
 		Usuario responsable = buscarUsuario(pp[2]); 
+		
+		if (id.equals("")) {
+			id = "PR00" + (listaProyectos.size() + 1);
+		}
 		
 		if (responsable == null) { // Si el usuario no existe en nuestra base de datos
 			String[] datosResponsable = {pp[2], "", "Administrador"};
@@ -99,10 +105,18 @@ public class SistemaImpl implements Sistema{
 		Proyecto proyecto = buscarProyecto(datos[0]);
 		Usuario responsable = buscarUsuario(datos[5]);
 		
+		if (datos[1].equals("")) { 
+			datos[1] = "T00" + (listaTareas.size() + 1);
+		}
+		
 		Tarea t = FactoryTareas.crearTarea(proyecto, responsable, datos);
-		listaTareas.add(t);
-		responsable.addTarea(t);
-		proyecto.addTarea(t);
+		try {			
+			listaTareas.add(t);
+			responsable.addTarea(t);
+			proyecto.addTarea(t);
+		} catch (NullPointerException e) {
+			return;
+		}
 
 	}
 
