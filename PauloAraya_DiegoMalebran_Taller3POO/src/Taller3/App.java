@@ -161,6 +161,7 @@ public class App {
 			}
 			case "0":{
 				System.out.println("Adios!");
+				break;
 			}
 			default:
 				System.out.println("Opcion no encontrada, volviendo al menu...");
@@ -169,15 +170,15 @@ public class App {
 	}
 	
 	private static void menuAdminProyectos(Sistema sistema, Scanner s) {
-		System.out.println("Elige una opcion: \n " + 
+		System.out.println("Elige una opcion: \n" + 
 						"1. Agregar un proyecto \n" + 
 						"2. Eliminar un proyecto \n"
 						+ "Ingrese su opcion: ");
-		String respuesta = s.nextLine().toLowerCase();
+		String respuesta = s.nextLine();
 
 		switch (respuesta) {
-		case "1" -> eliminar(sistema, s, "proyecto");
-		case "2" -> agregar(sistema, s, "proyecto");
+		case "1" -> agregar(sistema, s, "proyecto");
+		case "2" -> eliminar(sistema, s, "proyecto");
 		default -> System.out.println("Opcion no encontrada, volviendo al menu...");
 		}
 	}
@@ -190,15 +191,16 @@ public class App {
     	String respuesta = s.nextLine().toLowerCase();
     	
     	switch(respuesta) {
-    		case "1" -> eliminar(sistema , s, "tarea");
-    		case "2" -> agregar(sistema, s, "tarea");
+    		case "1" -> agregar(sistema , s, "tarea");
+    		case "2" -> eliminar(sistema, s, "tarea");
     		default -> System.out.println("Opcion no encontrada, volviendo al menu...");
     	}
 	}
 
 	private static void agregar(Sistema sistema, Scanner s, String tipo) {
 		if (tipo.equalsIgnoreCase("proyecto")) {
-			// TODO: Agregar cosas
+			
+			
 		} else if (tipo.equalsIgnoreCase("tarea")) {
 			// TODO: Agregar cosas
 		}
@@ -206,14 +208,38 @@ public class App {
 
 	private static void eliminar(Sistema sistema, Scanner s, String tipo) {
 		if (tipo.equalsIgnoreCase("proyecto")) {
-			// TODO: Eliminar cosas
+			System.out.println(sistema.mostrarProyectos());
+			System.out.println("Elige el proyecto por su id: ");
+			String id = s.nextLine();
+			System.out.println("Esta seguro que quiere eliminar el proyecto? (Y/N)");
+			String respuesta = s.nextLine();
+			
+			switch (respuesta.toLowerCase()){
+				case "y": {
+					System.out.println(sistema.eliminarProyecto(id));
+					break;
+				}
+				case "n": {
+					System.out.println("Accion cancelada, volviendo al menu...");
+				}
+			}
+			
 		} else if (tipo.equalsIgnoreCase("tarea")) {
-			// TODO: Eliminar cosas
+			System.out.println(sistema.mostrarProyectosyTareas());
+			System.out.println("Elija la tarea por su id: ");
+			String id = s.nextLine();
+			System.out.println("Esta seguro que quiere eliminar la tarea? (Y/N)");
+			String respuesta = s.nextLine();
+			
+			switch (respuesta.toLowerCase()){
+				case "y": {
+					System.out.println(sistema.eliminarTarea(id));
+					break;
+				}
+				case "n": {
+					System.out.println("Accion cancelada, volviendo al menu...");
+				}
+			}
 		}
-		
 	}
-
-
-	
-
 }

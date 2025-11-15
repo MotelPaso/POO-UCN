@@ -38,6 +38,9 @@ public class Proyecto {
 	public void addTarea(Tarea t) {
 		this.tareasProyecto.add(t);
 	}
+	public void removeTarea(Tarea t) {
+		this.tareasProyecto.remove(t);
+	}
 	
 	@Override
 	public String toString() {

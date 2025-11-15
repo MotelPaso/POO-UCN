@@ -158,5 +158,52 @@ public class SistemaImpl implements Sistema{
 		return datos;
 	}
 
+	@Override
+	public String mostrarProyectos() {
+		String datos = "";
+		for (Proyecto proyecto : listaProyectos) {
+			datos += proyecto.toString() + "\n";
+		}
+		return datos;
+	}
+
+	@Override
+	public String eliminarProyecto(String id) {
+		
+		Proyecto proyecto = buscarProyecto(id);
+		
+		if (proyecto == null) {
+			return "Proyecto no existe en la base de datos, intente nuevamente.";
+		}
+		ArrayList<Tarea> tareasProyecto = proyecto.getTareasProyecto();
+		listaProyectos.remove(proyecto);
+		for (Tarea tarea : tareasProyecto) {
+			listaTareas.remove(tarea);
+		}
+		return "Proyecto "+ proyecto.getNombre() +" y tareas asociadas eliminadas exitosamente";
+	}
+
+	@Override
+	public String eliminarTarea(String id) {
+		Tarea tarea = buscarTarea(id);
+		
+		if (tarea == null) {
+			return "Tarea no existe en la base de datos, intente nuevamente.";
+		}
+		Proyecto proyecto = tarea.getProyecto();
+		proyecto.removeTarea(tarea);
+		listaTareas.remove(tarea);
+		return "Tarea " + tarea.getId() + " eliminada exitosamente.";
+	}
+
+	private Tarea buscarTarea(String id) {
+		for (Tarea tarea: listaTareas) {
+			if (tarea.getId().equals(id)) {
+				return tarea;
+			}
+		}
+		return null;
+	}
+
 }
 

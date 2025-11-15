@@ -23,4 +23,10 @@ public interface Sistema {
 	// Menu Administrador
 	
 	String mostrarProyectosyTareas();
+	
+	String mostrarProyectos();
+	
+	String eliminarProyecto(String id);
+	
+	String eliminarTarea(String id);
 }
