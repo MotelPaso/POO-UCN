@@ -147,12 +147,13 @@ public class SistemaImpl implements Sistema{
 
 	@Override
 	public String mostrarProyectosyTareas() {
-		String datos = "";
+		String datos = "===============\n";
 		for (Proyecto proyecto : listaProyectos) {
 			datos += proyecto.toString() + "\n";
 			for( Tarea tarea: proyecto.getTareasProyecto()) {
 				datos += tarea.toString() + "\n";
 			}
+			datos += "===============\n";
 		}
 		return datos;
 	}

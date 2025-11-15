@@ -153,10 +153,18 @@ public class App {
 				menuAdminTareas(sistema, s);
 				break;
 			}
-			default:
-				throw new IllegalArgumentException("Unexpected value: " + opcion);
+			case "4": {
+				break;
 			}
-			
+			case "5":{
+				break;
+			}
+			case "0":{
+				System.out.println("Adios!");
+			}
+			default:
+				System.out.println("Opcion no encontrada, volviendo al menu...");
+			}
 		} while (!opcion.equals("0"));
 	}
 	

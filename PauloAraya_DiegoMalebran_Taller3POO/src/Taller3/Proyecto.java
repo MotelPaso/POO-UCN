@@ -41,11 +41,9 @@ public class Proyecto {
 	
 	@Override
 	public String toString() {
-		String datos = "id: " + id + 
+		String datos = id + 
 				", Proyecto " + nombre + 
-				", de " + responsable;
-		
-		
+				", de " + responsable.getUsername();
 		return datos;
 	}
 	

@@ -61,7 +61,7 @@ public abstract class Tarea {
 	@Override
 	public String toString() {
 		// TODO: Cambiar toString para algo mas bonito
-		return "Proyecto:" + proyecto.getNombre() +", id=" + id + ", tipo=" + tipo + ", descripcion=" + descripcion + ", estado=" + estado + ", complejidad=" + complejidad + ", fecha="+ fecha + "]";
+		return id + ": "+ proyecto.getNombre() +", " + tipo + " | " + estado + "\ndesc: " + descripcion + "" + ", " + complejidad + " complejidad\n"+ fecha;
 	}
 	
 	
