@@ -162,8 +162,10 @@ public class SistemaImpl implements Sistema{
 		String datos = "===============\n";
 		for (Proyecto proyecto : listaProyectos) {
 			datos += proyecto.toString() + "\n";
-			for( Tarea tarea: proyecto.getTareasProyecto()) {
-				datos += tarea.toString() + "\n";
+			for(Tarea tarea : listaTareas) {
+				if (tarea.getProyecto() == proyecto) {
+					datos += tarea.toString() + "\n";
+				}
 			}
 			datos += "===============\n";
 		}
@@ -238,8 +240,10 @@ public class SistemaImpl implements Sistema{
 			break;
 		default: 
 			datos += "por " + estrategiaActual.toString();
+			break;
 		};
 		listaTareas = estrategiaActual.asignarPrioridad(listaTareas); // ordenamos la lista y la cambiamos
+		datos += "Estrategia aplicada a las tareas.";
 		return datos;
 	}
 

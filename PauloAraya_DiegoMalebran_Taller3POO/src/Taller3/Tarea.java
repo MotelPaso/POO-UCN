@@ -58,7 +58,9 @@ public abstract class Tarea {
 	public void setComplejidad(String complejidad) {
 		this.complejidad = complejidad;
 	}
-	
+	public String getFecha() {
+		return fecha;
+	}
 	public abstract void visitar(Visitor v);
 	@Override
 	public String toString() {

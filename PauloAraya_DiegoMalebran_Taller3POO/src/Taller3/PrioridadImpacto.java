@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class PrioridadImpacto implements PrioridadStrategy {
 	
-	private static ArrayList<Tarea> nuevasTareas = new ArrayList<>();
+	
 
 	@Override
 	public ArrayList<Tarea> asignarPrioridad(ArrayList<Tarea> listaTareas) {
@@ -18,7 +18,7 @@ public class PrioridadImpacto implements PrioridadStrategy {
 			if (tarea instanceof Feature) listaFeature.add(tarea);
 			if (tarea instanceof Documentacion) listaDocu.add(tarea);
 		}
-		
+		ArrayList<Tarea> nuevasTareas = new ArrayList<>();
 		nuevasTareas.addAll(listaBug);
 		nuevasTareas.addAll(listaFeature);
 		nuevasTareas.addAll(listaDocu);
