@@ -1,7 +1,10 @@
 package Taller3;
 
 import java.util.ArrayList;
-
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDate;
 public class SistemaImpl implements Sistema{
 	
 	private static SistemaImpl Instancia;
@@ -159,7 +162,7 @@ public class SistemaImpl implements Sistema{
 
 	@Override
 	public String mostrarProyectosyTareas() {
-		String datos = "===============\n";
+		String datos = "Lista de Proyectos! \n===============\n";
 		for (Proyecto proyecto : listaProyectos) {
 			datos += proyecto.toString() + "\n";
 			for(Tarea tarea : listaTareas) {
@@ -172,11 +175,21 @@ public class SistemaImpl implements Sistema{
 		return datos;
 	}
 
+	
+	
 	@Override
 	public String mostrarProyectos() {
 		String datos = "";
 		for (Proyecto proyecto : listaProyectos) {
 			datos += proyecto.toString() + "\n";
+		}
+		return datos;
+	}
+	@Override
+	public String mostrarTareas() {
+		String datos = "";
+		for (Tarea tarea : listaTareas) {
+			datos += tarea.toString() + "\n";
 		}
 		return datos;
 	}
@@ -245,6 +258,20 @@ public class SistemaImpl implements Sistema{
 		listaTareas = estrategiaActual.asignarPrioridad(listaTareas); // ordenamos la lista y la cambiamos
 		datos += "\nEstrategia elegida ya aplicada a las tareas.";
 		return datos;
+	}
+	@Override
+	public String generarReportes() {
+		String datos = "";
+		try (BufferedWriter escritor = new BufferedWriter(new FileWriter("reportes.txt", true))){
+			datos += "Fecha nuevo reporte: " + LocalDate.now() + "\n";
+			datos += mostrarProyectosyTareas();// agregamos la lista de proyectos y sus tareas
+			escritor.write(datos);
+			escritor.newLine();
+		} catch(IOException e) {
+			return "No se ha podido generar el reporte...";
+		}
+		
+		return "Reporte generado exitosamente!";
 	}
 
 }

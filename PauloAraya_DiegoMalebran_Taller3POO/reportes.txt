@@ -1,0 +1,61 @@
+Fecha nuevo reporte: 2025-11-17Lista de Proyectos! 
+===============
+PR001, Proyecto Plataforma de E-commerce, de admin1
+T001: Plataforma de E-commerce, Bug | Pendiente
+desc: Error en el login de usuarios, Alta complejidad
+2025-08-01
+T002: Plataforma de E-commerce, Feature | Pendiente
+desc: Agregar carrito de compras, Media complejidad
+2025-08-01
+T003: Plataforma de E-commerce, Documentacion | En progreso
+desc: Redactar manual de usuario, Baja complejidad
+2025-08-02
+===============
+PR002, Proyecto Sistema de Inventario, de admin2
+T004: Sistema de Inventario, Feature | Pendiente
+desc: Implementar módulo de reportes, Alta complejidad
+2025-08-02
+T005: Sistema de Inventario, Bug | Pendiente
+desc: Fallo en exportación de datos, Alta complejidad
+2025-08-03
+===============
+PR003, Proyecto Aplicación Móvil de Reservas, de admin3
+T006: Aplicación Móvil de Reservas, Feature | Pendiente
+desc: Diseñar pantalla de reservas, Media complejidad
+2025-08-04
+T007: Aplicación Móvil de Reservas, Documentacion | Pendiente
+desc: Escribir casos de uso, Baja complejidad
+2025-08-03
+===============
+
+Fecha nuevo reporte: 2025-11-17
+Lista de Proyectos! 
+===============
+PR001, Proyecto Plataforma de E-commerce, de admin1
+T001: Plataforma de E-commerce, Bug | Pendiente
+desc: Error en el login de usuarios, Alta complejidad
+2025-08-01
+T002: Plataforma de E-commerce, Feature | Pendiente
+desc: Agregar carrito de compras, Media complejidad
+2025-08-01
+T003: Plataforma de E-commerce, Documentacion | En progreso
+desc: Redactar manual de usuario, Baja complejidad
+2025-08-02
+===============
+PR002, Proyecto Sistema de Inventario, de admin2
+T004: Sistema de Inventario, Feature | Pendiente
+desc: Implementar módulo de reportes, Alta complejidad
+2025-08-02
+T005: Sistema de Inventario, Bug | Pendiente
+desc: Fallo en exportación de datos, Alta complejidad
+2025-08-03
+===============
+PR003, Proyecto Aplicación Móvil de Reservas, de admin3
+T006: Aplicación Móvil de Reservas, Feature | Pendiente
+desc: Diseñar pantalla de reservas, Media complejidad
+2025-08-04
+T007: Aplicación Móvil de Reservas, Documentacion | Pendiente
+desc: Escribir casos de uso, Baja complejidad
+2025-08-03
+===============
+

@@ -129,7 +129,7 @@ public class App {
 		
 		String opcion = "";
 		do {
-			System.out.println("--- MENÚ ADMINISTRADOR ---\r\n"
+			System.out.print("--- MENÚ ADMINISTRADOR ---\r\n"
 					+ "1. Ver lista completa de proyectos y tareas\r\n"
 					+ "2. Administrar proyectos\r\n"
 					+ "3. Administrar tareas\r\n"
@@ -146,7 +146,6 @@ public class App {
 				break;
 			}
 			case "2": {
-				System.out.println(sistema.mostrarProyectosyTareas());
 				menuAdminProyectos(sistema, s);
 				break;
 			}
@@ -165,7 +164,8 @@ public class App {
 				break;
 			}
 			case "5":{
-				// TODO
+				System.out.println("Generando reportes...");
+				System.out.println(sistema.generarReportes());
 				break;
 			}
 			case "0":{
@@ -179,6 +179,7 @@ public class App {
 	}
 	
 	private static void menuAdminProyectos(Sistema sistema, Scanner s) {
+		System.out.println(sistema.mostrarProyectos());
 		System.out.println("Elige una opcion: \n" + 
 						"1. Agregar un proyecto \n" + 
 						"2. Eliminar un proyecto \n"
@@ -193,6 +194,7 @@ public class App {
 	}
 
 	private static void menuAdminTareas(Sistema sistema, Scanner s) {
+		System.out.println(sistema.mostrarTareas());
 		System.out.println("Elige una opcion: \n" +
 						"1. Agregar una tarea \n" +
 						"2. Eliminar una tarea \n" +

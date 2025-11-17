@@ -26,9 +26,14 @@ public interface Sistema {
 	
 	String mostrarProyectos();
 	
+	String mostrarTareas();
+	
 	String eliminarProyecto(String id);
 	
 	String eliminarTarea(String id);
 	
 	String cambiarStrategy(String strategy);
+
+	String generarReportes();
+
 }
