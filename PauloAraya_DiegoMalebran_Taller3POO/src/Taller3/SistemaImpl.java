@@ -23,15 +23,12 @@ public class SistemaImpl implements Sistema{
 
 	@Override
 	public void crearUsuarios(String[] p) {
-		Usuario u = factoryUsuarios.crear(p);
+		Usuario u = FactoryUsuarios.crear(p);
 		listaUsuarios.add(u);
 	}
 
 	@Override
-	public void guardarProyectos(String[] pp) {
-
-		
-		
+	public void guardarProyectos(String[] pp) {		
 		String id = pp[0];
 		String nombre = pp[1];
 		Usuario responsable = buscarUsuario(pp[2]); 
@@ -42,14 +39,14 @@ public class SistemaImpl implements Sistema{
 		
 		if (responsable == null) { // Si el usuario no existe en nuestra base de datos
 			String[] datosResponsable = {pp[2], "", "Administrador"};
-			responsable = factoryUsuarios.crear(datosResponsable); 
+			responsable = FactoryUsuarios.crear(datosResponsable); 
 			// Crearemos un nuevo usuario que no tocara nada por ahora
 		}
 		Proyecto p = new Proyecto(id, nombre, responsable);
 		listaProyectos.add(p);
 	}
 
-	
+	 
 
 	private Proyecto buscarProyecto(String proyecto) {
 		for (Proyecto p : listaProyectos) {

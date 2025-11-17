@@ -1,6 +1,6 @@
 package Taller3;
 
-public class factoryUsuarios {
+public class FactoryUsuarios {
 
 	public static Usuario crear(String[] p) {
 
