@@ -239,8 +239,7 @@ public class SistemaImpl implements Sistema{
 		default: 
 			datos += "por " + estrategiaActual.toString();
 		};
-		estrategiaActual.asignarPrioridad(listaTareas); // ordenamos la lista
-		listaTareas = estrategiaActual.getTareasOrdenadas(); // y la cambiamos
+		listaTareas = estrategiaActual.asignarPrioridad(listaTareas); // ordenamos la lista y la cambiamos
 		return datos;
 	}
 
