@@ -193,7 +193,7 @@ public class App {
 	}
 
 	private static void menuAdminTareas(Sistema sistema, Scanner s) {
-		System.out.println("Elige una opcion: \n " +
+		System.out.println("Elige una opcion: \n" +
 						"1. Agregar una tarea \n" +
 						"2. Eliminar una tarea \n" +
 						"Ingrese su opcion: ");
@@ -217,17 +217,16 @@ public class App {
 			
 		} else if (tipo.equalsIgnoreCase("tarea")) {
 			System.out.println(sistema.mostrarProyectos());
-			System.out.println("Elija un proyecto por su id: ");
+			System.out.println("Elija un proyecto por su id: (PRXXX)");
 			String idProyecto = s.nextLine();
-			System.out.print("Ingrese el tipo de la tarea: ");
+			System.out.print("Ingrese el tipo de la tarea: (Bug, Feature, Complejidad) ");
 			String tipoTarea = s.nextLine();
 			System.out.print("Descripcion: ");
 			String descripcion = s.nextLine();
-			System.out.print("Estado Inicial: ");
-			String estado = s.nextLine();
+			String estado = "Pendiente";
 			System.out.print("Colaborador responsable: ");
 			String colab = s.nextLine();
-			System.out.println("Complejidad: ");
+			System.out.println("Complejidad: (Alta, Media, Baja)");
 			String complejidad = s.nextLine();
 			String fecha = LocalDate.now().toString();
 			sistema.guardarTareas(new String[] {idProyecto,"",tipoTarea, descripcion, estado, colab, complejidad, fecha});
