@@ -156,9 +156,9 @@ public class App {
 			}
 			case "4": {
 				System.out.println("Elige la estrategia para asignar prioridades:");
-				System.out.println("1. Estrategia por fecha." + 
-								"\n2. Estrategia por impacto." +
-								"\n3. Estrategia por complejidad." +
+				System.out.println("1. Estrategia por fecha. (mas antigua primero)" + 
+								"\n2. Estrategia por impacto. (Bug, Feature, Documentacion)" +
+								"\n3. Estrategia por complejidad. (menos compleja primero)" +
 								"\n0. Mantener la estrategia actual.");
 				String nuevaEstrategia = s.nextLine();
 				System.out.println(sistema.cambiarStrategy(nuevaEstrategia));

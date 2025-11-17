@@ -243,7 +243,7 @@ public class SistemaImpl implements Sistema{
 			break;
 		};
 		listaTareas = estrategiaActual.asignarPrioridad(listaTareas); // ordenamos la lista y la cambiamos
-		datos += "Estrategia aplicada a las tareas.";
+		datos += "\nEstrategia elegida ya aplicada a las tareas.";
 		return datos;
 	}
 
