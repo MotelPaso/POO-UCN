@@ -155,9 +155,17 @@ public class App {
 				break;
 			}
 			case "4": {
+				System.out.println("Elige la estrategia para asignar prioridades:");
+				System.out.println("1. Estrategia por fecha." + 
+								"\n2. Estrategia por impacto." +
+								"\n3. Estrategia por complejidad." +
+								"\n0. Mantener la estrategia actual.");
+				String nuevaEstrategia = s.nextLine();
+				System.out.println(sistema.cambiarStrategy(nuevaEstrategia));
 				break;
 			}
 			case "5":{
+				// TODO
 				break;
 			}
 			case "0":{

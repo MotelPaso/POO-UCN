@@ -8,6 +8,7 @@ public class SistemaImpl implements Sistema{
 	private static ArrayList<Usuario> listaUsuarios = new ArrayList<>();
 	private static ArrayList<Proyecto> listaProyectos = new ArrayList<>();
 	private static ArrayList<Tarea> listaTareas = new ArrayList<>();
+	private static PrioridadStrategy estrategiaActual = new PrioridadFecha();
 
 	public SistemaImpl() {}
 
@@ -214,6 +215,33 @@ public class SistemaImpl implements Sistema{
 			}
 		}
 		return null;
+	}
+
+	@Override
+	public String cambiarStrategy(String strategy) {
+		String datos = "Nueva estrategia: estrategia ";
+		switch(strategy) {
+		case "1": 
+			estrategiaActual = new PrioridadFecha(); 
+			datos += "por Fecha.";
+			break;
+		case "2": 
+			estrategiaActual = new PrioridadImpacto(); 
+			datos += "por Impacto.";
+			break;
+		case "3": 
+			estrategiaActual = new PrioridadComplejidad(); 
+			datos += "por Complejidad";
+			break;
+		case "0":
+			datos += "por " + estrategiaActual.toString();
+			break;
+		default: 
+			datos += "por " + estrategiaActual.toString();
+		};
+		estrategiaActual.asignarPrioridad(listaTareas); // ordenamos la lista
+		listaTareas = estrategiaActual.getTareasOrdenadas(); // y la cambiamos
+		return datos;
 	}
 
 }

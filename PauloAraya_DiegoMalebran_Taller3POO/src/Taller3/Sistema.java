@@ -29,4 +29,6 @@ public interface Sistema {
 	String eliminarProyecto(String id);
 	
 	String eliminarTarea(String id);
+	
+	String cambiarStrategy(String strategy);
 }
