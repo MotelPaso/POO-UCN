@@ -1,3 +1,9 @@
+/* Paulo Araya - ICCI
+ * 21.918.080-2
+ * Diego Malebran - ICCI
+ * 21.661.740-1
+ * 
+ */
 package Taller3;
 
 import java.util.*;
