@@ -114,11 +114,7 @@ public class App {
 		        }
 		        
 		        case "4":{
-		        	System.out.println(sistema.getTareasAsignadas(logueado));
-		        	System.out.print("Elige una tarea por su id: ");
-		        	String tarea = s.nextLine();
-		        	System.out.println(sistema.accionPorTarea(tarea));
-		        	// TODO: Visitor
+		        	System.out.println(sistema.accionPorTarea());
 		        	break;
 		        }
 		        case "0":{

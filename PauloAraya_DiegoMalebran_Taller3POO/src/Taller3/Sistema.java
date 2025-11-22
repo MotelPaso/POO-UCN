@@ -18,7 +18,7 @@ public interface Sistema {
 
 	String cambioEstadoTarea(String idTarea, String nuevoEstado, Colaborador colab);
 
-	String accionPorTarea(String idTarea);
+	String accionPorTarea();
 
 	// Menu Administrador
 	

@@ -155,9 +155,12 @@ public class SistemaImpl implements Sistema{
 	}
 
 	@Override
-	public String accionPorTarea(String idTarea) {
-		// TODO Auto-generated method stub
-		return null;
+	public String accionPorTarea() {
+		VisitorAccionTarea v = new VisitorAccionTarea();
+		for (Tarea tarea : listaTareas) {
+			tarea.visitar(v);
+		}
+		return "Tareas visitadas!";
 	}
 
 	@Override
