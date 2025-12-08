@@ -25,15 +25,13 @@ public class Certificacion {
         this.cursosAsociados = new ArrayList<>();
     }
 
-    public static Certificacion addDatosCertificacion(Certificacion c, String[] p) {
-        Certificacion certAgregar = c;
+    public void addDatosCertificacion(String[] p) {
         String fechaObtencion = p[2];
         String estado = p[3];
         int progreso = Integer.parseInt(p[4]);
-        certAgregar.setFechaObtencion(fechaObtencion);
-        certAgregar.setEstado(estado);
-        certAgregar.setProgreso(progreso);
-        return certAgregar;
+        this.setFechaObtencion(fechaObtencion);
+        this.setEstado(estado);
+        this.setProgreso(progreso);
     }
 
     public String getId() {

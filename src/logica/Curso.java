@@ -1,108 +1,106 @@
 package logica;
 
 public class Curso {
-    private String nrc;
-    private String nombre;
-    private int semestre;
-    private int creditos;
-    private String area;
-    private String prerequisitos;
-    //
-    // Para el estudiante:
-    private double notaFinal;
-    private String estado;
-    private String semestreCursado;
+	private String nrc;
+	private String nombre;
+	private int semestre;
+	private int creditos;
+	private String area;
+	private Curso prerequisitos;
+	//
+	// Para el estudiante:
+	private double notaFinal;
+	private String estado;
+	private String semestreCursado;
 
-    public Curso(String nrc, String nombre, int semestre, int creditos, String area, String prerequisitos) {
-        this.nrc = nrc;
-        this.nombre = nombre;
-        this.semestre = semestre;
-        this.creditos = creditos;
-        this.area = area;
-        this.prerequisitos = prerequisitos;
-    }
+	public Curso(String nrc, String nombre, int semestre, int creditos, String area, Curso prerequisitos) {
+		this.nrc = nrc;
+		this.nombre = nombre;
+		this.semestre = semestre;
+		this.creditos = creditos;
+		this.area = area;
+		this.prerequisitos = prerequisitos;
+	}
 
-    public static Curso registrarCursoEstudiante(Curso c, String[] p) {
-        Curso cursoAgregar = c;
-        double notaFinal = Double.parseDouble(p[2]);
-        String estado = p[3];
-        String semestreCursado = p[4];
-        cursoAgregar.setNotaFinal(notaFinal);
-        cursoAgregar.setEstado(estado);
-        cursoAgregar.setSemestreCursado(semestreCursado);
-        return cursoAgregar;
-    }
+	public void registrarDatosParaEstudiante(String[] p) {
+		double notaFinal = Double.parseDouble(p[2]);
+		String estado = p[3];
+		String semestreCursado = p[4];
+		this.setNotaFinal(notaFinal);
+		this.setEstado(estado);
+		this.setSemestreCursado(semestreCursado);
+	}
 
-    public String getNrc() {
-        return nrc;
-    }
+	public String getNrc() {
+		return nrc;
+	}
 
-    public void setNrc(String nrc) {
-        this.nrc = nrc;
-    }
+	public void setNrc(String nrc) {
+		this.nrc = nrc;
+	}
 
-    public String getNombre() {
-        return nombre;
-    }
+	public String getNombre() {
+		return nombre;
+	}
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
 
-    public int getSemestre() {
-        return semestre;
-    }
+	public int getSemestre() {
+		return semestre;
+	}
 
-    public void setSemestre(int semestre) {
-        this.semestre = semestre;
-    }
+	public void setSemestre(int semestre) {
+		this.semestre = semestre;
+	}
 
-    public int getCreditos() {
-        return creditos;
-    }
+	public int getCreditos() {
+		return creditos;
+	}
 
-    public void setCreditos(int creditos) {
-        this.creditos = creditos;
-    }
+	public void setCreditos(int creditos) {
+		this.creditos = creditos;
+	}
 
-    public String getArea() {
-        return area;
-    }
+	public String getArea() {
+		return area;
+	}
 
-    public void setArea(String area) {
-        this.area = area;
-    }
+	public void setArea(String area) {
+		this.area = area;
+	}
 
-    public String getPrerequisitos() {
-        return prerequisitos;
-    }
+	public Curso getPrerequisitos() {
+		return prerequisitos;
+	}
 
-    public void setPrerequisitos(String prerequisitos) {
-        this.prerequisitos = prerequisitos;
-    }
+	public void setPrerequisitos(Curso prerequisitos) {
+		this.prerequisitos = prerequisitos;
+	}
 
-    public double getNotaFinal() {
-        return notaFinal;
-    }
+	public double getNotaFinal() {
+		return notaFinal;
+	}
 
-    public void setNotaFinal(double notaFinal) {
-        this.notaFinal = notaFinal;
-    }
+	public void setNotaFinal(double notaFinal) {
+		this.notaFinal = notaFinal;
+	}
 
-    public String getEstado() {
-        return estado;
-    }
+	public String getEstado() {
+		return estado;
+	}
 
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
 
-    public String getSemestreCursado() {
-        return semestreCursado;
-    }
+	public String getSemestreCursado() {
+		return semestreCursado;
+	}
 
-    public void setSemestreCursado(String semestreCursado) {
-        this.semestreCursado = semestreCursado;
-    }
+	public void setSemestreCursado(String semestreCursado) {
+		this.semestreCursado = semestreCursado;
+	}
 
 }

@@ -71,11 +71,11 @@ public class Estudiante {
         this.contraseña = contraseña;
     }
 
-    public void addCurso(Curso c) {
+    public void agregarCurso(Curso c) {
         ramosCursados.add(c);
     }
 
-    public void addCertificacion(Certificacion cert) {
+    public void agregarCertificacion(Certificacion cert) {
         certificaciones.add(cert);
     }
 }
