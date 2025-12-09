@@ -25,7 +25,16 @@ public interface Sistema {
 
 	int getNivelAcceso(String[] datosUsuario);
 	
+	
 	// Funciones para el menu Administrador
+	
+	void crearCuentas(String[] datos);
+	
+	void modificarCuentas(String nombre);
+	
+	void eliminarCuentas(String nombre);
+	
+	void resetContraseña(String nombre, String nuevaContra);
 	
 	
 	

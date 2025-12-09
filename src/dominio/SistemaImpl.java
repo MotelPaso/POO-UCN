@@ -32,14 +32,11 @@ public class SistemaImpl implements Sistema {
 
 	@Override
 	public void crearEstudiante(String[] p) {
-		String rut = p[0];
-		String nombre = p[1];
-		String carrera = p[2];
-		String semestre = p[3];
-		String correo = p[4];
-		String contraseña = p[5];
-		Estudiante e = new Estudiante(rut, nombre, carrera, semestre, correo, contraseña);
-		listaEstudiantes.add(e);
+		Usuario u = FactoryUsuarios.crearUsuario(p);
+		if (u instanceof Estudiante) {
+			listaEstudiantes.add((Estudiante) u);
+		}
+		listaUsuarios.add(u);
 	}
 
 	@Override
@@ -93,10 +90,9 @@ public class SistemaImpl implements Sistema {
 		estudiante.agregarCertificacion(cert);
 	}
 
-	
 	@Override
 	public boolean revisarUsuario(String[] datosUsuario) {
-		
+
 		for (Usuario u : listaUsuarios) {
 			if (u.getNombreUsuario().equals(datosUsuario[0]) && u.getPassword().equals(datosUsuario[1])) {
 				return true;
@@ -107,20 +103,20 @@ public class SistemaImpl implements Sistema {
 				return true;
 			}
 		}
-		
+
 		return false;
 	}
-	
+
 	@Override
 	public int getNivelAcceso(String[] datosUsuario) {
 		// a este punto, deberia llegar un usuario que ya existe
 		// asi que no debemos revisar si existe realmente
-		if (datosUsuario[0].contains("@")){ 
-			return 3; 
+		if (datosUsuario[0].contains("@")) {
+			return 3;
 		}
 		Usuario u = buscarUsuario(datosUsuario[0]);
 		// aqui buscamos su rol admin/coordinador
-		
+
 		return switch (u.getRol().toLowerCase()) {
 		case "admin" -> 1;
 		case "coordinador" -> 2;
@@ -128,11 +124,31 @@ public class SistemaImpl implements Sistema {
 		default -> 0;
 		};
 	}
-	
-	
-	
-	
-	
+
+	@Override
+	public void crearCuentas(String[] datos) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void modificarCuentas(String nombre) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void eliminarCuentas(String nombre) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void resetContraseña(String nombre, String nuevaContra) {
+		// TODO Auto-generated method stub
+
+	}
+
 	private Usuario buscarUsuario(String nombre) {
 		for (Usuario u : listaUsuarios) {
 			if (u.getNombreUsuario().equals(nombre))
@@ -148,7 +164,7 @@ public class SistemaImpl implements Sistema {
 		}
 		return null;
 	}
-	
+
 	private Estudiante buscarEstudiantePorCorreo(String correo) {
 		for (Estudiante e : listaEstudiantes) {
 			if (e.getCorreo().equals(correo))
@@ -172,4 +188,5 @@ public class SistemaImpl implements Sistema {
 		}
 		return null;
 	}
+
 }
