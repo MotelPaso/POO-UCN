@@ -21,7 +21,6 @@ public class GUI extends JFrame {
 	public GUI() {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setSize(400, 400);
-
 	}
 
 	public void inicioSesion() {
@@ -34,6 +33,7 @@ public class GUI extends JFrame {
 		JLabel passLabel = new JLabel("Ingrese aqui su contraseña");
 		JTextField password = new JTextField(30);
 		JButton login = new JButton("Ingresar");
+		JLabel error = new JLabel();
 
 		userLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 		username.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -45,21 +45,22 @@ public class GUI extends JFrame {
 		password.setMaximumSize(new Dimension(300, 50));
 
 		login.addActionListener((e) -> {
-			boolean logged = sistema.revisarUsuario(new String[] { username.getText(), password.getText() });
+			String[] datosUsuario = { username.getText(), password.getText() };
+			boolean logged = sistema.revisarUsuario(datosUsuario);
 			if (logged) {
-				int acceso = sistema.getNivelAcceso(new String[] { username.getText(), password.getText() });
+				int acceso = sistema.getNivelAcceso(datosUsuario);
 				getContentPane().removeAll();
 				switch (acceso) {
-				case 1 -> menuAdmin();
-				case 2 -> menuColab();
-				case 3 -> menuEstudiante();
-				case 0 -> System.out.println("Ha habido un error...");
+				case 1 -> menuAdmin(datosUsuario[0]);
+				case 2 -> menuCoordinador(datosUsuario[0]);
+				case 3 -> menuEstudiante(datosUsuario[0]);
 				}
 				revalidate();
 				repaint();
 			} else {
 				username.setText("");
 				password.setText("");
+				error.setText("Credenciales incorrectas...");
 			}
 		});
 
@@ -68,29 +69,77 @@ public class GUI extends JFrame {
 		inicio.add(passLabel);
 		inicio.add(password);
 		inicio.add(login);
+		inicio.add(error);
 
 		getContentPane().add(inicio);
 		setVisible(true);
 	}
 
-	public void menuEstudiante() {
-		JLabel titulo = new JLabel("¡Bienvenido!");
+	public void menuEstudiante(String correo) {
+		String nombres = correo.split("@")[0]; // nombre.apellido
+		JLabel titulo = new JLabel("¡Bienvenido " + nombres.split("\\.")[0] + " " + nombres.split("\\.")[1] + "!");
 		JButton logout = new JButton("Cerrar Sesión");
 		JPanel menuEstudiante = new JPanel(new BorderLayout());
 
-		menuEstudiante.add(titulo);
-		menuEstudiante.add(logout);
+		JButton perfil = new JButton("Ver mi Perfil");
+		JButton malla = new JButton("Ver mi Malla");
+		JButton inscripcion = new JButton("Inscribirme a una Certificacion");
+		JButton progreso = new JButton("Ver mi Progreso en mi Certificacion");
+		JPanel botonera = new JPanel();
+
+		botonera.setLayout(new BoxLayout(botonera, BoxLayout.PAGE_AXIS));
+		botonera.add(perfil);
+		botonera.add(malla);
+		botonera.add(inscripcion);
+		botonera.add(progreso);
+		
+		menuEstudiante.add(titulo, BorderLayout.NORTH);
+		menuEstudiante.add(botonera, BorderLayout.CENTER);
+		menuEstudiante.add(logout, BorderLayout.SOUTH);
+		getContentPane().add(menuEstudiante);
 	}
 
-	public void menuColab() {
-
-	}
-
-	public void menuAdmin() {
-		JLabel admin = new JLabel("¡Bienvenido Administrador!");
+	public void menuCoordinador(String username) {
+		JLabel coor = new JLabel("¡Bienvenido " + username + "!");
 		JButton logout = new JButton("Cerrar Sesión");
+		JButton gestionCertificados = new JButton("Gestion de Cerficaciones");
+		JButton metricas = new JButton("Panel de metricas y analisis");
+		JButton gestionEstudiantes = new JButton("Gestion de Estudiantes");
+		
+		JPanel menuCoordinador = new JPanel(new BorderLayout());
+		JPanel botonera = new JPanel();
+		
+		botonera.setLayout(new BoxLayout(botonera, BoxLayout.PAGE_AXIS));
+		botonera.add(gestionCertificados);
+		botonera.add(metricas);
+		botonera.add(gestionEstudiantes);
+		
+		menuCoordinador.add(coor, BorderLayout.NORTH);
+		menuCoordinador.add(botonera, BorderLayout.CENTER);
+		menuCoordinador.add(logout, BorderLayout.SOUTH);
+		
+		getContentPane().add(menuCoordinador);
+	}
+
+	public void menuAdmin(String username) {
+		JLabel admin = new JLabel("¡Bienvenido " + username + "!");
+		JButton logout = new JButton("Cerrar Sesión");
+		JButton crear = new JButton("Crear cuentas");
+		JButton modificar = new JButton("Modificar cuentas");
+		JButton eliminar = new JButton("Eliminar cuenta");
+		JButton restablecer = new JButton("Restablecer cuenta");
+
 		JPanel menuAdmin = new JPanel(new BorderLayout());
-		menuAdmin.add(admin, BorderLayout.CENTER);
+		JPanel botonera = new JPanel();
+
+		botonera.setLayout(new BoxLayout(botonera, BoxLayout.PAGE_AXIS));
+		botonera.add(crear);
+		botonera.add(modificar);
+		botonera.add(eliminar);
+		botonera.add(restablecer);
+
+		menuAdmin.add(admin, BorderLayout.NORTH);
+		menuAdmin.add(botonera, BorderLayout.CENTER);
 		menuAdmin.add(logout, BorderLayout.SOUTH);
 
 		getContentPane().add(menuAdmin);

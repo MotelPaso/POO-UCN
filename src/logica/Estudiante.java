@@ -7,8 +7,6 @@ public class Estudiante extends Usuario {
 	private String nombre;
 	private String carrera;
 	private String semestre;
-	private String correo;
-	private String contraseña;
 	private ArrayList<Curso> ramosCursados;
 	private ArrayList<Certificacion> certificaciones;
 
@@ -55,19 +53,19 @@ public class Estudiante extends Usuario {
 	}
 
 	public String getCorreo() {
-		return correo;
+		return nombreUsuario;
 	}
 
 	public void setCorreo(String correo) {
-		this.correo = correo;
+		this.nombreUsuario = correo;
 	}
 
 	public String getContraseña() {
-		return contraseña;
+		return password;
 	}
 
 	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+		this.password = contraseña;
 	}
 
 	public void agregarCurso(Curso c) {
