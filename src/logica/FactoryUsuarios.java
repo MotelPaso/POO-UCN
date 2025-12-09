@@ -8,10 +8,10 @@ public class FactoryUsuarios {
         String rol = p[2];
 
         Usuario u = switch (rol.toLowerCase()) {
-            case "administrador", "admin" ->
+            case "admin" ->
                 new Administrador(nombreUsuario, contraseña, rol);
-            case "colaborador", "colab", "col" ->
-                new Colaborador(nombreUsuario, contraseña, rol, p[3]);
+            case "coordinador" ->
+                new Coordinador(nombreUsuario, contraseña, rol, p[3]);
             default -> null;
         };
 

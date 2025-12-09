@@ -1,9 +1,9 @@
 package logica;
 
-public class Colaborador extends Usuario {
+public class Coordinador extends Usuario {
     private String areaCoordinacion;
 
-    public Colaborador(String nombreUsuario, String password, String rol, String areaCoordinacion) {
+    public Coordinador(String nombreUsuario, String password, String rol, String areaCoordinacion) {
         super(nombreUsuario, password, rol);
         this.areaCoordinacion = areaCoordinacion;
     }

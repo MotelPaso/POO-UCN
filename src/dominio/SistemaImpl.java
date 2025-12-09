@@ -93,9 +93,65 @@ public class SistemaImpl implements Sistema {
 		estudiante.agregarCertificacion(cert);
 	}
 
+	
+	@Override
+	public boolean revisarUsuario(String[] datosUsuario) {
+		
+		for (Usuario u : listaUsuarios) {
+			if (u.getNombreUsuario().equals(datosUsuario[0]) && u.getPassword().equals(datosUsuario[1])) {
+				return true;
+			}
+		}
+		for (Estudiante u : listaEstudiantes) {
+			if (u.getCorreo().equals(datosUsuario[0]) && u.getContraseña().equals(datosUsuario[1])) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	@Override
+	public int getNivelAcceso(String[] datosUsuario) {
+		// a este punto, deberia llegar un usuario que ya existe
+		// asi que no debemos revisar si existe realmente
+		if (datosUsuario[0].contains("@")){ 
+			return 3; 
+		}
+		Usuario u = buscarUsuario(datosUsuario[0]);
+		// aqui buscamos su rol admin/coordinador
+		
+		return switch (u.getRol().toLowerCase()) {
+		case "admin" -> 1;
+		case "coordinador" -> 2;
+		case "estudiante" -> 3;
+		default -> 0;
+		};
+	}
+	
+	
+	
+	
+	
+	private Usuario buscarUsuario(String nombre) {
+		for (Usuario u : listaUsuarios) {
+			if (u.getNombreUsuario().equals(nombre))
+				return u;
+		}
+		return null;
+	}
+
 	private Estudiante buscarEstudiantePorRut(String rut) {
 		for (Estudiante e : listaEstudiantes) {
 			if (e.getRut().equals(rut))
+				return e;
+		}
+		return null;
+	}
+	
+	private Estudiante buscarEstudiantePorCorreo(String correo) {
+		for (Estudiante e : listaEstudiantes) {
+			if (e.getCorreo().equals(correo))
 				return e;
 		}
 		return null;
