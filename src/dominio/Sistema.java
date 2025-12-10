@@ -35,6 +35,8 @@ public interface Sistema {
 	void eliminarCuentas(String nombre);
 	
 	void resetContraseña(String nombre, String nuevaContra);
+
+	
 	
 	
 	
@@ -43,4 +45,8 @@ public interface Sistema {
 	
 	
 	// Funciones para el menu Estudiante
+	
+	String[] getInformacionEstudiante(String correo);
+
+	double[] getPromediosEstudiante(String correo);
 }

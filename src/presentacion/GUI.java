@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
 
+import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -43,7 +44,8 @@ public class GUI extends JFrame {
 
 		username.setMaximumSize(new Dimension(300, 50));
 		password.setMaximumSize(new Dimension(300, 50));
-
+		username.setText("juan.perez@alumnos.ucn.cl");
+		password.setText("contraseña123");
 		login.addActionListener((e) -> {
 			String[] datosUsuario = { username.getText(), password.getText() };
 			boolean logged = sistema.revisarUsuario(datosUsuario);
@@ -79,12 +81,30 @@ public class GUI extends JFrame {
 		String nombres = correo.split("@")[0]; // nombre.apellido
 		JLabel titulo = new JLabel("¡Bienvenido " + nombres.split("\\.")[0] + " " + nombres.split("\\.")[1] + "!");
 		JButton logout = new JButton("Cerrar Sesión");
+		logout.addActionListener((e) -> {
+			dispose();
+		});
 		JPanel menuEstudiante = new JPanel(new BorderLayout());
 
 		JButton perfil = new JButton("Ver mi Perfil");
+		perfil.addActionListener((e) -> {
+			mostrarPerfil(correo);
+			revalidate();
+			repaint();
+		});
+
 		JButton malla = new JButton("Ver mi Malla");
+		malla.addActionListener((e) -> {
+
+		});
 		JButton inscripcion = new JButton("Inscribirme a una Certificacion");
+		inscripcion.addActionListener((e) -> {
+
+		});
 		JButton progreso = new JButton("Ver mi Progreso en mi Certificacion");
+		progreso.addActionListener((e) -> {
+
+		});
 		JPanel botonera = new JPanel();
 
 		botonera.setLayout(new BoxLayout(botonera, BoxLayout.PAGE_AXIS));
@@ -92,11 +112,58 @@ public class GUI extends JFrame {
 		botonera.add(malla);
 		botonera.add(inscripcion);
 		botonera.add(progreso);
-		
+
 		menuEstudiante.add(titulo, BorderLayout.NORTH);
 		menuEstudiante.add(botonera, BorderLayout.CENTER);
 		menuEstudiante.add(logout, BorderLayout.SOUTH);
 		getContentPane().add(menuEstudiante);
+		setSize(400, 400);
+	}
+
+	private void mostrarPerfil(String correo) {
+		getContentPane().removeAll();
+		// get datos del sistema
+		String[] informacionEstudiante = sistema.getInformacionEstudiante(correo);
+		double[] promedios = sistema.getPromediosEstudiante(correo);
+
+		JPanel main = new JPanel(new BorderLayout());
+
+		JPanel leftPanel = new JPanel();
+		leftPanel.setLayout(new BoxLayout(leftPanel, BoxLayout.PAGE_AXIS));
+		JPanel rightPanel = new JPanel();
+		rightPanel.setLayout(new BoxLayout(rightPanel, BoxLayout.PAGE_AXIS));
+		
+		JLabel perfil = new JLabel(informacionEstudiante[0]);
+		leftPanel.add(perfil);
+		JLabel mostrarMalla = new JLabel(informacionEstudiante[1]);
+		rightPanel.add(mostrarMalla);
+
+		String datosPromedios = "<html>Promedios por semestre: <br>";
+		JLabel promedioGeneral = new JLabel("Promedio General: " + promedios[0]);
+		for (int i = 1; i < promedios.length; i++) {
+			datosPromedios += "Promedio de " + Math.round(promedios[i] * 100.0) / 100.0     + " en el semestre N" + i + ".<br>";
+		}
+
+		JLabel promediosPerSemestre = new JLabel(datosPromedios + "</html>");
+
+		JButton volver = new JButton("Volver al menu principal");
+		volver.addActionListener((e) -> {
+			getContentPane().removeAll();
+			menuEstudiante(correo);
+			revalidate();
+		    repaint();
+		});
+		leftPanel.add(promedioGeneral);
+		leftPanel.add(promediosPerSemestre);
+
+		main.add(leftPanel, BorderLayout.WEST);
+		main.add(rightPanel, BorderLayout.EAST);
+		main.add(volver, BorderLayout.SOUTH);
+
+		getContentPane().add(main);
+		setSize(750,600);
+		revalidate();
+		repaint();
 	}
 
 	public void menuCoordinador(String username) {
@@ -105,19 +172,19 @@ public class GUI extends JFrame {
 		JButton gestionCertificados = new JButton("Gestion de Cerficaciones");
 		JButton metricas = new JButton("Panel de metricas y analisis");
 		JButton gestionEstudiantes = new JButton("Gestion de Estudiantes");
-		
+
 		JPanel menuCoordinador = new JPanel(new BorderLayout());
 		JPanel botonera = new JPanel();
-		
+
 		botonera.setLayout(new BoxLayout(botonera, BoxLayout.PAGE_AXIS));
 		botonera.add(gestionCertificados);
 		botonera.add(metricas);
 		botonera.add(gestionEstudiantes);
-		
+
 		menuCoordinador.add(coor, BorderLayout.NORTH);
 		menuCoordinador.add(botonera, BorderLayout.CENTER);
 		menuCoordinador.add(logout, BorderLayout.SOUTH);
-		
+
 		getContentPane().add(menuCoordinador);
 	}
 

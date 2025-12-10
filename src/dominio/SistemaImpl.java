@@ -149,6 +149,21 @@ public class SistemaImpl implements Sistema {
 
 	}
 
+	@Override
+	public String[] getInformacionEstudiante(String correo) {
+		Estudiante e = buscarEstudiantePorCorreo(correo);
+		return e.getInformacion();
+	}
+	
+	@Override
+	public double[] getPromediosEstudiante(String correo) {
+		Estudiante e = buscarEstudiantePorCorreo(correo);
+		return e.getPromedios();
+	}
+	
+	
+	
+	
 	private Usuario buscarUsuario(String nombre) {
 		for (Usuario u : listaUsuarios) {
 			if (u.getNombreUsuario().equals(nombre))

@@ -20,6 +20,42 @@ public class Estudiante extends Usuario {
 		this.certificaciones = new ArrayList<>();
 	}
 
+	public String[] getInformacion() {
+		
+		String ramos = "<html>Avance Curricular:<br>";
+		for (Curso c : ramosCursados) {
+			ramos += c.getNombre() + "\t\t | Estado: " + c.getEstado();
+			ramos += (c.getNotaFinal() != 0.0) ? "\tNota: " + c.getNotaFinal() + "<br>" : "<br>";
+		}
+		ramos += "</html>";
+		
+		return new String[]{"<html>" + nombre 
+				+ "<br>Rut: "+ rut
+				+ "<br>Carrera: "+ carrera 
+				+ "<br>Semestre: " + semestre 
+				+ "<br> </html>", ramos};
+	}
+	public double[] getPromedios() {
+		
+		
+		double[] promedios = new double[Integer.parseInt(semestre) + 1];
+		int[] numCursosSemestre = new int[Integer.parseInt(semestre) + 1 ];
+		for (Curso c : ramosCursados) {
+			if (!c.getEstado().equals("Cursando")) { // si el ramo ya fue cursado
+				promedios[0] += c.getNotaFinal(); // el semestre 0 va a ser el promedioTotal
+				numCursosSemestre[0]++;
+				promedios[c.getSemestre()] += c.getNotaFinal();
+				numCursosSemestre[c.getSemestre()] ++;
+			}
+		}
+		for (int i = 1; i < promedios.length; i++) {
+			promedios[i] /= numCursosSemestre[i];
+		}
+		
+		return promedios;
+	}
+	
+	
 	public String getRut() {
 		return rut;
 	}
@@ -75,4 +111,9 @@ public class Estudiante extends Usuario {
 	public void agregarCertificacion(Certificacion cert) {
 		certificaciones.add(cert);
 	}
+
+
+
+
+	
 }
