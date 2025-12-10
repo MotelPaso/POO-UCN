@@ -112,6 +112,11 @@ public class Estudiante extends Usuario {
 		certificaciones.add(cert);
 	}
 
+	public ArrayList<Curso> getRamosCursados() {
+		return ramosCursados;
+	}
+	
+
 
 
 

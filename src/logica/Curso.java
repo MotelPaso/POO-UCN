@@ -7,7 +7,6 @@ public class Curso {
 	private int creditos;
 	private String area;
 	private Curso prerequisitos;
-	//
 	// Para el estudiante:
 	private double notaFinal;
 	private String estado;
@@ -101,6 +100,15 @@ public class Curso {
 
 	public void setSemestreCursado(String semestreCursado) {
 		this.semestreCursado = semestreCursado;
+	}
+
+	public String[] getDatosCurso() {
+		return new String[] {nrc, nombre, String.valueOf(creditos)};
+	}
+
+	public String[] getDatosEstudiante() {
+		// TODO Auto-generated method stub
+		return new String[] {nrc, nombre, String.valueOf(creditos), estado, String.valueOf(notaFinal)};
 	}
 
 }

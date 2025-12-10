@@ -161,8 +161,44 @@ public class SistemaImpl implements Sistema {
 		return e.getPromedios();
 	}
 	
+	@Override
+	public String[][] getMalla() {
+
+		String[][] datosMalla = new String[12][8];
+		int j = 0;
+		int temp = 0;
+		for (Curso c: listaCursos) {
+			if (c.getSemestre()-1 != temp) {
+				j = 0;
+			}
+			datosMalla[j][c.getSemestre()-1] = c.getNombre(); 
+			temp = c.getSemestre()-1;
+			j++;
+		}
+		return datosMalla;
+	}
 	
+	@Override
+	public ArrayList<String> getCursados(String correo) {
+		Estudiante e = buscarEstudiantePorCorreo(correo);
+		ArrayList<String> cursados = new ArrayList<>(); 
+		for (Curso c : e.getRamosCursados()) {
+			if (c.getEstado().equals("Aprobada"))
+			cursados.add(c.getNombre());
+		}
+		return cursados;
+	}
 	
+	@Override
+	public ArrayList<String> getEnProceso(String correo) {
+		Estudiante e = buscarEstudiantePorCorreo(correo);
+		ArrayList<String> cursados = new ArrayList<>(); 
+		for (Curso c : e.getRamosCursados()) {
+			if (c.getEstado().equals("Cursando"))
+			cursados.add(c.getNombre());
+		}
+		return cursados;
+	}
 	
 	private Usuario buscarUsuario(String nombre) {
 		for (Usuario u : listaUsuarios) {

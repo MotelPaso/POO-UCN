@@ -1,16 +1,20 @@
 package presentacion;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.util.ArrayList;
 
-import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableCellRenderer;
 
 import dominio.Sistema;
 import dominio.SistemaImpl;
@@ -44,8 +48,8 @@ public class GUI extends JFrame {
 
 		username.setMaximumSize(new Dimension(300, 50));
 		password.setMaximumSize(new Dimension(300, 50));
-		username.setText("juan.perez@alumnos.ucn.cl");
-		password.setText("contraseña123");
+		username.setText("sofia.morales@alumnos.ucn.cl");
+		password.setText("sofia222");
 		login.addActionListener((e) -> {
 			String[] datosUsuario = { username.getText(), password.getText() };
 			boolean logged = sistema.revisarUsuario(datosUsuario);
@@ -95,6 +99,9 @@ public class GUI extends JFrame {
 
 		JButton malla = new JButton("Ver mi Malla");
 		malla.addActionListener((e) -> {
+			mostrarMalla(correo);
+			revalidate();
+			repaint();
 
 		});
 		JButton inscripcion = new JButton("Inscribirme a una Certificacion");
@@ -119,7 +126,7 @@ public class GUI extends JFrame {
 		getContentPane().add(menuEstudiante);
 		setSize(400, 400);
 	}
-
+	
 	private void mostrarPerfil(String correo) {
 		getContentPane().removeAll();
 		// get datos del sistema
@@ -164,6 +171,61 @@ public class GUI extends JFrame {
 		setSize(750,600);
 		revalidate();
 		repaint();
+	}
+	
+	private void mostrarMalla(String correo) {
+
+	    getContentPane().removeAll();
+	    String[][] ramosMalla = sistema.getMalla();
+	    ArrayList<String> cursados = sistema.getCursados(correo);
+	    ArrayList<String> enProceso = sistema.getEnProceso(correo);
+	    String[] numeroSemestres = {"1","2","3","4","5","6","7","8"};
+
+	    JPanel main = new JPanel(new BorderLayout());
+	    JLabel titulo = new JLabel("Malla curricular:");
+	    javax.swing.JTable tablaMalla = new javax.swing.JTable(ramosMalla, numeroSemestres);
+	    tablaMalla.setRowHeight(40);
+
+	    tablaMalla.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
+	        @Override
+	        public Component getTableCellRendererComponent(javax.swing.JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+	            
+	            Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+	            String nombreRamo = (String) value;
+
+	            if (!isSelected) {
+	                if (nombreRamo != null && nombreRamo.trim().isEmpty()) {
+	                    c.setBackground(Color.WHITE); 
+	                } else if (nombreRamo != null && cursados.contains(nombreRamo)) {
+	                    c.setBackground(Color.GREEN); // ramo pasado verde
+	                } else if (nombreRamo != null && enProceso.contains(nombreRamo)) {
+	                    c.setBackground(Color.YELLOW); // ramo en proceso weko
+	                } else {
+	                    c.setBackground(Color.WHITE); // ramo echado rojo
+	                }
+	            }
+	            return c;
+	        }
+	    });
+	    
+	    JScrollPane scrollPane = new JScrollPane(tablaMalla); 
+	    
+	    JButton volver = new JButton("Volver al Menú Estudiante");
+	    volver.addActionListener(e -> {
+	        getContentPane().removeAll();
+	        menuEstudiante(correo);
+	        revalidate();
+	        repaint();
+	    });
+	    
+	    main.add(titulo, BorderLayout.NORTH);
+	    main.add(scrollPane, BorderLayout.CENTER);
+	    main.add(volver, BorderLayout.SOUTH);
+	    
+	    getContentPane().add(main);
+	    setSize(750,600);
+	    revalidate();
+	    repaint();
 	}
 
 	public void menuCoordinador(String username) {
