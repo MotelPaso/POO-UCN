@@ -138,8 +138,17 @@ public class SistemaImpl implements Sistema {
 	}
 
 	@Override
-	public void eliminarCuentas(String nombre) {
-		// TODO Auto-generated method stub
+	public int eliminarCuentaUsuario(String nombre) {
+		for (Usuario u : listaUsuarios) {
+			if (u.getNombreUsuario().equals(nombre) && u.getRol().equals("Admin")){
+				return 2;
+			}
+			if (u.getNombreUsuario().equals(nombre) && !u.getRol().equals("Admin")){
+				listaUsuarios.remove(u);
+				return 1;
+			}
+		}
+		return 0;
 
 	}
 

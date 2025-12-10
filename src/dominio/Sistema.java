@@ -34,7 +34,7 @@ public interface Sistema {
 	
 	void modificarCuentas(String nombre);
 	
-	void eliminarCuentas(String nombre);
+	int eliminarCuentaUsuario(String nombre);
 	
 	void resetContraseña(String nombre, String nuevaContra);
 
