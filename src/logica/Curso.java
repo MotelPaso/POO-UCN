@@ -107,13 +107,12 @@ public class Curso {
 	}
 
 	public String[] getDatosEstudiante() {
-		// TODO Auto-generated method stub
 		return new String[] {nrc, nombre, String.valueOf(creditos), estado, String.valueOf(notaFinal)};
 	}
 
 	@Override
 	public String toString() {
-		return "Curso [nrc=" + nrc + ", nombre=" + nombre + ", estado=" + estado + "]";
+		return nrc + "\t| " + nombre + "\t " + creditos + " creditos";
 	}
 	
 	

@@ -200,6 +200,18 @@ public class SistemaImpl implements Sistema {
 		return cursados;
 	}
 	
+	@Override
+	public String getDatosCertificaciones(String correo) {
+		
+		String datos = "<html>";
+		for (Certificacion c : listaCertificaciones) {
+			datos += "-- "+c.getDatosCertificacion() + "<br>";
+		}
+		datos += "</html>";
+		return datos;
+	}
+	
+	
 	private Usuario buscarUsuario(String nombre) {
 		for (Usuario u : listaUsuarios) {
 			if (u.getNombreUsuario().equals(nombre))

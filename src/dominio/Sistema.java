@@ -57,4 +57,6 @@ public interface Sistema {
 	ArrayList<String> getCursados(String correo);
 
 	ArrayList<String> getEnProceso(String correo);
+
+	String getDatosCertificaciones(String correo);
 }

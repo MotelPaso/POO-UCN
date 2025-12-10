@@ -12,7 +12,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableCellRenderer;
 
@@ -52,7 +51,7 @@ public class GUI extends JFrame {
 		password.setMaximumSize(new Dimension(300, 50));
 		username.setText("sofia.morales@alumnos.ucn.cl");
 		password.setText("sofia222");
-		login.addActionListener((e) -> {
+		login.addActionListener((_) -> {
 			String[] datosUsuario = { username.getText(), password.getText() };
 			boolean logged = sistema.revisarUsuario(datosUsuario);
 			if (logged) {
@@ -87,31 +86,34 @@ public class GUI extends JFrame {
 		String nombres = correo.split("@")[0]; // nombre.apellido
 		JLabel titulo = new JLabel("¡Bienvenido " + nombres.split("\\.")[0] + " " + nombres.split("\\.")[1] + "!");
 		JButton logout = new JButton("Cerrar Sesión");
-		logout.addActionListener((e) -> {
+		logout.addActionListener((_) -> {
 			dispose();
 		});
 		JPanel menuEstudiante = new JPanel(new BorderLayout());
 
 		JButton perfil = new JButton("Ver mi Perfil");
-		perfil.addActionListener((e) -> {
+		perfil.addActionListener((_) -> {
 			mostrarPerfil(correo);
 			revalidate();
 			repaint();
 		});
 
 		JButton malla = new JButton("Ver mi Malla");
-		malla.addActionListener((e) -> {
+		malla.addActionListener((_) -> {
 			mostrarMalla(correo);
 			revalidate();
 			repaint();
 
 		});
 		JButton inscripcion = new JButton("Inscribirme a una Certificacion");
-		inscripcion.addActionListener((e) -> {
+		inscripcion.addActionListener((_) -> {
+			mostrarInscripcion(correo);
+			revalidate();
+			repaint();
 
 		});
 		JButton progreso = new JButton("Ver mi Progreso en mi Certificacion");
-		progreso.addActionListener((e) -> {
+		progreso.addActionListener((_) -> {
 
 		});
 		JPanel botonera = new JPanel();
@@ -127,8 +129,11 @@ public class GUI extends JFrame {
 		menuEstudiante.add(logout, BorderLayout.SOUTH);
 		getContentPane().add(menuEstudiante);
 		setSize(400, 400);
+		setLocationRelativeTo(null);
 	}
 	
+	
+
 	private void mostrarPerfil(String correo) {
 		getContentPane().removeAll();
 		// get datos del sistema
@@ -156,7 +161,7 @@ public class GUI extends JFrame {
 		JLabel promediosPerSemestre = new JLabel(datosPromedios + "</html>");
 
 		JButton volver = new JButton("Volver al menu principal");
-		volver.addActionListener((e) -> {
+		volver.addActionListener((_) -> {
 			getContentPane().removeAll();
 			menuEstudiante(correo);
 			revalidate();
@@ -170,6 +175,7 @@ public class GUI extends JFrame {
 		main.add(volver, BorderLayout.SOUTH);
 
 		getContentPane().add(main);
+		setLocationRelativeTo(null);
 		setSize(750,600);
 		revalidate();
 		repaint();
@@ -212,7 +218,7 @@ public class GUI extends JFrame {
 	    JScrollPane scrollPane = new JScrollPane(tablaMalla); 
 	    
 	    JButton volver = new JButton("Volver al Menú Estudiante");
-	    volver.addActionListener(e -> {
+	    volver.addActionListener(_ -> {
 	        getContentPane().removeAll();
 	        menuEstudiante(correo);
 	        revalidate();
@@ -225,10 +231,43 @@ public class GUI extends JFrame {
 	    
 	    getContentPane().add(main);
 	    setSize(1050,700);
+	    setLocationRelativeTo(null);
 	    revalidate();
 	    repaint();
 	}
 
+	private void mostrarInscripcion(String correo) {
+		getContentPane().removeAll();
+		String datosCertificaciones = sistema.getDatosCertificaciones(correo);
+		
+		JLabel titulo = new JLabel("Inscripcion a Certificaciones");
+		JPanel main = new JPanel(new BorderLayout());
+		JPanel leftPanel = new JPanel();
+		JPanel rightPanel = new JPanel();
+		
+		JLabel lineasDisponibles = new JLabel(datosCertificaciones);
+		leftPanel.add(lineasDisponibles);
+		
+		JButton volver = new JButton("Volver al menu principal");
+		volver.addActionListener((_) -> {
+			getContentPane().removeAll();
+			menuEstudiante(correo);
+			revalidate();
+		    repaint();
+		});
+		
+		main.add(titulo, BorderLayout.NORTH);
+		main.add(leftPanel, BorderLayout.WEST);
+		main.add(rightPanel, BorderLayout.EAST);
+		main.add(volver, BorderLayout.SOUTH);
+		
+		getContentPane().add(main);
+		setSize(1250,800);
+		setLocationRelativeTo(null);
+		revalidate();
+		repaint();
+		
+	}
 	public void menuCoordinador(String username) {
 		JLabel coor = new JLabel("¡Bienvenido " + username + "!");
 		JButton logout = new JButton("Cerrar Sesión");
