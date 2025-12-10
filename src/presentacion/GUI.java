@@ -1,15 +1,19 @@
 package presentacion;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.util.ArrayList;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+import javax.swing.table.DefaultTableCellRenderer;
 
 import dominio.Sistema;
 import dominio.SistemaImpl;
@@ -19,8 +23,10 @@ public class GUI extends JFrame {
 	private Sistema sistema = SistemaImpl.getInstancia();
 
 	public GUI() {
+		setTitle("Sistema Curricular UCN");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setSize(400, 400);
+		setLocationRelativeTo(null);
 	}
 
 	public void inicioSesion() {
@@ -43,8 +49,9 @@ public class GUI extends JFrame {
 
 		username.setMaximumSize(new Dimension(300, 50));
 		password.setMaximumSize(new Dimension(300, 50));
-
-		login.addActionListener((e) -> {
+		username.setText("sofia.morales@alumnos.ucn.cl");
+		password.setText("sofia222");
+		login.addActionListener((_) -> {
 			String[] datosUsuario = { username.getText(), password.getText() };
 			boolean logged = sistema.revisarUsuario(datosUsuario);
 			if (logged) {
@@ -79,12 +86,36 @@ public class GUI extends JFrame {
 		String nombres = correo.split("@")[0]; // nombre.apellido
 		JLabel titulo = new JLabel("¡Bienvenido " + nombres.split("\\.")[0] + " " + nombres.split("\\.")[1] + "!");
 		JButton logout = new JButton("Cerrar Sesión");
+		logout.addActionListener((_) -> {
+			dispose();
+		});
 		JPanel menuEstudiante = new JPanel(new BorderLayout());
 
 		JButton perfil = new JButton("Ver mi Perfil");
+		perfil.addActionListener((_) -> {
+			mostrarPerfil(correo);
+			revalidate();
+			repaint();
+		});
+
 		JButton malla = new JButton("Ver mi Malla");
+		malla.addActionListener((_) -> {
+			mostrarMalla(correo);
+			revalidate();
+			repaint();
+
+		});
 		JButton inscripcion = new JButton("Inscribirme a una Certificacion");
+		inscripcion.addActionListener((_) -> {
+			mostrarInscripcion(correo);
+			revalidate();
+			repaint();
+
+		});
 		JButton progreso = new JButton("Ver mi Progreso en mi Certificacion");
+		progreso.addActionListener((_) -> {
+
+		});
 		JPanel botonera = new JPanel();
 
 		botonera.setLayout(new BoxLayout(botonera, BoxLayout.PAGE_AXIS));
@@ -92,32 +123,170 @@ public class GUI extends JFrame {
 		botonera.add(malla);
 		botonera.add(inscripcion);
 		botonera.add(progreso);
-		
+
 		menuEstudiante.add(titulo, BorderLayout.NORTH);
 		menuEstudiante.add(botonera, BorderLayout.CENTER);
 		menuEstudiante.add(logout, BorderLayout.SOUTH);
 		getContentPane().add(menuEstudiante);
+		setSize(400, 400);
+		setLocationRelativeTo(null);
+	}
+	
+	
+
+	private void mostrarPerfil(String correo) {
+		getContentPane().removeAll();
+		// get datos del sistema
+		String[] informacionEstudiante = sistema.getInformacionEstudiante(correo);
+		double[] promedios = sistema.getPromediosEstudiante(correo);
+
+		JPanel main = new JPanel(new BorderLayout());
+
+		JPanel leftPanel = new JPanel();
+		leftPanel.setLayout(new BoxLayout(leftPanel, BoxLayout.PAGE_AXIS));
+		JPanel rightPanel = new JPanel();
+		rightPanel.setLayout(new BoxLayout(rightPanel, BoxLayout.PAGE_AXIS));
+		
+		JLabel perfil = new JLabel(informacionEstudiante[0]);
+		leftPanel.add(perfil);
+		JLabel mostrarMalla = new JLabel(informacionEstudiante[1]);
+		rightPanel.add(mostrarMalla);
+
+		String datosPromedios = "<html>Promedios por semestre: <br>";
+		JLabel promedioGeneral = new JLabel("Promedio General: " + Math.round(promedios[0] * 100.0) / 100.0);
+		for (int i = 1; i < promedios.length; i++) {
+			datosPromedios += "Promedio de " + Math.round(promedios[i] * 100.0) / 100.0     + " en el semestre N" + i + ".<br>";
+		}
+
+		JLabel promediosPerSemestre = new JLabel(datosPromedios + "</html>");
+
+		JButton volver = new JButton("Volver al menu principal");
+		volver.addActionListener((_) -> {
+			getContentPane().removeAll();
+			menuEstudiante(correo);
+			revalidate();
+		    repaint();
+		});
+		leftPanel.add(promedioGeneral);
+		leftPanel.add(promediosPerSemestre);
+
+		main.add(leftPanel, BorderLayout.WEST);
+		main.add(rightPanel, BorderLayout.EAST);
+		main.add(volver, BorderLayout.SOUTH);
+
+		getContentPane().add(main);
+		setLocationRelativeTo(null);
+		setSize(750,600);
+		revalidate();
+		repaint();
+	}
+	
+	private void mostrarMalla(String correo) {
+
+	    getContentPane().removeAll();
+	    String[][] ramosMalla = sistema.getMalla();
+	    ArrayList<String> cursados = sistema.getCursados(correo);
+	    ArrayList<String> enProceso = sistema.getEnProceso(correo);
+	    String[] numeroSemestres = {"1","2","3","4","5","6","7","8"};
+
+	    JPanel main = new JPanel(new BorderLayout());
+	    JLabel titulo = new JLabel("Malla curricular:");
+	    javax.swing.JTable tablaMalla = new javax.swing.JTable(ramosMalla, numeroSemestres);
+	    tablaMalla.setRowHeight(40);
+
+	    // TODO: entender como funciona esto
+	    tablaMalla.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
+	        @Override
+	        public Component getTableCellRendererComponent(javax.swing.JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+	            
+	            Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+	            String nombreRamo = (String) value;
+
+	            if (!isSelected) { 
+	                if (nombreRamo != null && cursados.contains(nombreRamo)) {
+	                    c.setBackground(Color.GREEN); // ramo pasado verde
+	                } else if (nombreRamo != null && enProceso.contains(nombreRamo)) {
+	                    c.setBackground(Color.YELLOW); // ramo en proceso weko
+	                } else {
+	                    c.setBackground(Color.WHITE); 
+	                }
+	            }
+	            return c;
+	        }
+	    });
+	    
+	    JScrollPane scrollPane = new JScrollPane(tablaMalla); 
+	    
+	    JButton volver = new JButton("Volver al Menú Estudiante");
+	    volver.addActionListener(_ -> {
+	        getContentPane().removeAll();
+	        menuEstudiante(correo);
+	        revalidate();
+	        repaint();
+	    });
+	    
+	    main.add(titulo, BorderLayout.NORTH);
+	    main.add(scrollPane, BorderLayout.CENTER);
+	    main.add(volver, BorderLayout.SOUTH);
+	    
+	    getContentPane().add(main);
+	    setSize(1050,700);
+	    setLocationRelativeTo(null);
+	    revalidate();
+	    repaint();
 	}
 
+	private void mostrarInscripcion(String correo) {
+		getContentPane().removeAll();
+		String datosCertificaciones = sistema.getDatosCertificaciones(correo);
+		
+		JLabel titulo = new JLabel("Inscripcion a Certificaciones");
+		JPanel main = new JPanel(new BorderLayout());
+		JPanel leftPanel = new JPanel();
+		JPanel rightPanel = new JPanel();
+		
+		JLabel lineasDisponibles = new JLabel(datosCertificaciones);
+		leftPanel.add(lineasDisponibles);
+		
+		JButton volver = new JButton("Volver al menu principal");
+		volver.addActionListener((_) -> {
+			getContentPane().removeAll();
+			menuEstudiante(correo);
+			revalidate();
+		    repaint();
+		});
+		
+		main.add(titulo, BorderLayout.NORTH);
+		main.add(leftPanel, BorderLayout.WEST);
+		main.add(rightPanel, BorderLayout.EAST);
+		main.add(volver, BorderLayout.SOUTH);
+		
+		getContentPane().add(main);
+		setSize(1250,800);
+		setLocationRelativeTo(null);
+		revalidate();
+		repaint();
+		
+	}
 	public void menuCoordinador(String username) {
 		JLabel coor = new JLabel("¡Bienvenido " + username + "!");
 		JButton logout = new JButton("Cerrar Sesión");
 		JButton gestionCertificados = new JButton("Gestion de Cerficaciones");
 		JButton metricas = new JButton("Panel de metricas y analisis");
 		JButton gestionEstudiantes = new JButton("Gestion de Estudiantes");
-		
+
 		JPanel menuCoordinador = new JPanel(new BorderLayout());
 		JPanel botonera = new JPanel();
-		
+
 		botonera.setLayout(new BoxLayout(botonera, BoxLayout.PAGE_AXIS));
 		botonera.add(gestionCertificados);
 		botonera.add(metricas);
 		botonera.add(gestionEstudiantes);
-		
+
 		menuCoordinador.add(coor, BorderLayout.NORTH);
 		menuCoordinador.add(botonera, BorderLayout.CENTER);
 		menuCoordinador.add(logout, BorderLayout.SOUTH);
-		
+
 		getContentPane().add(menuCoordinador);
 	}
 

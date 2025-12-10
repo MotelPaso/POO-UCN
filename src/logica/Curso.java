@@ -7,7 +7,6 @@ public class Curso {
 	private int creditos;
 	private String area;
 	private Curso prerequisitos;
-	//
 	// Para el estudiante:
 	private double notaFinal;
 	private String estado;
@@ -102,5 +101,20 @@ public class Curso {
 	public void setSemestreCursado(String semestreCursado) {
 		this.semestreCursado = semestreCursado;
 	}
+
+	public String[] getDatosCurso() {
+		return new String[] {nrc, nombre, String.valueOf(creditos)};
+	}
+
+	public String[] getDatosEstudiante() {
+		return new String[] {nrc, nombre, String.valueOf(creditos), estado, String.valueOf(notaFinal)};
+	}
+
+	@Override
+	public String toString() {
+		return nrc + "\t| " + nombre + "\t " + creditos + " creditos";
+	}
+	
+	
 
 }

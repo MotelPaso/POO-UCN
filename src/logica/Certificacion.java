@@ -7,7 +7,7 @@ public class Certificacion {
     private String id;
     private String nombre;
     private String descripcion;
-    private int requisitos;
+    private int requisitos; // en creditos
     private int duracion;
     private ArrayList<Curso> cursosAsociados;
 
@@ -33,6 +33,14 @@ public class Certificacion {
         this.setEstado(estado);
         this.setProgreso(progreso);
     }
+    
+     public String getDatosCertificacion() {
+    	 String datosCursos = "";
+    	 for (Curso curso : cursosAsociados) {
+			datosCursos += curso.toString() + "<br>";
+		 }
+    	 return nombre + "<br>" + descripcion + "<br>Requisitos: "+ requisitos +" creditos.<br>Cursos:<br>" + datosCursos;
+     }
 
     public String getId() {
         return id;
