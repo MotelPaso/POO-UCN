@@ -41,14 +41,14 @@ public class Estudiante extends Usuario {
 		double[] promedios = new double[Integer.parseInt(semestre) + 1];
 		int[] numCursosSemestre = new int[Integer.parseInt(semestre) + 1 ];
 		for (Curso c : ramosCursados) {
-			if (!c.getEstado().equals("Cursando")) { // si el ramo ya fue cursado
+			if (c.getSemestre() < promedios.length) { // si el ramo ya fue cursado
 				promedios[0] += c.getNotaFinal(); // el semestre 0 va a ser el promedioTotal
 				numCursosSemestre[0]++;
 				promedios[c.getSemestre()] += c.getNotaFinal();
 				numCursosSemestre[c.getSemestre()] ++;
 			}
 		}
-		for (int i = 1; i < promedios.length; i++) {
+		for (int i = 0; i < promedios.length; i++) {
 			promedios[i] /= numCursosSemestre[i];
 		}
 		

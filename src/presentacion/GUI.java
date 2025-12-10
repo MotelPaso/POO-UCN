@@ -24,8 +24,10 @@ public class GUI extends JFrame {
 	private Sistema sistema = SistemaImpl.getInstancia();
 
 	public GUI() {
+		setTitle("Sistema Curricular UCN");
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setSize(400, 400);
+		setLocationRelativeTo(null);
 	}
 
 	public void inicioSesion() {
@@ -146,7 +148,7 @@ public class GUI extends JFrame {
 		rightPanel.add(mostrarMalla);
 
 		String datosPromedios = "<html>Promedios por semestre: <br>";
-		JLabel promedioGeneral = new JLabel("Promedio General: " + promedios[0]);
+		JLabel promedioGeneral = new JLabel("Promedio General: " + Math.round(promedios[0] * 100.0) / 100.0);
 		for (int i = 1; i < promedios.length; i++) {
 			datosPromedios += "Promedio de " + Math.round(promedios[i] * 100.0) / 100.0     + " en el semestre N" + i + ".<br>";
 		}
@@ -186,6 +188,7 @@ public class GUI extends JFrame {
 	    javax.swing.JTable tablaMalla = new javax.swing.JTable(ramosMalla, numeroSemestres);
 	    tablaMalla.setRowHeight(40);
 
+	    // TODO: entender como funciona esto
 	    tablaMalla.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
 	        @Override
 	        public Component getTableCellRendererComponent(javax.swing.JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
@@ -193,15 +196,13 @@ public class GUI extends JFrame {
 	            Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
 	            String nombreRamo = (String) value;
 
-	            if (!isSelected) {
-	                if (nombreRamo != null && nombreRamo.trim().isEmpty()) {
-	                    c.setBackground(Color.WHITE); 
-	                } else if (nombreRamo != null && cursados.contains(nombreRamo)) {
+	            if (!isSelected) { 
+	                if (nombreRamo != null && cursados.contains(nombreRamo)) {
 	                    c.setBackground(Color.GREEN); // ramo pasado verde
 	                } else if (nombreRamo != null && enProceso.contains(nombreRamo)) {
 	                    c.setBackground(Color.YELLOW); // ramo en proceso weko
 	                } else {
-	                    c.setBackground(Color.WHITE); // ramo echado rojo
+	                    c.setBackground(Color.WHITE); 
 	                }
 	            }
 	            return c;
@@ -223,7 +224,7 @@ public class GUI extends JFrame {
 	    main.add(volver, BorderLayout.SOUTH);
 	    
 	    getContentPane().add(main);
-	    setSize(750,600);
+	    setSize(1050,700);
 	    revalidate();
 	    repaint();
 	}

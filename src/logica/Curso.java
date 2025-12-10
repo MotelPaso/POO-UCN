@@ -111,4 +111,11 @@ public class Curso {
 		return new String[] {nrc, nombre, String.valueOf(creditos), estado, String.valueOf(notaFinal)};
 	}
 
+	@Override
+	public String toString() {
+		return "Curso [nrc=" + nrc + ", nombre=" + nombre + ", estado=" + estado + "]";
+	}
+	
+	
+
 }
