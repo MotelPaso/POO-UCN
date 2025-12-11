@@ -1,3 +1,10 @@
+/* Paulo Araya Rojo
+ * 21.918.080-2
+ * Diego Malebran
+ * 21.661.740-1
+ * ICCI 
+ */
+
 package dominio;
 
 import java.util.ArrayList;
@@ -32,11 +39,13 @@ public interface Sistema {
 	
 	void crearCuentas(String[] datos);
 	
-	void modificarCuentas(String nombre);
+	void modificarCuentas(String nombre, String[] nuevosDatos);
 	
 	int eliminarCuentaUsuario(String nombre);
 	
 	void resetContraseña(String nombre, String nuevaContra);
+	
+	int buscarCuenta(String username);
 
 	
 	
@@ -59,4 +68,6 @@ public interface Sistema {
 	ArrayList<String> getEnProceso(String correo);
 
 	String getDatosCertificaciones(String correo);
+
+	
 }

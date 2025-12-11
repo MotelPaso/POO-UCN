@@ -1,3 +1,10 @@
+/* Paulo Araya Rojo
+ * 21.918.080-2
+ * Diego Malebran
+ * 21.661.740-1
+ * ICCI 
+ */
+
 package dominio;
 
 import logica.*;
@@ -132,9 +139,17 @@ public class SistemaImpl implements Sistema {
 	}
 
 	@Override
-	public void modificarCuentas(String nombre) {
-		// TODO Auto-generated method stub
-
+	public void modificarCuentas(String nombre, String[] nuevosDatos) {
+		Usuario u = buscarUsuario(nombre);
+		
+		u.setNombreUsuario(
+				(nuevosDatos[0].equals("")) ? u.getNombreUsuario() : nuevosDatos[0]);
+		u.setPassword(
+				(nuevosDatos[1].equals("")) ? u.getPassword() : nuevosDatos[1]);
+		
+		if (u instanceof Coordinador) {
+			((Coordinador) u).setAreaCoordinacion(nuevosDatos[2]);
+		}
 	}
 
 	@Override
@@ -145,6 +160,7 @@ public class SistemaImpl implements Sistema {
 			}
 			if (u.getNombreUsuario().equals(nombre) && !u.getRol().equals("Admin")){
 				listaUsuarios.remove(u);
+				if (u instanceof Estudiante) listaEstudiantes.remove(u);
 				return 1;
 			}
 		}
@@ -156,6 +172,22 @@ public class SistemaImpl implements Sistema {
 	public void resetContraseña(String nombre, String nuevaContra) {
 		// TODO Auto-generated method stub
 
+	}
+	
+	@Override
+	public int buscarCuenta(String username) {
+		Usuario u = buscarUsuario(username);
+		if (u == null) {
+			return 0;			
+		} else if (u.getRol().equalsIgnoreCase("Estudiante")) {
+			return 1;
+		} else if (u.getRol().equalsIgnoreCase("Coordinador")) {
+			return 2;
+		} else if (u.getRol().equalsIgnoreCase("Admin")) {
+			return 3;
+		}
+		return 0;
+		
 	}
 
 	@Override

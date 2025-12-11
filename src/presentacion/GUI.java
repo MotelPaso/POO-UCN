@@ -1,3 +1,11 @@
+/* Paulo Araya Rojo
+ * 21.918.080-2
+ * Diego Malebran
+ * 21.661.740-1
+ * ICCI 
+ */
+
+
 package presentacion;
 
 import java.awt.BorderLayout;
@@ -8,6 +16,7 @@ import java.util.ArrayList;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -300,7 +309,6 @@ public class GUI extends JFrame {
 		JButton crear = new JButton("Crear cuentas");
 		JButton modificar = new JButton("Modificar cuentas");
 		JButton eliminar = new JButton("Eliminar cuenta");
-		JButton restablecer = new JButton("Restablecer cuenta");
 
 		JPanel menuAdmin = new JPanel(new BorderLayout());
 		JPanel botonera = new JPanel();
@@ -311,8 +319,9 @@ public class GUI extends JFrame {
 
 		});
 		modificar.addActionListener((_) -> {
-			mostrarModificar();
-
+			mostrarModificar(username);
+			revalidate();
+			repaint();
 		});
 		eliminar.addActionListener((_) -> {
 			mostrarEliminar(username);
@@ -320,14 +329,9 @@ public class GUI extends JFrame {
 			repaint();
 
 		});
-		restablecer.addActionListener((_) -> {
-			mostrarRestablecer();
-
-		});
 		botonera.add(crear);
 		botonera.add(modificar);
 		botonera.add(eliminar);
-		botonera.add(restablecer);
 
 		menuAdmin.add(admin, BorderLayout.NORTH);
 		menuAdmin.add(botonera, BorderLayout.CENTER);
@@ -341,9 +345,174 @@ public class GUI extends JFrame {
 
 	}
 
-	private void mostrarModificar() {
-		// TODO Auto-generated method stub
+	private void mostrarModificar(String adminActual) {
+		getContentPane().removeAll();
 
+		JPanel main = new JPanel(new BorderLayout());
+		main.setAlignmentX(Component.CENTER_ALIGNMENT);
+		
+		JPanel buscar = new JPanel();
+		buscar.setLayout(new BoxLayout(buscar, BoxLayout.PAGE_AXIS));
+		JLabel tituloBusqueda = new JLabel("Ingrese el nombre de la cuenta que desea modificar");
+		JTextField username = new JTextField(20);
+		username.setMaximumSize(new Dimension(300, 50));
+		tituloBusqueda.setAlignmentX(Component.CENTER_ALIGNMENT);
+		username.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+		buscar.add(tituloBusqueda);
+		buscar.add(username);
+		
+		JPanel botonera = new JPanel();
+		botonera.setLayout(new BoxLayout(botonera, BoxLayout.LINE_AXIS));
+		JButton cancelar = new JButton("Cancelar");
+		JButton aceptar = new JButton("Buscar cuenta");
+		botonera.add(aceptar);
+		botonera.add(cancelar);
+		
+		JLabel error = new JLabel("");
+		buscar.add(error);
+		error.setAlignmentX(Component.CENTER_ALIGNMENT);
+		
+		aceptar.addActionListener((_) -> {
+			switch (sistema.buscarCuenta(username.getText())) {
+			case 0 -> error.setText("Cuenta no encontrada en el sistema.");
+			case 1 -> mostrarPanelModificarEstudiante(username.getText(), adminActual);
+			case 2 -> mostrarPanelModificarCoordinador(username.getText(), adminActual);
+			case 3 -> error.setText("No puedes cambiarle los datos a otro administrador.");
+			}
+		});
+		
+		
+		cancelar.addActionListener((_) -> {
+			getContentPane().removeAll();
+			menuAdmin(adminActual);
+			revalidate();
+			repaint();
+		});
+		main.add(buscar, BorderLayout.CENTER);
+		main.add(botonera, BorderLayout.SOUTH);
+
+		getContentPane().add(main);
+		setLocationRelativeTo(null);
+	}
+
+	private void mostrarPanelModificarCoordinador(String nombre, String adminActual) {
+		revalidate();
+		repaint();
+		getContentPane().removeAll();
+		JPanel main = new JPanel(new BorderLayout());
+		JPanel modificar = new JPanel();
+		modificar.setLayout(new BoxLayout(modificar, BoxLayout.PAGE_AXIS));
+		
+		JLabel titulo = new JLabel("Rellene unicamente los campos a modificar.");
+		JLabel labelNombre = new JLabel("Nuevo nombre de usuario:");
+		JTextField username = new JTextField(20);
+		
+		JLabel labelPass = new JLabel("Nueva contraseña:");
+		JTextField password = new JTextField(20);
+		
+		String[] areas = {"Sistemas Inteligentes", "Ciberseguridad", "Desarrollo de Software"};
+		JLabel labelArea = new JLabel("Cambio de area:");
+		JComboBox<String> areaSelect = new JComboBox<>(areas);
+		
+		JLabel cambio = new JLabel("");
+		
+		JPanel botonera = new JPanel();
+		botonera.setLayout(new BoxLayout(botonera, BoxLayout.LINE_AXIS));
+		JButton cancelar = new JButton("Cancelar");
+		JButton aceptar = new JButton("Realizar cambios");
+		botonera.add(aceptar);
+		botonera.add(cancelar);
+		
+		cancelar.addActionListener((_) -> {
+			getContentPane().removeAll();
+			menuAdmin(adminActual);
+			revalidate();
+			repaint();
+		});
+		
+		aceptar.addActionListener((_) -> {
+			String[] nuevosDatos = {username.getText(), password.getText(), (String) areaSelect.getSelectedItem()};
+			sistema.modificarCuentas(nombre, nuevosDatos);
+			cambio.setText("Cambio realizado correctamente.");
+		});
+		
+		username.setMaximumSize(new Dimension(300, 50));
+		password.setMaximumSize(new Dimension(300, 50));
+		areaSelect.setMaximumSize(new Dimension(300, 50));
+		
+		modificar.add(titulo);
+		modificar.add(labelNombre);
+		modificar.add(username);
+		modificar.add(labelPass);
+		modificar.add(password);
+		modificar.add(labelArea);
+		modificar.add(areaSelect);
+		modificar.add(cambio);
+		
+		main.add(modificar, BorderLayout.CENTER);
+		main.add(botonera, BorderLayout.SOUTH);
+		
+		getContentPane().add(main);
+		setLocationRelativeTo(null);
+		revalidate();
+		repaint();
+	}
+
+	private void mostrarPanelModificarEstudiante(String nombre, String adminActual) {
+		revalidate();
+		repaint();
+		getContentPane().removeAll();
+		JPanel main = new JPanel(new BorderLayout());
+		JPanel modificar = new JPanel();
+		modificar.setLayout(new BoxLayout(modificar, BoxLayout.PAGE_AXIS));
+		JLabel titulo = new JLabel("Rellene unicamente los campos a modificar.");
+		JLabel labelNombre = new JLabel("Nuevo nombre de usuario:");
+		JTextField username = new JTextField(20);
+		
+		JLabel labelPass = new JLabel("Nueva contraseña:");
+		JTextField password = new JTextField(20);
+		
+		JLabel cambio = new JLabel("");
+		
+		JPanel botonera = new JPanel();
+		botonera.setLayout(new BoxLayout(botonera, BoxLayout.LINE_AXIS));
+		JButton cancelar = new JButton("Cancelar");
+		JButton aceptar = new JButton("Realizar cambios");
+		botonera.add(aceptar);
+		botonera.add(cancelar);
+		
+		cancelar.addActionListener((_) -> {
+			getContentPane().removeAll();
+			menuAdmin(adminActual);
+			revalidate();
+			repaint();
+		});
+		
+		aceptar.addActionListener((_) -> {
+			String[] nuevosDatos = {username.getText(), password.getText()};
+			sistema.modificarCuentas(nombre, nuevosDatos);
+			cambio.setText("Cambio realizado correctamente.");
+		});
+		
+		username.setMaximumSize(new Dimension(300, 50));
+		password.setMaximumSize(new Dimension(300, 50));
+		
+		modificar.add(titulo);
+		modificar.add(labelNombre);
+		modificar.add(username);
+		modificar.add(labelPass);
+		modificar.add(password);
+		modificar.add(cambio);
+		
+		main.add(modificar, BorderLayout.CENTER);
+		main.add(botonera, BorderLayout.SOUTH);
+		
+		getContentPane().add(main);
+		setLocationRelativeTo(null);
+		revalidate();
+		repaint();
+		
 	}
 
 	private void mostrarEliminar(String adminActual) {
@@ -395,11 +564,6 @@ public class GUI extends JFrame {
 
 		getContentPane().add(main);
 		setLocationRelativeTo(null);
-	}
-
-	private void mostrarRestablecer() {
-		// TODO Auto-generated method stub
-
 	}
 
 }
