@@ -13,6 +13,10 @@ import java.util.ArrayList;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+/**
+ * Clase que implementa la lógica del sistema.
+ * Utiliza el patrón Singleton.
+ */
 
 public class SistemaImpl implements Sistema {
 
@@ -25,7 +29,11 @@ public class SistemaImpl implements Sistema {
 
 	public SistemaImpl() {
 	}
-
+	/**
+     * Obtiene la instancia única del Sistema.
+     * Si es llamado por primera vez, crea una instancia.
+     * @return La instancia única de SistemaImpl.
+     */
 	public static Sistema getInstancia() {
 
 		if (instancia == null) {

@@ -28,6 +28,13 @@ public class Estudiante extends Usuario {
 		this.certificaciones = new ArrayList<>();
 	}
 
+	/**
+     * Genera un resumen en formato HTML con la información del estudiante y 
+     * el estado de sus ramos cursados.
+     * @return Array de Strings donde 
+     * 			 [0] info personal
+     * 			 [1] avance curricular.
+     */
 	public String[] getInformacion() {
 		
 		String ramos = "<html>Avance Curricular:<br>";
@@ -43,6 +50,12 @@ public class Estudiante extends Usuario {
 				+ "<br>Semestre: " + semestre 
 				+ "<br> </html>", ramos};
 	}
+	/**
+     * Calcula los promedios del estudiante, tanto el general como por semestre.
+     * @return Array de doubles. 
+     * 			 [0] promedio total, 
+     * 			 [i] semestre i.
+     */
 	public double[] getPromedios() {
 		
 		

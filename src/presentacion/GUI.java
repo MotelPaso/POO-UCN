@@ -212,7 +212,6 @@ public class GUI extends JFrame {
 		javax.swing.JTable tablaMalla = new javax.swing.JTable(ramosMalla, numeroSemestres);
 		tablaMalla.setRowHeight(40);
 
-		// TODO: entender como funciona esto
 		tablaMalla.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
 			@Override
 			public Component getTableCellRendererComponent(javax.swing.JTable table, Object value, boolean isSelected,
