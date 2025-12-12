@@ -274,7 +274,7 @@ public class SistemaImpl implements Sistema {
 		// si alguien me hubiera dicho que se podia usar <p> y headings de html se veria todo mas bonito
 		// aunque es mas culpa mia por no probar -- pau
 		String report = "<html><h3>Progreso de Certificaciones Inscritas:</h3>";
-		RevisarProgresoVisitor visitor = new RevisarProgresoVisitor(); // Instancia del Visitor
+		RevisarProgresoVisitor visitor = new RevisarProgresoVisitor();
 		Estudiante e = buscarEstudiantePorCorreo(nombre);
 		if (e.getCertificaciones().isEmpty()) {
 			return "<html>El estudiante no está inscrito en ninguna certificación.</html>";
@@ -282,8 +282,7 @@ public class SistemaImpl implements Sistema {
 		
 		for (Certificacion cert : e.getCertificaciones()) {
 			report += "---<br>";
-			// Aquí se aplica el patrón Visitor
-			report += cert.visitar(visitor, e); 
+			report += cert.aceptar(visitor, e); 
 		}
 		report += "</html>";
 		return report;
@@ -341,7 +340,7 @@ public class SistemaImpl implements Sistema {
 	
 	
 	@Override
-	public String getDatosCertificaciones(String correo) {
+	public String getDatosCertificaciones() {
 		
 		String datos = "<html>";
 		for (Certificacion c : listaCertificaciones) {

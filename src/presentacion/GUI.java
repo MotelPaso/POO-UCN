@@ -257,7 +257,7 @@ public class GUI extends JFrame {
 
 	private void mostrarInscripcion(String correo) {
 		getContentPane().removeAll();
-		String datosCertificaciones = sistema.getDatosCertificaciones(correo);
+		String datosCertificaciones = sistema.getDatosCertificaciones();
 
 		JLabel titulo = new JLabel("<html><h3>Inscripcion a Certificaciones</h3></html>");
 		JPanel main = new JPanel(new BorderLayout());
