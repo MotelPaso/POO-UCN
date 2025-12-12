@@ -465,9 +465,11 @@ public class GUI extends JFrame {
 			repaint();
 
 		});
+		JLabel contras = new JLabel("Puedes restablecer una contraseña en modificar cuentas");
 		botonera.add(crear);
 		botonera.add(modificar);
 		botonera.add(eliminar);
+		botonera.add(contras);
 
 		menuAdmin.add(admin, BorderLayout.NORTH);
 		menuAdmin.add(botonera, BorderLayout.CENTER);
