@@ -71,6 +71,8 @@ public interface Sistema {
 
 	String getProgresoCertificaciones(String correo);
 
+	String inscribirCertificacion(String correo, String idCertificacion);
+
 	
 
 	

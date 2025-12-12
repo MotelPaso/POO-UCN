@@ -143,8 +143,6 @@ public class GUI extends JFrame {
 		setLocationRelativeTo(null);
 	}
 
-	
-
 	private void mostrarPerfil(String correo) {
 		getContentPane().removeAll();
 		// get datos del sistema
@@ -253,14 +251,35 @@ public class GUI extends JFrame {
 		getContentPane().removeAll();
 		String datosCertificaciones = sistema.getDatosCertificaciones(correo);
 
-		JLabel titulo = new JLabel("Inscripcion a Certificaciones");
+		JLabel titulo = new JLabel("<html><h3>Inscripcion a Certificaciones</h3></html>");
 		JPanel main = new JPanel(new BorderLayout());
-		JPanel leftPanel = new JPanel();
-		JPanel rightPanel = new JPanel();
+		JPanel top = new JPanel();
+		JPanel bot = new JPanel();
+		bot.setLayout(new BoxLayout(bot, BoxLayout.LINE_AXIS));
 
 		JLabel lineasDisponibles = new JLabel(datosCertificaciones);
-		leftPanel.add(lineasDisponibles);
+		top.add(lineasDisponibles); 
 
+		
+		// Lógica para elegir e inscribir (Strategy)
+		JLabel labelSeleccion = new JLabel("Seleccione la certificación a inscribir");
+		String[] lineas = {"Sistemas Inteligentes", "Ciberseguridad", "Desarrollo de Software"};
+		JComboBox<String> lineaSelect = new JComboBox<>(lineas);
+		JButton inscribir = new JButton("Inscribir");
+		JLabel resultado = new JLabel("");
+		
+		inscribir.addActionListener((_) -> {
+			String mensaje = sistema.inscribirCertificacion(correo, (String) lineaSelect.getSelectedItem()); 
+			
+			resultado.setText("<html>" + mensaje + "</html>");
+		});
+
+		
+		bot.add(labelSeleccion);
+		bot.add(lineaSelect);
+		bot.add(inscribir);
+		bot.add(resultado);
+		
 		JButton volver = new JButton("Volver al menu principal");
 		volver.addActionListener((_) -> {
 			getContentPane().removeAll();
@@ -269,13 +288,13 @@ public class GUI extends JFrame {
 			repaint();
 		});
 
+		top.add(bot);
 		main.add(titulo, BorderLayout.NORTH);
-		main.add(leftPanel, BorderLayout.WEST);
-		main.add(rightPanel, BorderLayout.EAST);
+		main.add(top, BorderLayout.CENTER);
 		main.add(volver, BorderLayout.SOUTH);
 
 		getContentPane().add(main);
-		setSize(1250, 800);
+		setSize(1250, 1050);
 		setLocationRelativeTo(null);
 		revalidate();
 		repaint();
@@ -288,8 +307,6 @@ public class GUI extends JFrame {
 		String progreso = sistema.getProgresoCertificaciones(correo);
 		
 		JPanel main = new JPanel(new BorderLayout());
-		
-		JLabel titulo = new JLabel("Seguimiento de Progreso");
 		JLabel datosProgreso = new JLabel(progreso);
 		
 		JButton volver = new JButton("Volver al menu principal");
@@ -299,13 +316,11 @@ public class GUI extends JFrame {
 			revalidate();
 			repaint();
 		});
-		
-		main.add(titulo, BorderLayout.NORTH);
 		main.add(datosProgreso, BorderLayout.CENTER);
 		main.add(volver, BorderLayout.SOUTH);
 		
 		getContentPane().add(main);
-		setSize(800, 600);
+		setSize(800, 700);
 		setLocationRelativeTo(null);
 		revalidate();
 		repaint();
@@ -361,7 +376,7 @@ public class GUI extends JFrame {
 		top.add(generar, BorderLayout.EAST);
 		
 		JLabel tituloModificar = new JLabel("Elija la linea que desea modificar");
-		String[] lineasDisponibles = {"Sistemas Inteligantes", "Ciberseguridad", "Desarrollo de Software"};
+		String[] lineasDisponibles = {"Sistemas Inteligentes", "Ciberseguridad", "Desarrollo de Software"};
 		JComboBox<String> lineaSelect = new JComboBox<>(lineasDisponibles);
 		JButton modificar = new JButton("Modificar");
 		

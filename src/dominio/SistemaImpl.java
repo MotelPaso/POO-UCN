@@ -282,6 +282,34 @@ public class SistemaImpl implements Sistema {
 		report += "</html>";
 		return report;
 	}
+	@Override
+	public String inscribirCertificacion(String correo, String cert) {
+		Estudiante estudiante = buscarEstudiantePorCorreo(correo);
+		Certificacion certOriginal = buscarCertificacionPorNombre(cert);
+		// siempre se va a encontrar porque no puedes ingresar sin un estudiante valido
+		
+		StrategyInscripcion validador = new StrategyValidarRequisitos();
+		String resultadoValidacion = validador.validar(estudiante, certOriginal);
+		
+		if (!resultadoValidacion.equals("") || resultadoValidacion.equals("Ya estás inscrito en esta certificación.")) { // si no es valido
+			return resultadoValidacion;
+		}
+		Certificacion nuevaCertificacion = new Certificacion(
+				certOriginal.getId(),
+		        certOriginal.getNombre(),
+		        certOriginal.getDescripcion(),
+		        certOriginal.getRequisitos(),
+		        certOriginal.getDuracion());
+		nuevaCertificacion.setCursosAsociados(certOriginal.getCursosAsociados());
+
+		
+		String[] p = {estudiante.getRut(), certOriginal.getId(), "12/12/2025", "Activo", "0"}; 
+		// es 0 porque no hemos hecho ningun ramo todavia
+		nuevaCertificacion.addDatosCertificacion(p);
+		
+		estudiante.agregarCertificacion(nuevaCertificacion);
+		return "¡Inscripción exitosa a la certificación " + certOriginal.getNombre() + "!";
+	}
 	
 	@Override
 	public ArrayList<String> getCursados(String correo) {
@@ -304,6 +332,7 @@ public class SistemaImpl implements Sistema {
 		}
 		return cursados;
 	}
+	
 	
 	@Override
 	public String getDatosCertificaciones(String correo) {
