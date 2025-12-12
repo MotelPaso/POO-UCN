@@ -10,6 +10,9 @@ package dominio;
 import logica.*;
 
 import java.util.ArrayList;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class SistemaImpl implements Sistema {
 
@@ -63,8 +66,15 @@ public class SistemaImpl implements Sistema {
 
 	@Override
 	public void guardarNotasEstudiante(String[] p) {
-		Curso c = buscarCursoPorNRC(p[1]);
+		Curso cOriginal = buscarCursoPorNRC(p[1]);
 		Estudiante estudiante = buscarEstudiantePorRut(p[0]);
+		Curso c = new Curso(
+				cOriginal.getNrc(), 
+				cOriginal.getNombre(), 
+				cOriginal.getSemestre(), 
+				cOriginal.getCreditos(), 
+				cOriginal.getArea(), 
+				cOriginal.getPrerequisitos());
 		c.registrarDatosParaEstudiante(p);
 		estudiante.agregarCurso(c);
 	}
@@ -93,8 +103,17 @@ public class SistemaImpl implements Sistema {
 	public void guardarRegistrosEstudiantes(String[] p) {
 		Estudiante estudiante = buscarEstudiantePorRut(p[0]);
 		Certificacion cert = buscarCertificacionPorId(p[1]);
-		cert.addDatosCertificacion(p);
-		estudiante.agregarCertificacion(cert);
+		
+		Certificacion nuevaCertificacion = new Certificacion(
+				cert.getId(),
+		        cert.getNombre(),
+		        cert.getDescripcion(),
+		        cert.getRequisitos(),
+		        cert.getDuracion());
+		
+		nuevaCertificacion.setCursosAsociados(cert.getCursosAsociados());
+		nuevaCertificacion.addDatosCertificacion(p);
+		estudiante.agregarCertificacion(nuevaCertificacion);
 	}
 
 	@Override
@@ -132,6 +151,7 @@ public class SistemaImpl implements Sistema {
 		};
 	}
 
+	// metodos Administrador
 	@Override
 	public void crearCuentas(String[] datos) {
 		// TODO Auto-generated method stub
@@ -167,12 +187,6 @@ public class SistemaImpl implements Sistema {
 		return 0;
 
 	}
-
-	@Override
-	public void resetContraseña(String nombre, String nuevaContra) {
-		// TODO Auto-generated method stub
-
-	}
 	
 	@Override
 	public int buscarCuenta(String username) {
@@ -190,6 +204,37 @@ public class SistemaImpl implements Sistema {
 		
 	}
 
+	// metodos Coordinador
+	@Override
+	public String getEstudiantesCompletados() {
+		String datos = "";
+		for (Estudiante e : listaEstudiantes) {
+			datos += e.getDatosCertificacionCompletada();
+		}
+		
+		return datos;
+	}
+	
+	@Override
+	public void generarCertificados() {
+		
+		String datosEstudiantes = "";
+		
+		for (Estudiante e : listaEstudiantes) {
+			datosEstudiantes += e.getDatosCertificado();
+		}
+		
+		try (BufferedWriter writer = new BufferedWriter(new FileWriter("certificado.txt", true))) {
+            writer.write(datosEstudiantes);
+            writer.newLine(); // Add a new line
+        } catch (IOException e) {
+            System.err.println("Error writing to file: " + e.getMessage());
+            e.printStackTrace();
+        }
+		
+	}
+	
+	// metodos Estudiante
 	@Override
 	public String[] getInformacionEstudiante(String correo) {
 		Estudiante e = buscarEstudiantePorCorreo(correo);
@@ -252,7 +297,7 @@ public class SistemaImpl implements Sistema {
 		return datos;
 	}
 	
-	
+	// funciones de busqueda
 	private Usuario buscarUsuario(String nombre) {
 		for (Usuario u : listaUsuarios) {
 			if (u.getNombreUsuario().equals(nombre))
@@ -292,5 +337,12 @@ public class SistemaImpl implements Sistema {
 		}
 		return null;
 	}
-
+	
+	private Certificacion buscarCertificacionPorNombre(String nombre) {
+		for (Certificacion c : listaCertificaciones) {
+			if (c.getNombre().equals(nombre))
+				return c;
+		}
+		return null;
+	}
 }

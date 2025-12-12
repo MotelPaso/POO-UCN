@@ -43,8 +43,6 @@ public interface Sistema {
 	
 	int eliminarCuentaUsuario(String nombre);
 	
-	void resetContraseña(String nombre, String nuevaContra);
-	
 	int buscarCuenta(String username);
 
 	
@@ -53,7 +51,7 @@ public interface Sistema {
 	
 	// Funciones para el menu Coordinador
 	
-	
+	String getEstudiantesCompletados();
 	
 	// Funciones para el menu Estudiante
 	
@@ -68,6 +66,10 @@ public interface Sistema {
 	ArrayList<String> getEnProceso(String correo);
 
 	String getDatosCertificaciones(String correo);
+
+	void generarCertificados();
+
+	
 
 	
 }

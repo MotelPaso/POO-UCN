@@ -54,8 +54,31 @@ public class Estudiante extends Usuario {
 		
 		return promedios;
 	}
-	
-	
+	public String getDatosCertificacionCompletada() { // para la gui
+		String datos = "";
+		for (Certificacion c : certificaciones) {
+			if (c.getProgreso() == 100) {
+				datos += nombre + " Rut: " + rut + "<br> " + c.getNombre() + " completada.<br>";
+			}
+		}
+		return datos;
+	}
+	public String getDatosCertificado() { // para el archivo
+		String datos = nombre + " Rut: " + rut + "\nHa completado exitosamente la certificacion de ";
+		String fecha = "";
+		for (Certificacion c : certificaciones) {
+			if (c.getProgreso() == 100) {
+				datos += c.getNombre() + ".";
+				fecha = c.getFechaObtencion();
+			}
+		}
+		if (fecha.equals("")) {
+			return "";
+		}
+		datos += "\nFecha: " + fecha;
+		datos += "\nMucho Exito!\n============================\n";
+		return datos;
+	}
 	public String getRut() {
 		return rut;
 	}
@@ -115,6 +138,15 @@ public class Estudiante extends Usuario {
 	public ArrayList<Curso> getRamosCursados() {
 		return ramosCursados;
 	}
+
+	public ArrayList<Certificacion> getCertificaciones() {
+		return certificaciones;
+	}
+
+	
+
+	
+	
 	
 
 

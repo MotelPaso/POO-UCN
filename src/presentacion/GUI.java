@@ -58,8 +58,8 @@ public class GUI extends JFrame {
 
 		username.setMaximumSize(new Dimension(300, 50));
 		password.setMaximumSize(new Dimension(300, 50));
-		username.setText("admin");
-		password.setText("admin123");
+		username.setText("coord.is");
+		password.setText("coord123");
 		login.addActionListener((_) -> {
 			String[] datosUsuario = { username.getText(), password.getText() };
 			boolean logged = sistema.revisarUsuario(datosUsuario);
@@ -281,10 +281,19 @@ public class GUI extends JFrame {
 	public void menuCoordinador(String username) {
 		JLabel coor = new JLabel("¡Bienvenido " + username + "!");
 		JButton logout = new JButton("Cerrar Sesión");
+		logout.addActionListener((_) -> {
+			dispose();
+		});
 		JButton gestionCertificados = new JButton("Gestion de Cerficaciones");
 		JButton metricas = new JButton("Panel de metricas y analisis");
 		JButton gestionEstudiantes = new JButton("Gestion de Estudiantes");
 
+		gestionCertificados.addActionListener((_) -> {
+			gestionCertificados(username);
+			revalidate();
+			repaint();
+		});
+		
 		JPanel menuCoordinador = new JPanel(new BorderLayout());
 		JPanel botonera = new JPanel();
 
@@ -298,6 +307,75 @@ public class GUI extends JFrame {
 		menuCoordinador.add(logout, BorderLayout.SOUTH);
 
 		getContentPane().add(menuCoordinador);
+	}
+
+	private void gestionCertificados(String username) {
+		getContentPane().removeAll();
+		
+		String estudiantes = sistema.getEstudiantesCompletados();
+		
+		JPanel main = new JPanel(new BorderLayout());
+		JPanel top = new JPanel(new BorderLayout());
+		JPanel bot = new JPanel(new BorderLayout());
+		bot.setLayout(new BoxLayout(bot, BoxLayout.LINE_AXIS));
+		
+		JLabel estudiantesCompletados = new JLabel("<html> Estudiantes Completados: <br>" + estudiantes );
+		
+		JButton generar = new JButton("Generar certificados");
+		generar.addActionListener((_) -> sistema.generarCertificados());
+		
+		top.add(estudiantesCompletados, BorderLayout.WEST);
+		top.add(generar, BorderLayout.EAST);
+		
+		JLabel tituloModificar = new JLabel("Elija la linea que desea modificar");
+		String[] lineasDisponibles = {"Sistemas Inteligantes", "Ciberseguridad", "Desarrollo de Software"};
+		JComboBox<String> lineaSelect = new JComboBox<>(lineasDisponibles);
+		JButton modificar = new JButton("Modificar");
+		
+		lineaSelect.setMaximumSize(new Dimension(300,50));
+		modificar.setMaximumSize(new Dimension(100,50));
+
+		
+		bot.add(tituloModificar);
+		bot.add(lineaSelect);
+		bot.add(modificar);
+		
+		modificar.addActionListener((_) -> {
+			modificarCertificados(username, (String) lineaSelect.getSelectedItem());
+			revalidate();
+			repaint();
+		});;
+		
+		JButton volver = new JButton("Volver al Menú Coordinador");
+		volver.addActionListener(_ -> {
+			getContentPane().removeAll();
+			menuCoordinador(username);
+			revalidate();
+			repaint();
+		});
+		
+		main.add(top, BorderLayout.NORTH);
+		main.add(bot, BorderLayout.CENTER);
+		main.add(volver, BorderLayout.SOUTH);
+		
+		getContentPane().add(main);
+		setSize(600,400);
+		
+	}
+
+	private void modificarCertificados(String username, String lineaSelect) {
+		getContentPane().removeAll();
+		
+		JPanel main = new JPanel(new BorderLayout());
+		
+		JLabel estudiantesCompletados = new JLabel();
+		
+		JButton aceptar = new JButton("Cambiar linea de certificados");
+		
+		aceptar.addActionListener((_) -> {
+			
+		});
+		
 	}
 
 	public void menuAdmin(String username) {

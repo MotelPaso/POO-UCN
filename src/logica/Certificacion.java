@@ -34,7 +34,11 @@ public class Certificacion {
         this.setProgreso(progreso);
     }
     
-     public String getDatosCertificacion() {
+     public void setCursosAsociados(ArrayList<Curso> cursosAsociados) {
+		this.cursosAsociados = cursosAsociados;
+	}
+
+	 public String getDatosCertificacion() {
     	 String datosCursos = "";
     	 for (Curso curso : cursosAsociados) {
 			datosCursos += curso.toString() + "<br>";
