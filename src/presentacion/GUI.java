@@ -21,6 +21,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableCellRenderer;
 
@@ -203,18 +204,19 @@ public class GUI extends JFrame {
 
 		getContentPane().removeAll();
 		String[][] ramosMalla = sistema.getMalla();
+		// utilizamos arraylist para hacer mas simple el coloreado de los ramos
 		ArrayList<String> cursados = sistema.getCursados(correo);
 		ArrayList<String> enProceso = sistema.getEnProceso(correo);
 		String[] numeroSemestres = { "1", "2", "3", "4", "5", "6", "7", "8" };
 
 		JPanel main = new JPanel(new BorderLayout());
 		JLabel titulo = new JLabel("Malla curricular:");
-		javax.swing.JTable tablaMalla = new javax.swing.JTable(ramosMalla, numeroSemestres);
+		JTable tablaMalla = new JTable(ramosMalla, numeroSemestres);
 		tablaMalla.setRowHeight(40);
 
 		tablaMalla.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
 			@Override
-			public Component getTableCellRendererComponent(javax.swing.JTable table, Object value, boolean isSelected,
+			public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected,
 					boolean hasFocus, int row, int column) {
 
 				Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
@@ -224,7 +226,7 @@ public class GUI extends JFrame {
 					if (nombreRamo != null && cursados.contains(nombreRamo)) {
 						c.setBackground(Color.GREEN); // ramo pasado verde
 					} else if (nombreRamo != null && enProceso.contains(nombreRamo)) {
-						c.setBackground(Color.YELLOW); // ramo en proceso weko
+						c.setBackground(Color.YELLOW); // ramo en proceso amarillo
 					} else {
 						c.setBackground(Color.WHITE);
 					}
