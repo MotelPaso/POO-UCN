@@ -154,8 +154,14 @@ public class SistemaImpl implements Sistema {
 	// metodos Administrador
 	@Override
 	public void crearCuentas(String[] datos) {
-		// TODO Auto-generated method stub
-
+		Usuario u = FactoryUsuarios.crearUsuario(datos);
+		
+		if (u != null) {
+			listaUsuarios.add(u);
+			if (u instanceof Estudiante) {
+				listaEstudiantes.add((Estudiante) u);
+			}
+		}
 	}
 
 	@Override

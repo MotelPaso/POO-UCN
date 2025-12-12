@@ -58,8 +58,16 @@ public class GUI extends JFrame {
 
 		username.setMaximumSize(new Dimension(300, 50));
 		password.setMaximumSize(new Dimension(300, 50));
-		username.setText("juan.perez@alumnos.ucn.cl");
-		password.setText("contraseña123");
+		// debug
+		// usuario
+		// username.setText("juan.perez@alumnos.ucn.cl");
+		// password.setText("contraseña123");
+		// admin
+		username.setText("admin");
+		password.setText("admin123");
+		// coordinador
+		// username.setText("coord.is");
+		// password.setText("coord123");
 		login.addActionListener((_) -> {
 			String[] datosUsuario = { username.getText(), password.getText() };
 			boolean logged = sistema.revisarUsuario(datosUsuario);
@@ -441,7 +449,9 @@ public class GUI extends JFrame {
 
 		botonera.setLayout(new BoxLayout(botonera, BoxLayout.PAGE_AXIS));
 		crear.addActionListener((_) -> {
-			mostrarCrear();
+			mostrarCrear(username);
+			revalidate();
+			repaint();
 
 		});
 		modificar.addActionListener((_) -> {
@@ -467,8 +477,151 @@ public class GUI extends JFrame {
 		setLocationRelativeTo(null);
 	}
 
-	private void mostrarCrear() {
-
+	private void mostrarCrear(String username) {
+		getContentPane().removeAll();
+		
+		JPanel main = new JPanel(new BorderLayout());
+		JPanel formulario = new JPanel();
+		formulario.setLayout(new BoxLayout(formulario, BoxLayout.PAGE_AXIS));
+		
+		JLabel titulo = new JLabel("Crear Nueva Cuenta");
+		titulo.setAlignmentX(Component.CENTER_ALIGNMENT);
+		// claramente no puedo crear otro admin
+		String[] tipos = {"Estudiante", "Coordinador"};
+		JComboBox<String> tipoSelect = new JComboBox<>(tipos);
+		tipoSelect.setAlignmentX(Component.CENTER_ALIGNMENT);
+		tipoSelect.setMaximumSize(new Dimension(200, 30));
+		JButton select = new JButton("Elegir tipo");
+		select.setAlignmentX(Component.CENTER_ALIGNMENT);
+		
+		JPanel camposPanel = new JPanel();
+		camposPanel.setLayout(new BoxLayout(camposPanel, BoxLayout.PAGE_AXIS));
+		
+		JTextField txtRut = new JTextField(20);
+		JTextField txtNombre = new JTextField(20);
+		JTextField txtCarrera = new JTextField(20);
+		JTextField txtSemestre = new JTextField(20);
+		JTextField txtCorreo = new JTextField(20);
+		JTextField txtPassEst = new JTextField(20);
+		
+		JTextField txtUserCoord = new JTextField(20);
+		JTextField txtPassCoord = new JTextField(20);
+		String[] areas = {"Sistemas Inteligentes", "Ciberseguridad", "Desarrollo de Software"};
+		JComboBox<String> areaSelect = new JComboBox<>(areas);
+		
+		select.addActionListener((_) -> {
+			camposPanel.removeAll();
+			String seleccion = (String) tipoSelect.getSelectedItem();
+			
+			if ("Estudiante".equals(seleccion)) {
+				camposPanel.add(new JLabel("RUT (ej: 12345678-9):"));
+				camposPanel.add(txtRut);
+				camposPanel.add(new JLabel("Nombre Completo:"));
+				camposPanel.add(txtNombre);
+				camposPanel.add(new JLabel("Carrera:"));
+				camposPanel.add(txtCarrera);
+				camposPanel.add(new JLabel("Semestre (número):"));
+				camposPanel.add(txtSemestre);
+				camposPanel.add(new JLabel("Correo:"));
+				camposPanel.add(txtCorreo);
+				camposPanel.add(new JLabel("Contraseña:"));
+				camposPanel.add(txtPassEst);
+			} else {
+				camposPanel.add(new JLabel("Nombre de Usuario:"));
+				camposPanel.add(txtUserCoord);
+				camposPanel.add(new JLabel("Contraseña:"));
+				camposPanel.add(txtPassCoord);
+				camposPanel.add(new JLabel("Área de Coordinación:"));
+				camposPanel.add(areaSelect);
+			}
+			camposPanel.revalidate();
+			camposPanel.repaint();
+		});
+		
+		JButton guardar = new JButton("Guardar Cuenta");
+		JLabel mensaje = new JLabel("");
+		
+		guardar.addActionListener(_ -> {
+			String seleccion = (String) tipoSelect.getSelectedItem();
+			String[] datos;
+			
+			try {
+				if ("Estudiante".equals(seleccion)) {
+					if (txtRut.getText().isEmpty() || txtCorreo.getText().isEmpty()) {
+						mensaje.setText("RUT y Correo son obligatorios.");
+						return;
+					}
+					try {
+						int numSemestre = Integer.parseInt(txtSemestre.getText());
+					} catch (Exception e) {
+						mensaje.setText("El Semestre debe ser un número.");
+						txtSemestre.setText("");
+						return;
+					}
+					if (!txtCorreo.getText().contains("@alumnos.ucn.cl")) {
+						mensaje.setText("Correo con mal formato, debe ser: nombre.apellido@alumnos.ucn.cl");
+						txtCorreo.setText("");
+						return;
+					}
+					datos = new String[] {
+						txtRut.getText(),
+						txtNombre.getText(),
+						txtCarrera.getText(),
+						txtSemestre.getText(),
+						txtCorreo.getText(),
+						txtPassEst.getText()
+					};
+				} else {
+					if (txtUserCoord.getText().isEmpty() || txtPassCoord.getText().isEmpty()) {
+						mensaje.setText("Usuario y Contraseña obligatorios.");
+						return;
+					}
+					datos = new String[] {
+						txtUserCoord.getText(),
+						txtPassCoord.getText(),
+						"Coordinador",
+						(String) areaSelect.getSelectedItem()
+					};
+				}
+				
+				sistema.crearCuentas(datos);
+				mensaje.setText("¡Cuenta creada exitosamente!");
+				
+				txtRut.setText(""); txtNombre.setText(""); txtCarrera.setText(""); 
+				txtSemestre.setText(""); txtCorreo.setText(""); txtPassEst.setText("");
+				txtUserCoord.setText(""); txtPassCoord.setText("");
+				
+			} catch (Exception ex) {
+				mensaje.setText("Error! Verifique los datos.");
+			}
+		});
+		
+		JPanel botonera = new JPanel();
+		JButton volver = new JButton("Volver");
+		volver.addActionListener(_ -> {
+			getContentPane().removeAll();
+			menuAdmin(username); 
+			revalidate();
+			repaint();
+		});
+		
+		botonera.add(guardar);
+		botonera.add(volver);
+		
+		formulario.add(titulo);
+		formulario.add(tipoSelect);
+		formulario.add(select);
+		formulario.add(camposPanel);
+		formulario.add(mensaje);
+		
+		main.add(new JScrollPane(formulario), BorderLayout.CENTER);
+		main.add(botonera, BorderLayout.SOUTH);
+		
+		getContentPane().add(main);
+		setSize(500, 600);
+		setLocationRelativeTo(null);
+		revalidate();
+		repaint();
 	}
 
 	private void mostrarModificar(String adminActual) {
