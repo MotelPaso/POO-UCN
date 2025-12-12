@@ -124,5 +124,8 @@ public class Certificacion {
     public void addCurso(Curso curso) {
         cursosAsociados.add(curso);
     }
+    public String visitar(Visitor visitor, Estudiante estudiante) {
+        return visitor.visitar(this, estudiante);
+    }
 
 }

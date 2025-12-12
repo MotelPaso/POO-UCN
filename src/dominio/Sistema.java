@@ -69,6 +69,8 @@ public interface Sistema {
 
 	void generarCertificados();
 
+	String getProgresoCertificaciones(String correo);
+
 	
 
 	

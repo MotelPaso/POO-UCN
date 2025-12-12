@@ -263,6 +263,25 @@ public class SistemaImpl implements Sistema {
 		}
 		return datosMalla;
 	}
+	@Override
+	public String getProgresoCertificaciones(String nombre) {
+		// si alguien me hubiera dicho que se podia usar <p> y headings de html se veria todo mas bonito
+		// aunque es mas culpa mia por no probar -- pau
+		String report = "<html><h3>Progreso de Certificaciones Inscritas:</h3>";
+		RevisarProgresoVisitor visitor = new RevisarProgresoVisitor(); // Instancia del Visitor
+		Estudiante e = buscarEstudiantePorCorreo(nombre);
+		if (e.getCertificaciones().isEmpty()) {
+			return "<html>El estudiante no está inscrito en ninguna certificación.</html>";
+		}
+		
+		for (Certificacion cert : e.getCertificaciones()) {
+			report += "---<br>";
+			// Aquí se aplica el patrón Visitor
+			report += cert.visitar(visitor, e); 
+		}
+		report += "</html>";
+		return report;
+	}
 	
 	@Override
 	public ArrayList<String> getCursados(String correo) {

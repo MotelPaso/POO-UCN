@@ -58,8 +58,8 @@ public class GUI extends JFrame {
 
 		username.setMaximumSize(new Dimension(300, 50));
 		password.setMaximumSize(new Dimension(300, 50));
-		username.setText("coord.is");
-		password.setText("coord123");
+		username.setText("juan.perez@alumnos.ucn.cl");
+		password.setText("contraseña123");
 		login.addActionListener((_) -> {
 			String[] datosUsuario = { username.getText(), password.getText() };
 			boolean logged = sistema.revisarUsuario(datosUsuario);
@@ -123,7 +123,9 @@ public class GUI extends JFrame {
 		});
 		JButton progreso = new JButton("Ver mi Progreso en mi Certificacion");
 		progreso.addActionListener((_) -> {
-
+			mostrarProgresoCertificaciones(correo);
+			revalidate();
+			repaint();
 		});
 		JPanel botonera = new JPanel();
 
@@ -140,6 +142,8 @@ public class GUI extends JFrame {
 		setSize(400, 400);
 		setLocationRelativeTo(null);
 	}
+
+	
 
 	private void mostrarPerfil(String correo) {
 		getContentPane().removeAll();
@@ -276,6 +280,35 @@ public class GUI extends JFrame {
 		revalidate();
 		repaint();
 
+	}
+	
+	private void mostrarProgresoCertificaciones(String correo) {
+		getContentPane().removeAll();
+		
+		String progreso = sistema.getProgresoCertificaciones(correo);
+		
+		JPanel main = new JPanel(new BorderLayout());
+		
+		JLabel titulo = new JLabel("Seguimiento de Progreso");
+		JLabel datosProgreso = new JLabel(progreso);
+		
+		JButton volver = new JButton("Volver al menu principal");
+		volver.addActionListener((_) -> {
+			getContentPane().removeAll();
+			menuEstudiante(correo);
+			revalidate();
+			repaint();
+		});
+		
+		main.add(titulo, BorderLayout.NORTH);
+		main.add(datosProgreso, BorderLayout.CENTER);
+		main.add(volver, BorderLayout.SOUTH);
+		
+		getContentPane().add(main);
+		setSize(800, 600);
+		setLocationRelativeTo(null);
+		revalidate();
+		repaint();
 	}
 
 	public void menuCoordinador(String username) {
