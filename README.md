@@ -1,53 +1,22 @@
-# TalleresPOO
+# 📚 Repositorio de Programación Orientada a Objetos (POO-UCN)
 
-En este repositorio se han guardado los talleres de 2025-2 de la asignatura de Programacion Orientada a Objetos.
+Colección de trabajos realizados por Paulo Araya y Diego Malebrán para el curso de Programación Orientada a Objetos (Java) de la UCN.
 
-# Taller 1: Análisis de modelos de IA
+Este repositorio sirve como una referencia para entender la aplicación práctica de los fundamentos de POO.
 
-## Funciones:
+## 🎯 Contenido y Aplicación de Conceptos POO
 
-### Menú Admin (62 pts)
+El material se organiza en Talleres (proyectos de construcción) y Pruebas (evaluaciones de conceptos clave).
 
-    Ver la matriz completa de métricas (15 pts).
-    Identificar el experimento con mejor F1-Score (12 pts).
-    Calcular promedio global de cada métrica (15 pts).
-    Comparar dos experimentos lado a lado (20 pts).
-    (EXTRA) Comparar CSV con matriz de confusión generada (15 pts).
+| Carpeta | Enfoque Temático del Proyecto | Conceptos POO Clave Aplicados |
+| :--- | :--- | :--- |
+| **Taller1** | Análisis de Modelos de IA | Fundamentos de Java, Estructuras de Datos, Lectura de Archivos .txt y .csv. |
+| **Taller2** | Sistema de Gestión de Seguridad de Red | **Clases y Objetos**, **Encapsulamiento**, Listas Dinámicas. |
+| **Taller3** | Gestión de Proyectos y Tareas | **Patrones de Diseño** (Factory, Strategy, Visitor, Singleton), Herencia y Polimorfismo. |
+| **Taller4** | Aplicación con Interfaz Gráfica (GUI) | Integración de Lógica POO con una interfaz gráfica (JSwing) y patrones de diseño. |
+| **Prueba1** | Modelado de Sistema de Mensajería | Modelado de Clases (`Usuario`, `Mensaje`, `Chat`), Asociación de Objetos. |
+| **Prueba2** | Aplicación Avanzada de Patrones (GUI) | Uso complejo y combinado de **Factory**, **Strategy** y **Visitor** para problemas modulares. |
 
-### Menú Usuario (45 pts)
+---
 
-    Ver lista de experimentos (6 pts).
-    Mostrar matriz de confusión de un experimento (TP, FP, TN, FN) (10 pts).
-    Ver métricas de un experimento (Accuracy, Precision, Recall, F1) (17 pts).
-    Ver promedio de Accuracy de todos los modelos (12 pts).
-
-# Taller 2: Auditoría de red en SecureNet LTDA
-
-## Funciones:
-
-### Menú Admin (40 pts)
-
-    Ver lista completa de PCs junto a su informacion (10 pts)
-    Agregar o eliminar un PC de la lista (15 pts)
-    Claisficas pcs segun su nivel de riesgo (15 pts)
-
-### Menú Usuario (59 pts)
-
-    Ver lista de PCs (6 pts)
-    Escanear un PC (25 pts)
-    Ver total de puertos abiertos en todos los PCs de la red (15 pts)
-    Ordenar PCs segun su IP (13 pts)
-
-## Clases:
-
-Clase PC.\
-Clase Puerto.\
-Clase User.
-
-Al descargar el repositorio como archivo zip, se debe agregar cada carpeta en Eclipse como su propio proyecto para evitar errores.\
-Tambien se puede clonar el repositorio con:
-
-```
-git init
-git clone https://github.com/MotelPaso/POO-UCN.git
-```
+**Nota:** Cada subcarpeta contiene un archivo `README.md` específico con la descripción detallada de su funcionalidad y la explicación de los archivos fuente.
