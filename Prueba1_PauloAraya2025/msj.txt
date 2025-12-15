@@ -1,0 +1,1000 @@
+1,45,06:29 10/09/2025,113,Confirmado
+2,19,09:36 10/09/2025,193,Ad eius dolore qui perspiciatis tempora assumenda. gracias
+3,6,04:04 25/09/2025,187,Hice el backup. Lo reviso con calma.
+4,43,09:51 09/09/2025,171,Confirmado
+5,39,03:20 04/09/2025,74,Chhicos ¿cómo vamos con eso?
+6,11,04:38 04/09/2025,112,Acabo de empujar cambios. Lo conversamos más rato.
+7,35,06:27 19/09/2025,153,Adipisci atque doloremque nobis. kerí too
+8,43,09:52 09/09/2025,119,Envié la invitación. Mañana lo termino.
+9,18,07:43 16/09/2025,119,Revisé los pendientes. No estoy ni ahí.
+10,34,03:08 14/09/2025,30,Oye! sumé los cambios de ayer. Gracias. wuajajajaja
+11,21,03:49 27/09/2025,123,Dicta officiis molestias dolore nihil. run!
+12,36,07:44 22/09/2025,131,Configuré el acceso. Lo veo en la tarde.
+13,29,08:21 13/09/2025,177,Chicos! hice el backup. Abrazo.
+14,9,06:05 20/09/2025,29,Chicos ¿qué opinan? jaja
+15,4,04:33 10/09/2025,97,Hey ¿qué opinan?
+16,38,08:32 08/09/2025,158,Amigos! probé la última versión. Diisen.
+17,48,05:43 13/09/2025,193,Quis cuum. abrazo
+18,36,07:45 22/09/2025,66,Entendido
+19,30,09:50 10/09/2025,144,Dejé la minuta en la carpeta. Lo presento el viernes.
+20,7,08:47 23/09/2025,59,Probé la última versión. No estoy ni ahí.
+21,26,03:59 05/09/2025,171,Gente! creé el evento en el calendario.
+22,44,05:42 05/09/2025,197,Oye ¿les parece si lo vemos m!ñana?
+23,5,03:39 09/09/2025,42,De acuerdo xd
+24,38,08:42 08/09/2025,108,Listo
+25,35,07:12 19/09/2025,153,Equipo ¿qué opinan?
+26,43,09:55 09/09/2025,119,Excepturi culpa vero excepturi. porfa xd
+27,10,02:45 03/09/2025,69,Vale
+28,36,07:47 22/09/2025,134,Fugit facere exercitationem eaque aliquam itaque commodi. kerí too
+29,44,06:27 05/09/2025,110,Listo
+30,11,04:40 04/09/2025,41,Equipo ¿qué opinan?
+31,34,03:10 14/09/2025,67,Aspernatur eos occaecaati suscipit. diisen
+32,42,09:45 04/09/2025,168,Hice el b.ckup. Lo conversamos más rato.
+33,25,05:22 26/09/2025,95,Genial
+34,4,04:35 10/09/2025,97,Hola ¿lo dejamos para la tarde?
+35,28,09:55 13/09/2025,114,Neque provident aliquid dolorem enim.
+36,28,09:57 13/09/2025,164,Sequi sint fugit iste rerum cum explicabo.
+37,17,04:20 15/09/2025,91,Amigos! cargué la planilla. Run!.
+38,31,08:42 03/09/2025,7,Chicos! armé un borrador. Saludos.
+39,6,04:06 25/09/2025,70,Amigos! añadí los comentarios en el doc.
+40,9,06:07 20/09/2025,40,Praesentium placeat architecto odio modi. diisen
+41,29,10:21 13/09/2025,10,De acueerdo
+42,35,07:27 19/09/2025,112,Cum fugit voluptatibus odit nam placeat saiente quod.
+43,41,05:05 26/09/2025,63,Perfecto
+44,22,06:18 24/09/2025,159,Probé la última versión. Lo conversamos más rato.
+45,49,08:20 08/09/2025,174,Oye ¿qué hora prefieren?
+46,39,03:25 04/09/2025,74,Probé la última versión. Lo dejo listo hoy.
+47,49,08:30 08/09/2025,174,Equipo ¿alguien puede revisar eso?
+48,45,06:31 10/09/2025,74,Ok XDDDD
+49,6,04:09 25/09/2025,42,Chicos! hice el backup.
+50,43,10:25 09/09/2025,117,Reprehenderit rem illo.
+51,46,09:39 22/09/2025,40,Cerré la tarea pendiente. No estoy ni ahí. jajajaja
+52,44,07:27 05/09/2025,67,Distinctio velit soluta et omnis.
+53,37,07:52 13/09/2025,32,Hey! envié la invitación. Saludos.
+54,35,07:37 19/09/2025,153,Hola ¿qué hora prefieren?
+55,36,07:48 22/09/2025,156,Buenas ¿qué opinan? muajajjaja
+56,31,08:43 03/09/2025,189,Suscipit odit corporis consequuntur quia molestiae quia.
+57,50,08:29 10/09/2025,87,Genial
+58,28,10:12 13/09/2025,114,Sumé los cambios de ayer. Lo veo en la tarde.
+59,33,10:22 05/09/2025,79,Amigos! subí el video. Run!.
+60,36,08:33 22/09/2025,112,Añadí los comentarios en el doc. Mañana lo termino. muajajjaja
+61,31,08:44 03/09/2025,106,Chicos ¿alguna novedad?
+62,26,04:14 05/09/2025,171,Tempore id dolor voluptatum magni at.
+63,5,03:41 09/09/2025,98,Queda así jaja
+64,14,04:18 19/09/2025,43,Hey ¿alguien puede revisar eso?
+65,46,09:54 22/09/2025,99,De acuerdo
+66,12,06:46 09/09/2025,40,Perfecto
+67,26,04:59 05/09/2025,77,De acuerdo
+68,8,03:41 19/09/2025,138,Hola! publiqué la encuesta.
+69,29,10:22 13/09/2025,39,Oye! cargué la planilla. Run!. wuajajajaja
+70,31,08:45 03/09/2025,172,Me parece
+71,36,08:38 22/09/2025,66,Similique corrupti cum perspiiciatis nisi. saludos
+72,50,08:34 10/09/2025,55,Equipo! subí el archivo al drive. Abrazo.
+73,18,07:45 16/09/2025,109,Sincronizé el repo. Lo reviso con calma.
+74,14,04:20 19/09/2025,136,Configuré el acceso. No estoy ni ahí.
+75,47,03:53 13/09/2025,100,Perfecto
+76,21,03:59 27/09/2025,18,Preparé el acta de la reunión. Lo reviso con calma.
+77,23,05:04 12/09/2025,166,Gente ¿qué opinan? xd
+78,49,09:30 08/09/2025,160,Chicos! probé la última versión.
+79,50,08:44 10/09/2025,117,Fugit voluptatum minus voluptas similique accusamus quam placeat modi eaque. saludos
+80,47,03:54 13/09/2025,198,Ok
+81,10,03:15 03/09/2025,185,Cargué la planilla. Mañana lo termino.
+82,30,09:52 10/09/2025,54,Listaylor
+83,27,03:17 14/09/2025,24,Oye! actualicé el doc. ¡gr!cias!. xd
+84,35,07:40 19/09/2025,153,Cargué la planilla. Lo dejo listo hoy.
+85,41,05:15 26/09/2025,58,Chicos! escribí el resumen del proyecto. Porfa.
+86,6,04:10 25/09/2025,187,Sumé los cambios de ayer. Lo conversamos más rato.
+87,47,04:09 13/09/2025,16,Añadí los comentarios en el doc. Lo veo en la tarde.
+88,42,09:55 04/09/2025,133,Beatae ipsa iste veritatis soluta ea magnam. saludos
+89,11,04:41 04/09/2025,76,Gente! envié la invitación. ¡gracias!.
+90,34,03:13 14/09/2025,67,Sincronizé el repo. Lo conversamos más rato.
+91,3,08:48 02/09/2025,115,Oye! termin de editar el archivo.
+92,35,07:43 19/09/2025,112,Amigos ¿alguna novedad?
+93,28,10:14 13/09/2025,42,Dale
+94,20,09:55 02/09/2025,40,Magni autem numquam sapiente magni dicta. porfa
+95,27,03:37 14/09/2025,109,Listaylor
+96,14,04:23 19/09/2025,96,Hey! terminé de editar el archivo. ¡gracias!.
+97,30,10:07 10/09/2025,159,Queda así
+98,12,06:51 09/09/2025,40,Acabo de empujar cambios. Lo veo en la tarde.
+99,31,08:55 03/09/2025,46,Confirmado
+100,28,11:44 13/09/2025,190,Buenas ¿quedamos a las 18:00?
+101,49,10:00 08/09/2025,174,Amigos ¿lo dejamos para la tarde?
+102,2,03:39 22/09/2025,130,Quis molestiae quod minus a eum accusantium ut.
+103,36,08:41 22/09/2025,66,Configuré el acceso. Lo conversamos más rato.
+104,14,04:28 19/09/2025,194,Amigos ¿les parece si lo vemos mañana?
+105,26,06:59 05/09/2025,77,Buenas! corrigí los errores del informe. wuajajajaja
+106,30,10:12 10/09/2025,11,Subí el video. Lo veo en la tarde.
+107,11,04:46 04/09/2025,76,Dolores dolores neces…itatibus aspernatur quasi.
+108,22,06:33 24/09/2025,150,Oye! sumé los cambios de ayer. ¡gracias!.
+109,29,10:37 13/09/2025,20,Hol! envié la invitación. ¡gracias!.
+110,24,04:20 06/09/2025,55,Amigos ¿cómo vamos con eso
+111,41,05:17 26/09/2025,117,Voluptate minus commodi. ¡gracias!
+112,31,09:10 03/09/2025,7,Entendido
+113,21,05:29 27/09/2025,18,Hey! cargué la planilla.?Diisen.
+114,38,10:42 08/09/2025,171,Amigos ¿qué hora prefieren? jaja
+115,49,10:20 08/09/2025,33,Veniam cumque minus non vitae ut quidem porro quae id perferendis fuga.
+116,42,10:05 04/09/2025,63,Buenas! escribí el resumen del proyecto. Gracias.
+117,39,03:40 04/09/2025,74,Perfecto
+118,14,04:48 19/09/2025,109,Iste dolorum aperiam accusantium mollitia nihil ab.
+119,18,09:15 16/09/2025,72,Equipo ¿algui…n puede revisar eso?
+120,37,07:53 13/09/2025,81,Gente ¿alguien puede revisar eso?
+121,45,06:41 10/09/2025,74,Animi architecto adipisci ex maiores eius laborum molestiae. saludos
+122,37,08:38 13/09/2025,81,Hola ¿alguna novedad?
+123,28,11:45 13/09/2025,164,Nemo doloribus labore illum atque omnis explicabo. xd
+124,10,03:18 03/09/2025,65,Amigos! actualicé la base de datos.
+125,8,03:51 19/09/2025,57,Iure quas perferendis voluptates atque illo. abrazo
+126,17,04:21 15/09/2025,120,Equipo! dejé la minuta en la carpeta. Saludos.
+127,31,09:20 03/09/2025,46,Oye! dejé la minuta en la carpeta.
+128,38,10:43 08/09/2025,108,Chicos! actualicé la base de datos. Saludos.
+129,40,04:25 23/09/2025,156,Reeiciendis autem deleniti modi consequuntur.
+130,2,03:59 22/09/2025,130,Equipo ¿les parece si lo .emos mañana?
+131,49,10:25 08/09/2025,172,Hola! envié la invitación?
+132,31,10:50 03/09/2025,172,Entendido
+133,8,04:06 19/09/2025,57,Sincronizé el repo. Mañana lo termino.
+134,10,03:28 03/09/2025,120,Hice el backup. Lo reviso con calma.
+135,20,10:00 02/09/2025,170,Publiqué la encuesta. Lo presento el viernes. kerí too
+136,15,08:02 24/09/2025,57,Equipo ¿alguna novedad?
+137,22,06:35 24/09/2025,159,Bue?as ¿alguna novedad? jajaja
+138,10,03:29 03/09/2025,3,Eius dolorum unde ipsam similique mollitia. porfa
+139,50,09:14 10/09/2025,84,Gente! sumé los cambios de ayer. Porfa.
+140,44,07:29 05/09/2025,197,List!ylor
+141,29,12:07 13/09/2025,10,Officiis molestiae accusamus at quidem.
+142,44,07:30 05/09/2025,122,Gente ¿lo dejamos para la tarde?
+143,11,04:56 04/09/2025,1,Confirmaddo
+144,26,07:02 05/09/2025,77,Perfecto
+145,38,10:44 08/09/2025,158,ale
+146,30,10:15 10/09/2025,91,Amigos! mandé el link por correo. Pora.
+147,35,07:45 19/09/2025,112,Oye ¿les parece si lo vemos mañana?
+148,10,03:31 03/09/2025,138,Oye ¿alguna novedad?
+149,26,07:17 05/09/2025,27,Creé la tabla con los resultados. Lo presento el vierne..
+150,29,12:10 13/09/2025,20,Genial
+151,47,04:12 13/09/2025,179,Ok
+152,41,05:37 26/09/2025,157,Cumque laborum distinctio. porfa
+153,35,07:48 19/09/2025,28,Equipo ¿qué opinan?
+154,34,03:18 14/09/2025,30,Estamos clarens
+155,43,10:27 09/09/2025,35,Vale
+156,50,09:15 10/09/2025,195,Temporibus cum a hic unde quos eligendi possimus quas. run!
+157,43,10:29 09/09/2025,136,Optio laborum deleniti dolor animi quasi aperiam. porfa
+158,19,09:39 10/09/2025,26,Entenndido
+159,43,10:39 09/09/2025,117,Envié la invitación. Lo dejo listo hoy.
+160,4,05:20 10/09/2025,142,Probé la última versión. Lo reviso con calma.
+161,5,03:42 09/09/2025,163,Animi nesciunt magnam sequi culpa vero. jajajja
+162,30,10:20 10/09/2025,171,Genial
+163,23,05:14 12/09/2025,19,Equipo! acabo de empujar cambios. Diisen.
+164,44,07:33 05/09/2025,141,Actualicé el doc. Lo reviso con calma.
+165,44,07:34 05/09/2025,64,Hola! agregué las notas al documento.
+166,10,03:46 03/09/2025,185,Sed architecto architecto similique illo velit. muajajjaja
+167,3,08:50 02/09/2025,40,Doloribus nisi nulla in nesciunt minima vel.
+168,10,03:47 03/09/2025,99,Pariatur et eaque.
+169,35,07:58 19/09/2025,28,Perferendis error et quibusdam asperiores itaque. diisen
+170,46,10:14 22/09/2025,40,Entendido wuajajajaja
+171,17,04:31 15/09/2025,173,Hey! armé un borrador.
+172,32,07:04 16/09/2025,10,Voluptatum asperiores distinctio eaque ut sunt sunt fuga culpa. ¡gracias!
+173,28,12:05 13/09/2025,68,Provident nostrum voluptates omnis ab repellendus. XDDDD
+174,37,08:53 13/09/2025,18,Revisé los pendientes. Lo reviso con calma. jajajaja
+175,34,03:38 14/09/2025,30,Vale
+176,3,08:51 02/09/2025,196,Armé un borrador. Lo conversamos más rato.
+177,3,09:36 02/09/2025,88,Ut aut soluta eaque suscipit quia culpa eligendi. slds XD
+178,32,07:19 16/09/2025,10,Sumé los cambiios de ayer. Mañana lo termino.
+179,37,09:03 13/09/2025,80,Terminé de editar el archivo. Lo reviso con calma.
+180,17,04:41 15/09/2025,14,Hola! revisé los pendientes.
+181,42,10:10 04/09/2025,57,Gente! creé el evento en el calendario. Abrazo.
+182,44,07:39 05/09/2025,130,Oye ¿quedams a las 18:00?
+183,18,09:18 16/09/2025,50,Vale
+184,39,03:41 04/09/2025,74,Equipo ¿cómo vamos con eso?
+185,46,10:24 22/09/2025,178,Quaeratt dignissimos odio.
+186,14,04:50 19/09/2025,68,Amigos ¿alguna novedad?
+187,14,04:53 19/09/2025,177,Equipo! mandé el link por correo. Abrazo.
+188,30,11:20 10/09/2025,159,Buenas ¿alguna novedad?
+189,35,08:18 19/09/2025,153,Hola! creé el evento en el calendario.
+190,22,06:36 24/09/2025,146,Gente! envié la invitación.
+191,24,04:21 06/09/2025,130,Magnam dolorum tenetur amet odio.
+192,5,03:52 09/09/2025,18,Preparé el acta de la reunión. No estoy ni ahí.
+193,3,10:06 02/09/2025,72,Hey! dejé la minuta en la carpeta. Saludos.
+194,26,07:18 05/09/2025,35,Entendido
+195,50,09:20 10/09/2025,119,Compartí la presentación. Lo reviso con calma.
+196,9,06:22 20/09/2025,29,Compartí la presentación. Lo dejo listo hoy. XD
+197,15,08:17 24/09/2025,142,Aliquid ex consectetur voluptatem. porfa
+198,30,11:40 10/09/2025,11,Qui mollitia incidunt ab.
+199,20,10:30 02/09/2025,179,Buenas! publiqué la encuesta. Saludos. xd
+200,17,04:42 15/09/2025,168,Organicé la lista de tareas. Lo conversamos más rato.
+201,41,05:38 26/09/2025,51,Hey ¿quedamos a las 18:00?
+202,6,05:40 25/09/2025,187,Hey! envié la invitación.
+203,37,09:13 13/09/2025,130,Buenas! creé el evento en el calendario.
+204,35,08:20 19/09/2025,28,Confirmado
+205,35,08:40 19/09/2025,153,Gente ¿cómo vamos con eso?
+206,7,08:57 23/09/2025,17,Actualicé la base de datos. Lo veo en la tarde.
+207,40,04:45 23/09/2025,44,Creé la tabla con los resultados. No estoy ni ahí. jaja
+208,38,10:54 08/09/2025,171,Amigos! sumé los cambios de ayer.
+209,20,11:30 02/09/2025,40,Publiqué la encuesta. No estoy ni ahí.
+210,6,05:41 25/09/2025,98,Corrigí los errores del informe. Lo conversamos más rato.
+211,22,06:51 24/09/2025,81,Equipo! compart la presentación. Abrazo.
+212,9,06:25 20/09/2025,40,Ok
+213,41,05:40 26/09/2025,122,Velit porro corrupti.
+214,14,04:58 19/09/2025,55,Corrigí los errores del i…forme. Lo reviso con calma.
+215,17,04:52 15/09/2025,169,Perfecto
+216,43,10:41 09/09/2025,171,Listo
+217,48,05:58 13/09/2025,189,Amigos ¿les parece si lo vemos mañana?
+218,37,09:14 13/09/2025,160,Terminé de editar el archivo. Lo dejo listo hoy.
+219,45,06:42 10/09/2025,113,Genial
+220,25,05:24 26/09/2025,95,Preparé el acta de la reunión. Mañana lo termino. jajajaja
+221,32,07:22 16/09/2025,52,Buenas! subí las fotos al grupo.
+222,41,05:50 26/09/2025,12,Preparé el acta de la reunión. Lo dejo listo hoy.
+223,32,07:25 16/09/2025,98,Amigos! actualicé la base de datos. Gracias.
+224,43,10:51 09/09/2025,136,Hey! agendé la reunión.
+225,26,07:38 05/09/2025,136,Hola ¿qué opinan? wuajajajaja
+226,28,12:07 13/09/2025,142,Sumé los cambios de ayer. Lo conversamos más rato.
+227,5,03:57 09/09/2025,170,Añadí los comentarios en el doc. Lo conversamos más rato.
+228,13,03:25 21/09/2025,125,Equipo ¿qué hora prefieren?
+229,17,04:57 15/09/2025,91,Gente ¿qué hora prefieren?
+230,33,10:27 05/09/2025,50,Cerré la tarea pendiente. No estoy ni ahí.
+231,38,10:59 08/09/2025,146,Rerum nesciunt corporis consectetur.
+232,20,11:32 02/09/2025,68,Equipo! cerré la tarea pendiente. ¡gracias!.
+233,36,09:26 22/09/2025,99,Buenas! revisé los pendientes.
+234,44,07:49 05/09/2025,191,Ya
+235,45,06:43 10/09/2025,20,Cerré la tarea pendiente. Lo veo en la tarde.
+236,32,07:35 16/09/2025,57,Gente! subí las fotos al grupo. Graciias.
+237,36,09:41 22/09/2025,134,Facilis ut voluptas aliqum. slds
+238,13,04:55 21/09/2025,197,Distinctio dolorum aut quod. porfa
+239,31,10:55 03/09/2025,172,Actualicé el doc. No estoy ni ahí.
+240,9,06:26 20/09/2025,40,Mandé el link por correo. Lo presento el viernes.
+241,20,11:47 02/09/2025,125,De acuerdo
+242,29,12:13 13/09/2025,10,Revisé los pendientes. Lo veo en la tarde.
+243,17,04:59 15/09/2025,148,Gente ¿lo dejamos para la tarde?
+244,2,04:09 22/09/2025,130,Oye! añadí los comentarios en el doc. ¡gracias!.
+245,47,04:14 13/09/2025,196,Perfecto
+246,10,03:48 03/09/2025,142,Equipo! creé el evento en el calendario.
+247,44,08:04 05/09/2025,41,Hola! preparé el acta de la reunión! Abrazo. jajaja
+248,38,11:00 08/09/2025,45,Hey ¿alguien puede revisar eso?
+249,33,10:57 05/09/2025,59,Dejé la minuta en la carpeta. Lo conversamos más rato. muajajjaja
+250,5,04:02 09/09/2025,95,Voluptate quibusdam unde dolores cum reiciendis debitis impedit debitis unde. ¡gracias!
+251,39,03:42 04/09/2025,78,Hola ¿les parece si lo vemos mmañana?
+252,20,11:49 02/09/2025,143,Queda así
+253,28,14:07 13/09/2025,42,Amigos ¿quedamos a las 18:00? kerí too
+254,24,04:23 06/09/2025,19,Preparé el acta de la reunión. Lo veo en la tarde.
+255,2,05:39 22/09/2025,56,Subí el video. Lo dejo listo hoy.
+256,16,07:09 24/09/2025,19,Vale
+257,9,06:46 20/09/2025,29,Terminé de editar el archivo. Mañana loo termino.
+258,30,11:50 10/09/2025,27,Rem sint repellat eaque ratione.
+259,15,08:18 24/09/2025,17,Fugit aliquam iusto.
+260,40,04:47 23/09/2025,44,Repellendus itaque esse recusandae dolorem ad deserunt.
+261,37,09:44 13/09/2025,77,Eius architecto quo expedita magni perspicia…is sapiente ex adipisci.
+262,35,08:55 19/09/2025,153,Agregué las notas al documento. Lo conversamos más rato.
+263,17,05:01 15/09/2025,111,Hey! cerré la tarea pendiente. Diisen.
+264,10,03:50 03/09/2025,65,Hola ¿alguna novedad?
+265,19,09:54 10/09/2025,124,Hola! probé la última versión.
+266,15,08:20 24/09/2025,2,Debitis vitae eaque autem ipsa. xd
+267,9,08:46 20/09/2025,161,Armé un borrador. Lo presento el viernes.
+268,17,05:03 15/09/2025,26,Hey ¿lo dejamos para la tarde?
+269,33,10:58 05/09/2025,85,Ipsa voluptates blanditiis tempore deleniti aliquid ipsa.
+270,22,06:52 24/09/2025,159,Unde modi quaerat quia perferendis facilis architecto optio ex et sed. ¡gracias!
+271,48,06:00 13/09/2025,140,Vale
+272,33,11:08 05/09/2025,72,Gente! terminé de editar el archivo.
+273,33,11:09 05/09/2025,85,Buenas! actualicé el doc.
+274,36,10:41 22/09/2025,1,Creé la tabla con los resultados. No estoy ni ahí. jaja
+275,28,14:27 13/09/2025,68,Buenas ¿les parece si lo vemos mañana?
+276,5,04:12 09/09/2025,54,Magni pariatur eveniet possimus mollitia deleniti. kerí too
+277,2,05:44 22/09/2025,56,Gente ¿les parece si lo vemos mañana?
+278,29,12:14 13/09/2025,177,Dale
+279,18,09:20 16/09/2025,109,Equipo ¿quedamos a las 18:00?
+280,46,10:26 22/09/2025,60,Perspiciatis temporibus nulla error.
+281,7,09:00 23/09/2025,103,Dejé la minuta en la carpeta. Lo presento el viernes. ajajaja
+282,43,10:56 09/09/2025,119,Rerum esse distinctio ratione non.
+283,46,10:31 22/09/2025,40,Listo
+284,36,10:51 22/09/2025,182,Listaylor
+285,39,03:57 04/09/2025,78,Amigos! cerré la tarea pendiente. Slds.
+286,26,08:08 05/09/2025,68,Buenas ¿alguien puede revisar eso?
+287,5,04:15 09/09/2025,12,Iure ipsam distinctio labore temporibus recusandae.
+288,22,07:02 24/09/2025,31,Hey! corrigí los errores del informe. Diisen.
+289,44,08:05 05/09/2025,64,Chicos! hice el backup. ¡gracias!.
+290,42,10:25 04/09/2025,127,Hola ¿alguien puede revisar eso? XD
+291,50,09:21 10/09/2025,67,Ya
+292,28,14:28 13/09/2025,164,Hola ¿lo dejamos para la arde?
+293,7,09:30 23/09/2025,184,Omnis eligendi optio nulla.
+294,10,03:52 03/09/2025,120,Acabo de empujar cambios. Lo veo en la tarde.
+295,32,07:38 16/09/2025,98,Repellendus quibusdam perferendis dolore dicta ad.
+296,8,04:08 19/09/2025,68,Voluptates nostrum quisquam iste suscipit.
+297,30,11:53 10/09/2025,54,Deserunt possimus laudantium doloribus omnis ab quibusdam quo autem incidunt debitis. wuajajajaja
+298,46,10:36 22/09/2025,60,Ya
+299,46,10:41 22/09/2025,181,Armé un borrador. Lo reviso con calma.
+300,27,03:38 14/09/2025,130,Actualicé la base de datos. Lo dejo listo hoy.
+301,3,11:06 02/09/2025,87,Gente ¿alguien puede revisar eso?
+302,28,14:33 13/09/2025,142,Chicos! mandé el link por correo.
+303,6,07:41 25/09/2025,42,Compartí la presentación. Lo dejo listo hoy.
+304,46,10:46 22/09/2025,178,Equipo! hice el backup.
+305,7,09:45 23/09/2025,199,Equipo! agendé la reunión. muajajjaja
+306,23,05:15 12/09/2025,77,Vale
+307,39,04:00 04/09/2025,78,Buenas ¿lo dejamos para la tarde?
+308,20,12:34 02/09/2025,143,Listaylor
+309,21,05:32 27/09/2025,136,Hey ¿lo dejamos para la tarde?
+310,46,10:48 22/09/2025,178,Hola ¿les parece si lo vemos mañana?
+311,45,07:28 10/09/2025,20,Buenas! configuré el acceso. Diisen.
+312,27,03:40 14/09/2025,184,Amigos! subí el archivo al drive.
+313,29,12:15 13/09/2025,140,Gente ¿alguien puede revisar eso?
+314,36,10:54 22/09/2025,131,Listo
+315,35,08:57 19/09/2025,112,Amigos ¿alguien puede revisar eso?
+316,41,06:10 26/09/2025,38,Gente! cerré la tarea pendiente. jajajaja
+317,17,05:04 15/09/2025,109,Buenas ¿quedamos a las 18:00?
+318,26,08:10 05/09/2025,77,Buenas! configuré el acceso. ¡gracias!. wuajajajaja
+319,41,06:40 26/09/2025,58,Iure nam totam commodi consequatur iure minus nam. diisen
+320,33,11:24 05/09/2025,103,Crreé la tabla con los resultados. Lo conversamos más rato.
+321,20,12:36 02/09/2025,68,Agendé la reunión. No estoy ni ahí.
+322,33,11:29 05/09/2025,72,Mandé el link por correo. No estoy ni ahí.
+323,36,11:09 22/09/2025,112,Probé la última versión. Lo conversamos más rato. xd
+324,4,05:22 10/09/2025,142,Veniam tempora nostrum quaerat. porfa
+325,49,10:40 08/09/2025,137,Incidunt tenetur ipsum culpa similique ipsum quibusdam saepe eius.
+326,15,08:40 24/09/2025,151,Configuré el acceso. Lo reviso con calma.
+327,47,04:16 13/09/2025,16,Hola ¿cómo vamos con eso?
+328,5,04:45 09/09/2025,21,Listaylor jajajaja
+329,17,05:09 15/09/2025,187,Mandé el link por correo. Lo presento el viernes.
+330,42,10:28 04/09/2025,179,Equipo! envié la invitac.ón.
+331,48,06:10 13/09/2025,155,Hola! publiqué la encuesta.
+332,15,08:42 24/09/2025,2,Laborum dolores ipsam quae doloremque excepturi tempora. XDDDD
+333,45,07:29 10/09/2025,71,Hey! subí el archivo al drivve. Slds.
+334,46,11:18 22/09/2025,60,Gente ¿alguien puede revisar eso?
+335,25,05:25 26/09/2025,95,Chicos! creé el evento en el caalendario.
+336,10,03:54 03/09/2025,175,Oye! subí el archivo al drive.
+337,29,12:20 13/09/2025,177,Hola ¿alguien puede revisar eso? wuajajajaja
+338,10,04:14 03/09/2025,65,Buenas! escribí el resumen del proyecto. kerí too
+339,41,06:41 26/09/2025,117,Chicos ¿cómo vamos con eso?
+340,30,11:55 10/09/2025,105,Consequuntur doloremque possimus.
+341,29,12:40 13/09/2025,39,Hola ¿qué opinan?
+342,40,05:07 23/09/2025,189,Gente! probé la última versión.
+343,20,12:37 02/09/2025,40,Aperiam illum molestiae impedit. porfa
+344,6,08:11 25/09/2025,119,Genial
+345,38,11:03 08/09/2025,174,Hey terminé de editar el archivo. Porfa. xd
+346,34,03:48 14/09/2025,67,Creé el evento en el calendario. L! conversamos más rato.
+347,19,09:56 10/09/2025,13,Probé la última versión. No estoy ni ahí.
+348,39,04:02 04/09/2025,78,Cargué la planilla. Lo veo en la tarde. jajaja
+349,9,08:56 20/09/2025,40,Queda así
+350,9,09:11 20/09/2025,29,Buenas! corrigí los errores del informe.
+351,48,06:11 13/09/2025,192,Estamos clarens
+352,9,09:14 20/09/2025,29,Preparé el acta de la reunión. Mañana lo termino.
+353,42,10:33 04/09/2025,179,Dejé la minuta en la carpeta. Lo conversamos más rato.
+354,12,07:11 09/09/2025,51,Rerum harum quo veniam accusantium sunt nemo.
+355,4,05:24 10/09/2025,12,Compartí la presentación. Lo veo en la tarde.
+356,4,05:44 10/09/2025,76,Amigos! armé un borrador. Diisen.
+357,6,08:14 25/09/2025,119,Sincronizé el repo. Mañana lo termino.
+358,4,05:45 10/09/2025,21,Agregué las notas al documento. No estoy ni ahí.
+359,37,09:45 13/09/2025,32,Gente ¿qué opinan?
+360,33,11:49 05/09/2025,165,Chicos! actualicé el doc. Diisen. kerí too
+361,46,12:18 22/09/2025,39,Queda así
+362,21,05:34 27/09/2025,13,Ab explicabo quidem sequi veritatis in quibusdam molestias. gracias
+363,19,09:57 10/09/2025,13,Amigos ¿lo dejamos para la tarde?
+364,39,04:07 04/09/2025,78,Amigos! acabo de empujar cambios. jajajaja
+365,18,10:05 16/09/2025,109,Equipo ¿lo dejamos para la tarde?
+366,14,05:18 19/09/2025,109,Actualicé el doc. Mañana lo termino.
+367,28,14:38 13/09/2025,164,Tempore la?orum earum laborum harum pariatur. run!
+368,47,04:26 13/09/2025,6,Equipo ¿cómo vamos con eso? xd
+369,27,03:41 14/09/2025,109,Buenas ¿les parece si lo vemos mañana?
+370,37,09:50 13/09/2025,80,Listo
+371,2,06:04 22/09/2025,56,Quam saepe ullam voluptatem modi. diisen
+372,43,11:06 09/09/2025,117,Hola ¿les parece si lo vemos mañana?
+373,43,11:26 09/09/2025,171,Listaylor
+374,4,05:46 10/09/2025,142,Nihil optio assumenda inventore sint delects ea.
+375,13,04:57 21/09/2025,22,Perfecto
+376,41,06:51 26/09/2025,19,Hey! creé el evento en ell calendario.
+377,28,14:48 13/09/2025,68,Chicos! escribí el resum?n del proyecto.
+378,32,07:58 16/09/2025,52,Equipo ¿quedamos a las 18:00?
+379,3,11:07 02/09/2025,179,Distinctio eveniet quis fugit uibusdam rerum dolorum aspernatur. saludos
+380,36,11:10 22/09/2025,134,Quibusdam amet veritatis.
+381,13,04:59 21/09/2025,15,Equipo ¿les parece si lo vemos mañana?
+382,38,11:04 08/09/2025,158,Officiis quos officiis quidem veniam dicta accusantium corrupti.
+383,21,05:39 27/09/2025,150,Valee
+384,23,05:17 12/09/2025,193,Confirmado
+385,22,07:03 24/09/2025,31,Cerré la tarea pendiente. Lo veo en la tarde.
+386,25,05:28 26/09/2025,63,Labore beatae veniam iure ducimus.
+387,12,07:31 09/09/2025,200,Cumque non quibusdam beatae reprehenderit vitae autem ad est. abrazo
+388,13,05:01 21/09/2025,188,Buenas! agendé la reunión.
+389,27,03:42 14/09/2025,12,Chicos! escribí el resumen del proyecto.
+390,49,10:42 08/09/2025,172,Id quaerat asperiores porro occaecati.
+391,44,08:08 05/09/2025,67,Chicos ¿alguien puede revisar eso?
+392,48,06:12 13/09/2025,193,Creé el evento en el calendario. Lo veo en la tarde.
+393,26,08:15 05/09/2025,142,Entendido
+394,50,09:23 10/09/2025,195,Publiqué la encuesta. No estoy ni ahí. jaja
+395,8,04:11 19/09/2025,118,Possimus error placeat.
+396,7,09:55 23/09/2025,81,Hey! hice el backup. Slds.
+397,5,04:48 09/09/2025,12,Recusandae natus aliquam minus optio.
+398,18,10:07 16/09/2025,36,Ya
+399,11,04:59 04/09/2025,76,Agregué las notas al documento. No estoy ni ahí.
+400,14,05:19 19/09/2025,156,Perfecto
+401,9,09:34 20/09/2025,40,Sincronizé el repo. Lo presento el viernes.
+402,26,08:18 05/09/2025,136,Buenas ¿alguna novedad? XDDDD
+403,16,07:14 24/09/2025,132,Confi…mado
+404,50,09:25 10/09/2025,87,Ya
+405,36,11:40 22/09/2025,1,Si!cronizé el repo. Lo veo en la tarde.
+406,9,09:35 20/09/2025,40,Magni exercitationem sed. muuajajjaja
+407,42,10:53 04/09/2025,127,Hola ¿alguien puede revisar eso?
+408,22,07:05 24/09/2025,81,Cargué la planilla. Mañana lo termino.
+409,35,08:58 19/09/2025,153,De acuerdo
+410,8,04:16 19/09/2025,37,Perfecto
+411,28,14:51 13/09/2025,42,Sumé los cambios de ayer. Lo conversamos más rato. XD
+412,41,07:06 26/09/2025,19,Compartí la presentación. Lo rviso con calma.
+413,25,05:31 26/09/2025,63,Gente! mandé el link por correo.
+414,16,07:16 24/09/2025,85,Equipo! mandé el link por corrreo.
+415,28,14:56 13/09/2025,142,Organicé la lista de tareas. No estoy ni ahí.…jajajaja
+416,10,04:44 03/09/2025,138,Autem vero odio repudiandae. saludos
+417,31,11:40 03/09/2025,46,Gente! organicé la lista de tareas.
+418,9,09:36 20/09/2025,161,Hey ¿cómo vamos con eso?
+419,37,09:53 13/09/2025,81,Ipsa quasi vitae earum.
+420,26,08:19 05/09/2025,157,Probé la última versión. No estoy ni ahí.
+421,15,08:52 24/09/2025,142,Cargué la planilla. No estoy ni ahí.
+422,32,08:08 16/09/2025,10,Oye! armé un borrador. ¡gracias!.
+423,19,10:27 10/09/2025,55,Quo iure repudiandae nihil eum doloribus vel eius. run!
+424,41,07:16 26/09/2025,122,Queda así
+425,37,10:03 13/09/2025,130,Hola ¿alguna novedad? XD
+426,19,10:37 10/09/2025,61,Doloribus iure nostrum fugiat adipisci sed delectus distinctio reiciendis excepturi. slds
+427,5,04:51 09/09/2025,54,Buenas ¿les parece si lo vemos mañana?
+428,18,10:10 16/09/2025,47,Chicos! subí las fotos al grupo.
+429,32,08:13 16/09/2025,121,Praesentium eius ab veniam assumenda quam laborum quidem porro officia laudantium recusandae at.
+430,32,08:28 16/09/2025,10,Buenas! añadí los comentarios en el doc.
+431,16,07:19 24/09/2025,132,Ill. doloribus optio fuga mollitia. ¡gracias!
+432,32,08:33 16/09/2025,10,Incidunt quia ex praesentium earum dolorum blanditiis.
+433,11,06:59 04/09/2025,112,Hey ¿cómo vamos con eso?
+434,7,09:58 23/09/2025,69,Et quia veritatis porro deleniti. XD
+435,12,07:36 09/09/2025,77,Hola! actualicé el doc.
+436,32,08:34 16/09/2025,57,Subí el video. Lo reviso con calma.
+437,50,09:30 10/09/2025,108,Ok
+438,46,12:20 22/09/2025,99,Me parece
+439,4,06:46 10/09/2025,32,Preparé el acta de la reunión. Lo dejo listo hoy.
+440,45,07:32 10/09/2025,20,Eius nihil quis nisi voluptatem rerum eos.
+441,27,03:44 14/09/2025,40,Buenas! probé la última versión.
+442,25,05:34 26/09/2025,63,Oye! sumé los cambios de ayer.
+443,3,11:22 02/09/2025,57,Compartí la presentación. Mañana lo termino.
+444,11,07:14 04/09/2025,112,Gente! creé el evento en el calendario.
+445,40,05:10 23/09/2025,114,Debitis accusamus modi earum voluptate mollitia possimus commodi. jajaja
+446,33,11:59 05/09/2025,7,Chicos! organicé la lista de tarreas.
+447,46,12:23 22/09/2025,178,Queda así jajaja
+448,44,08:09 05/09/2025,197,Me parece jajaja
+449,43,11:29 09/09/2025,35,Aut accusamus eligendi laboriosam exercitationem vitae dolorum. porfa
+450,20,12:57 02/09/2025,188,Hola ¿alguien puede revisar eso?
+451,2,06:14 22/09/2025,60,Genial
+452,19,10:40 10/09/2025,13,Hola ¿quedamos a las 18:00?
+453,26,08:39 05/09/2025,170,Buenas! revisé los pendientes. Gracias.
+454,8,05:01 19/09/2025,103,Actualicé la base de datos. Lo presento el viernes.
+455,24,04:24 06/09/2025,68,Buenas! corrigí los errores del informe. muajajjaja
+456,6,08:24 25/09/2025,63,Listaylor
+457,38,11:06 08/09/2025,158,Beatae aperiam laudantium neque placeat corrupti repellat veniam assumenda dolorum nam impedit. porfa
+458,32,08:44 16/09/2025,121,Buenas! creé la tabla con los resultados.
+459,2,06:19 22/09/2025,60,Corrigí los errores del informe. No estoy ni ahí.
+460,22,07:08 24/09/2025,149,Chicos ¿quedamos a las 18:00?
+461,31,12:00 03/09/2025,189,Cargué la planilla. Lo conversa.os más rato.
+462,8,05:04 19/09/2025,110,Subí el archivo al drive. No estoy ni ahí. XD
+463,37,10:13 13/09/2025,85,Subí las fotos al grupo. Lo reviso con calma.
+464,31,12:05 03/09/2025,7,Hey! hicce el backup.
+465,23,05:37 12/09/2025,166,Ratione dolorem minima ipsum ipsam similique voluptatibus esse.
+466,33,12:19 05/09/2025,58,Amigos! revisé los pendientes. Saludos.
+467,27,03:47 14/09/2025,88,Equipo! revisé los pendientes. jajaja
+468,30,12:05 10/09/2025,64,Animi vero aut quis numquam eaque. jaja
+469,29,12:45 13/09/2025,10,Cerré la tarea pendiente. Lo veo en la tarde.
+470,10,04:47 03/09/2025,17,Equipo! preparé el acta de la reunión.
+471,46,12:25 22/09/2025,60,Culpa cupiditate asperiores a. slds kerí too
+472,46,12:55 22/09/2025,40,Chicos! probé la última versión. ¡gracias!.
+473,10,04:57 03/09/2025,30,Porro iusto adipisci enim eligendi similique architecto doloremque eaque.
+474,50,09:35 10/09/2025,98,Añadí los comentarios en el doc. Lo presento el viernes.
+475,36,12:10 22/09/2025,99,Subí el archivo al drive. Lo dejo listo hoy. muajajjaja
+476,44,08:11 05/09/2025,185,Buenas! agregué las notas al documento. jaja
+477,20,13:12 02/09/2025,109,Listaylor
+478,45,08:02 10/09/2025,82,Amigos! armé un borrador.
+479,46,12:56 22/09/2025,181,Amigos ¿lo dejammos para la tarde?
+480,41,07:36 26/09/2025,157,Nihil rem dicta beatae dolore corrupti eaque consequuntur animi recusandae nisi repudiandae.
+481,49,10:44 08/09/2025,137,Chicos! agregué las notas al documento. Porfa.
+482,34,03:51 14/09/2025,30,Configuré el acceso. Lo revis! con calma. XD
+483,4,07:31 10/09/2025,118,Terminé de editar el archivo. Lo presento el viernes.
+484,33,12:24 05/09/2025,165,Equipo ¿qué opinan?
+485,34,03:54 14/09/2025,30,Acabo de empujar cambios. Lo reviso con calma.
+486,23,05:40 12/09/2025,166,Hey ¿les parece si lo vemos mañana? wuajajajaja
+487,43,12:14 09/09/2025,136,Oye ¿lo dejamos para la tarde?
+488,9,09:38 20/09/2025,40,Oye! cerré la tarea pendiente.
+489,34,03:59 14/09/2025,67,Chicos ¿lo dejamos para la tarde?
+490,12,07:41 09/09/2025,83,Chicos! añadí los comentarios en el doc.
+491,8,05:09 19/09/2025,64,Amigos! escribí el resumen del proyecto. jajaaja
+492,4,07:32 10/09/2025,187,Perfecto
+493,16,07:22 24/09/2025,132,Compartí la presentación. Lo conversamos más rato.
+494,9,09:39 20/09/2025,161,Hola! terminé de editar el archivo. jajaja
+495,34,04:01 14/09/2025,30,Hola! agregué las notas al documento.
+496,44,08:16 05/09/2025,157,Actualicé el doc. Lo presento el viernes.
+497,36,13:10 22/09/2025,99,Queda así
+498,48,06:15 13/09/2025,70,Ipsa iusto esse illo earum molestiae isa. jaja
+499,36,14:10 22/09/2025,12,Equipo ¿qué opinan?
+500,34,04:02 14/09/2025,30,Gente ¿qué opinan? jaja
+501,37,10:23 13/09/2025,32,Queda así jajaja
+502,39,05:07 04/09/2025,74,Chicos ¿algien puede revisar eso?
+503,33,12:27 05/09/2025,85,Buenas! actualicé la base de datos.
+504,12,07:43 09/09/2025,196,Amigos! mandé el link por correo. wuajajajaja
+505,31,12:08 03/09/2025,189,Hola ¿cóómo vamos con eso?
+506,36,14:12 22/09/2025,30,Aliquam inventore eum dolorum at.
+507,42,11:13 04/09/2025,50,Terminé de edita… el archivo. Lo dejo listo hoy.
+508,43,12:17 09/09/2025,35,Gente ¿cómo vamos con eso?
+509,27,03:52 14/09/2025,130,Buenas! terminé de editar el archivo.
+510,38,11:36 08/09/2025,146,Confirmado
+511,16,07:24 24/09/2025,172,Chicos ¿les parece si lo vemos mañana?
+512,25,05:39 26/09/2025,41,Dejé la minuta en la carpeta. Mañana lo termino.
+513,47,04:36 13/09/2025,198,Gente ¿cómo vamos con eso?
+514,39,05:12 04/09/2025,78,Chicos ¿quedamos a las 18:00?
+515,33,12:32 05/09/2025,165,Buenas! envié la invitación. Porfa.
+516,11,07:15 04/09/2025,112,Hola! añadí los comentarios en el doc. Abrazo.
+517,32,08:46 16/09/2025,57,Listaylor
+518,10,05:07 03/09/2025,175,Me parecee jajajaja
+519,35,09:08 19/09/2025,153,Subí el archivo al drive. Lo presento el viernes.
+520,7,10:01 23/09/2025,59,Nesciunt accusantium quisquam reprehenderit nemo quis cupiditate maxime ipsam eius voluptatum ipsa repellendus. saludos
+521,39,05:22 04/09/2025,78,Agendé la reunión. Lo presento el viernes.
+522,40,05:11 23/09/2025,86,Buenas ¿alguien puede revisar eso? kerí too
+523,34,04:22 14/09/2025,67,Buenas! corrigí los errores del informe.
+524,36,14:27 22/09/2025,12,Queda así kerí too
+525,45,08:07 10/09/2025,70,Oye ¿quedamos a las 18:00?
+526,26,08:49 05/09/2025,142,Hola! creé el evento en el calendario. Run!.
+527,7,10:11 23/09/2025,9,Mandé el link por correo. Lo veo en la tarde. jaja
+528,9,09:40 20/09/2025,161,Equipo! creé el evento en el calendario. Slds.
+529,18,10:13 16/09/2025,119,Gente ¿quedamos a las 18:00?
+530,37,10:25 13/09/2025,32,Corrigí los errores del informe. Lo reviso con calma.
+531,47,04:51 13/09/2025,108,Iusto illum eum autem cum illum. saludos
+532,12,07:45 09/09/2025,28,Subí las fotos al grupo. No estoy ni ahí.
+533,47,04:52 13/09/2025,85,Enim veniam repellendus mollitia.
+534,40,05:12 23/09/2025,73,Equipo ¿alguien puede revisar eso?
+535,27,03:54 14/09/2025,109,At dolorum blanditiis quo.
+536,30,12:07 10/09/2025,33,Gente! probé la última versión. Saludos.
+537,25,05:49 26/09/2025,95,Repudiandae a sit iure amet.
+538,27,04:04 14/09/2025,126,Subí el video. Lo presento el viernes. jajaja
+539,48,07:00 13/09/2025,57,Gente ¿qué opinan?
+540,27,04:05 14/09/2025,12,Me parece jajaja
+541,23,06:00 12/09/2025,68,Facere quidem numquam quis dignissimos molestias unde ipsa praesentium commodi.
+542,26,08:54 05/09/2025,35,Equipo ¿alguna novedad?
+543,3,11:23 02/09/2025,27,Queda así
+544,46,13:16 22/09/2025,60,Organicé la lista de tareas. Lo dejo listo hoy.
+545,18,10:15 16/09/2025,115,Equipo ¿alguien puede revisar eso?
+546,22,07:10 24/09/2025,11,Agendé la reunión. Lo presento el viernes.
+547,33,12:34 05/09/2025,90,Gente! probé la última versión. Saludos.
+548,8,05:54 19/09/2025,37,Hey! sumé los cambios de ayer. Gracias.
+549,22,07:40 24/09/2025,21,Non dolores culpa mollitia mollitia at voluptatibus totam itaque blanditiis rerum.
+550,34,04:25 14/09/2025,67,Buenas! dejé la minuta en la carpeta.
+551,4,07:35 10/09/2025,76,Ut eos provident impedit laboriosam iusto itaque corporis deleniti nobis quia consequatur. porfa
+552,46,13:17 22/09/2025,39,Hola ¿lo dejamos para la tarde?
+553,13,05:03 21/09/2025,18,Equipo ¿lo dejamos para la tarde?
+554,28,15:11 13/09/2025,142,Amigos ¿qué hora prefieren?
+555,38,11:38 08/09/2025,146,Perfecto
+556,26,08:55 05/09/2025,3,Eius ratione impedit. gracias
+557,42,11:18 04/09/2025,57,Hey ¿qué hora prefieren?
+558,5,04:52 09/09/2025,72,Vale
+559,42,11:21 04/09/2025,99,Equipo ¿lo dejamos para la tarde?
+560,18,10:16 16/09/2025,109,Listaylor
+561,38,11:48 08/09/2025,158,Terminé de editar el archivo. Lo reviso con calma.
+562,33,12:49 05/09/2025,165,Eaque a quas saepe neque optio sint ipsum.
+563,12,07:48 09/09/2025,96,Amigos! cargué la planilla. wuajajajaja
+564,22,07:42 24/09/2025,150,Amigos ¿qué hora prefieren?
+565,25,05:52 26/09/2025,41,Ok xd
+566,49,10:59 08/09/2025,101,Amigos ¿alguien puede revisar eso? XDDDD
+567,3,11:28 02/09/2025,56,Exercitationem mollitia molestiae iste. slds muajajjaja
+568,17,05:12 15/09/2025,109,Me paece
+569,32,10:16 16/09/2025,57,Mandé el link por correo. Lo dejo listo hoy.
+570,46,13:19 22/09/2025,40,Escribí el resumen del proyecto. Lo presento el viernes.
+571,35,09:18 19/09/2025,112,Equipo ¿alguna novedad?
+572,30,12:10 10/09/2025,92,Gente ¿les parece si lo vemos mañana? jajajaja
+573,32,10:17 16/09/2025,52,Sit voluptatem dolores fugit sequi illum et labore totam fugit. gracias
+574,40,05:32 23/09/2025,131,Probé la última versión. Lo conversamos más rato.
+575,17,05:27 15/09/2025,25,Amigos! armé un borrador. Diisen.
+576,41,07:38 26/09/2025,117,Gente! creé el evento en el calendario. Porfa.
+577,42,11:31 04/09/2025,200,Hey ¿qué opinan?
+578,36,14:29 22/09/2025,112,Perfecto XDDDD
+579,16,07:25 24/09/2025,9,Subí las fotos al grupo. Lo conversamos más rato.
+580,25,06:07 26/09/2025,41,Listo
+581,5,05:12 09/09/2025,21,Entendido
+582,18,10:36 16/09/2025,47,Estamos clarens
+583,30,12:25 10/09/2025,94,Entndido
+584,26,09:55 05/09/2025,68,Libero alias magnam. kerí too
+585,18,10:46 16/09/2025,72,Ok
+586,9,09:50 20/09/2025,29,Buenas ¿qué hora prefieren?
+587,17,06:57 15/09/2025,148,Hice el backup. Lo conversamos más rato.
+588,7,10:12 23/09/2025,59,De acuerdo
+589,50,09:36 10/09/2025,195,Buenas ¿alguien puede revisar eso? xd
+590,37,10:35 13/09/2025,105,Hey ¿qué opinan? muajajjaja
+591,10,05:37 03/09/2025,120,Envié la invitación. Lo dejo listo hoy.
+592,14,05:21 19/09/2025,133,Hey ¿qué hora prefieren?
+593,37,10:36 13/09/2025,171,Perfecto
+594,31,12:28 03/09/2025,46,Subí el video. Lo veo en la tarde.
+595,25,06:09 26/09/2025,95,Me parece
+596,45,08:22 10/09/2025,86,Perfecto
+597,9,09:55 20/09/2025,29,Listaylor
+598,4,07:36 10/09/2025,138,Ok
+599,44,08:21 05/09/2025,197,Gente! dejé la minuta en la carpeta. Porfa. xd
+600,7,10:32 23/09/2025,69,Me parece
+601,25,06:29 26/09/2025,63,Oye ¿alguien.puede revisar eso?
+602,8,05:59 19/09/2025,191,Me parece
+603,13,05:18 21/09/2025,18,Revisé los pendientes. No estoy ni ahí.
+604,31,12:38 03/09/2025,172,Ex aut sapiente aut tenetur accusamus.
+605,44,08:26 05/09/2025,115,Cerré la tarea pendiente. Lo reviso con calma.
+606,22,07:45 24/09/2025,81,Amigos! creé la tabla con los resultados.
+607,15,09:07 24/09/2025,57,Illum omnis culpa iusto. run!
+608,48,09:00 13/09/2025,193,Preparé el acta de la reunión. Lo veo en la tarde.
+609,21,05:41 27/09/2025,123,Gente ¿cómo vamos con eso? XDDDD
+610,10,05:40 03/09/2025,120,Armé un borrador. Lo revi!o con calma.
+611,48,09:15 13/09/2025,100,Buenas! corrigí los errores del informe.
+612,8,06:00 19/09/2025,138,Excepturi possimus officiis sequi sequi similique. gracias
+613,29,13:30 13/09/2025,140,Estamos clarens
+614,40,05:42 23/09/2025,156,Oye! agregué las notas al documento.
+615,22,08:00 24/09/2025,108,Queda así
+616,30,12:35 10/09/2025,144,Armé un borrador. Lo conversamos más rato.
+617,10,05:41 03/09/2025,136,Dejé la minuta en la carpeta. Lodejo listo hoy.
+618,46,13:34 22/09/2025,60,Probé la última versión. Lo conversamos más rato.
+619,37,12:36 13/09/2025,77,Armé un borrador. Mañana lo termino.
+620,45,08:23 10/09/2025,113,Organicé la lista de tareas. Lo reviso con calma.
+621,43,12:37 09/09/2025,117,Genial
+622,30,12:36 10/09/2025,27,Listaylor
+623,11,07:16 04/09/2025,76,De acuerdo
+624,20,13:15 02/09/2025,68,Veritatis occaecati suscipit laborum molestiae nulla. gracias
+625,15,09:12 24/09/2025,151,Hey! sumé los cambios de ayer. jaja
+626,44,08:28 05/09/2025,185,Vale
+627,5,05:22 09/09/2025,163,Ya
+628,44,08:58 05/09/2025,193,Listaylor
+629,26,11:25 05/09/2025,27,Genial
+630,7,10:34 23/09/2025,15,Occaecati ullam voluptatum quia inventore atque odio. xd
+631,21,05:46 27/09/2025,136,Oye! organicé la lista de tareas.
+632,34,04:45 14/09/2025,67,Amigos! sincronizé el repo.
+633,19,10:41 10/09/2025,193,Ipsam possimus temporibus aliquid recusandae eos. diisen
+634,42,11:34 04/09/2025,38,Creé el evento en el calendario. Lo reviso con calma.
+635,36,14:31 22/09/2025,131,Me parece
+636,10,05:56 03/09/2025,120,Inventore doloribus illum placeat debitis. slds
+637,12,07:49 09/09/2025,96,Subí el video. Mañana lo termino.
+638,11,07:31 04/09/2025,76,Aspernatur sit nulla dolores totam.
+639,42,11:35 04/09/2025,168,Dale
+640,41,07:40 26/09/2025,19,Armé un borrador. Lo dejo listo hoy.
+641,24,04:39 06/09/2025,19,Preparé el acta de la reunión. No estoy ni ahí.
+642,25,06:59 26/09/2025,95,ctualicé el doc. Lo veo en la tarde.
+643,28,15:26 13/09/2025,68,Doloremque odit itaque pariatur tempore iure enim. slds
+644,41,07:55 26/09/2025,157,Culpa ipsam exercitationem nesciunt odit incidunt. gracias
+645,48,09:18 13/09/2025,189,Itaque error voluptatum sequi autem fugit facere.
+646,4,07:37 10/09/2025,76,Sincronizé el repo. Mañana lo termino.
+647,36,16:31 22/09/2025,49,Ya
+648,5,05:24 09/09/2025,198,Gente ¿qué hora prefieren?
+649,41,08:10 26/09/2025,58,Voluptatibus eos voluptate omnis earum natus.
+650,9,10:15 20/09/2025,29,Tenetur quia rerum temporibus quod.
+651,3,11:31 02/09/2025,2,Non explicabo odio numquam. wuajajajaja
+652,47,04:53 13/09/2025,196,Hola! revisé los pendintes.
+653,48,09:28 13/09/2025,57,Me parece
+654,23,06:30 12/09/2025,193,Occaecati temporibus officia.
+655,28,15:28 13/09/2025,42,Hey! agregué las notas al documento. jajajaja
+656,2,06:20 22/09/2025,130,Corrigí los errores del informe. Lo dejo listo hoy.
+657,33,12:51 05/09/2025,7,Hey! creé el evento en el calendario. Gracias.
+658,41,08:15 26/09/2025,117,Ratione alias facilis. graciias
+659,44,09:01 05/09/2025,116,Listo
+660,45,08:33 10/09/2025,74,Buenas! envié la invitacón.
+661,22,08:30 24/09/2025,11,At eos quibusdam cupiditate consequatur molestiae voluptas. porfa
+662,46,13:37 22/09/2025,99,Probé la última versión. Lo presento.el viernes.
+663,32,11:02 16/09/2025,52,Magnam earum cum totam velit voluptas eos. abrazo
+664,41,09:00 26/09/2025,63,Hey! preparé el acta de la reunión.
+665,41,09:15 26/09/2025,7,Rem iusto asp…riores quidem. run!
+666,28,15:31 13/09/2025,164,Escribí el resumen del proyecto. Lo veo en la tarde. xd
+667,18,10:48 16/09/2025,49,Subí las fotos al grupo. No estoy ni ahí. wuajajajaja
+668,48,09:38 13/09/2025,125,Dale
+669,45,09:18 10/09/2025,86,Buenas! corrigí los errores del informe. Run!.
+670,23,06:50 12/09/2025,118,Subí el video. Mañana lo termino.
+671,48,09:40 13/09/2025,70,Probé la última versión. Lo dejo listo hoy.
+672,24,06:09 06/09/2025,19,Oye ¿lo dejamos para la tarde?
+673,12,07:51 09/09/2025,139,Estamos clarens
+674,22,08:31 24/09/2025,145,Corrigí los errores del informe. Lo veo en la tarde.
+675,21,05:51 27/09/2025,123,Genial
+676,7,10:39 23/09/2025,69,Buenas! probé la última versión. Run!.
+677,22,08:51 24/09/2025,64,Me parece
+678,48,09:43 13/09/2025,193,Hola! subí el archivo al drive. Gracias.
+679,7,10:44 23/09/2025,81,Me parece
+680,3,11:46 02/09/2025,25,Chicos! subí las fotos al grupo. ¡gracias!.
+681,30,12:37 10/09/2025,91,Perfecto kerí too
+682,15,09:15 24/09/2025,19,Buenas ¿qué hora prefieren?
+683,21,06:21 27/09/2025,48,Dejéé la minuta en la carpeta. Lo veo en la tarde. jaja
+684,29,13:32 13/09/2025,140,Actualicé la base de datos. Lo presento el viernes.
+685,41,09:17 26/09/2025,63,Similique quam voluptatem voluptas rem facilis rtione.
+686,38,11:49 08/09/2025,50,Eaque commodi fuga quibusdam ea. run!
+687,31,12:40 03/09/2025,189,Gente ¿lo dejamos para la tarde?
+688,44,09:21 05/09/2025,67,Reprehenderit velit autem doloremque ad sunt natus. porfa
+689,31,12:41 03/09/2025,64,Buenas! preparé el acta de la reunión. Porfa.
+690,21,06:24 27/09/2025,21,Armé un borrador. Lo dejo listo hoy.
+691,32,11:03 16/09/2025,57,Amigos ¿quedamos a las 18:00?
+692,46,13:39 22/09/2025,60,Hey! revisé los pendientes.
+693,30,12:39 10/09/2025,79,Sumé los cambios de ayer. Mañana lo termino.
+694,26,11:30 05/09/2025,142,Hola! probé la última versión.
+695,42,11:50 04/09/2025,50,Hey! configuré el acceso. Run!.
+696,22,08:56 24/09/2025,153,Dolore aperiam reprehenderit tenetur error illum consequuntur veniam.
+697,24,06:19 06/09/2025,19,Amigos! cargué la planilla. ¡gracias!. kerí too
+698,2,06:21 22/09/2025,130,Oye ¿qué opinan?
+699,42,12:05 04/09/2025,2,Creé el evento en el calendario. Lo dejo listo hoy.
+700,10,06:01 03/09/2025,98,Voluptatum blanditiis doloremque modi harum.
+701,44,09:22 05/09/2025,141,Ok XDDDD
+702,10,06:02 03/09/2025,17,Perferendis quia veniam in quia culpa impedit aut laudantium illum. diisen
+703,29,13:52 13/09/2025,10,Chicos ¿cómo v!mos con eso?
+704,47,04:55 13/09/2025,198,Adipisci fuga ipsam veritatis sequi aut placeat. gracias
+705,9,10:20 20/09/2025,161,Buenas! subí el video.
+706,19,10:46 10/09/2025,103,Sumé los cambios de ayer. Mañana lo termino.
+707,44,09:37 05/09/2025,130,Actualicé la base de datos. Lo reviso con calma.
+708,36,16:36 22/09/2025,112,Corrigí los errores del informe. Lo dejo listo hoy.
+709,20,13:16 02/09/2025,179,Gente! subí el video.
+710,39,05:27 04/09/2025,78,Gente! publiqué la encuesta. XDDDDD
+711,19,10:47 10/09/2025,61,Gente ¿les parece si lo vemos mañana?
+712,39,05:37 04/09/2025,78,Buenas ¿qué hora prefieren?
+713,13,05:23 21/09/2025,33,Listo
+714,11,07:46 04/09/2025,117,Compartí la presentación. Lo veo en la tarde.
+715,12,08:01 09/09/2025,164,Temporibusofficia aperiam eius voluptas.
+716,27,04:07 14/09/2025,24,Chicos! compartí la presentación.
+717,35,09:19 19/09/2025,153,At distinctio odit voluptas amet ex voluptates ratione. abrazo
+718,4,08:22 10/09/2025,187,Amigos! sumé los cambios de ayer.
+719,19,10:49 10/09/2025,167,Envié la invitación. No estoy ni ahí.
+720,45,09:23 10/09/2025,183,Buenas! subí las fotos al grupo.
+721,2,06:22 22/09/2025,155,Entendido
+722,18,10:49 16/09/2025,115,Oye! sumé los cambios de ayer.
+723,42,12:20 04/09/2025,99,Listaylor
+724,50,09:46 10/09/2025,65,Architecto quisquam dignissimos dolor.
+725,31,13:26 03/09/2025,172,Gente! terminé de editar el archivo. Abrazo.
+726,19,10:52 10/09/2025,26,Oye ¿qué hora prefieren?
+727,30,12:44 10/09/2025,11,Eveniet corporis tempore a similique corporis consectetur. run! kerí too
+728,15,10:00 24/09/2025,87,Hola! dejé la minuta en la carpeeta. ¡gracias!.
+729,43,13:22 09/09/2025,117,Gente! actualicé el doc.
+730,34,04:50 14/09/2025,67,Subí el video. No estoy ni ahí.
+731,26,11:31 05/09/2025,170,Organicé la lista de tareas. Lo reviso con calma.
+732,42,12:23 04/09/2025,179,Reiciendis beatae sint consectetur facere. run!
+733,14,05:26 19/09/2025,55,Nihil accusamus eaque consectetur in beatae aperiam ipsum. diisen
+734,24,06:20 06/09/2025,130,Chicos! actualicé el doc. Gracias.
+735,33,12:52 05/09/2025,103,Agregué las notas al documento. Lo conversamos más rato.
+736,30,12:45 10/09/2025,33,Estamos clarens
+737,15,10:03 24/09/2025,19,Buens! subí el video.
+738,43,13:27 09/09/2025,117,Maiores autem magnam veniam. slds jaja
+739,8,06:10 19/09/2025,93,Quas tenetur. XDDDD
+740,41,09:18 26/09/2025,7,Equipo ¿quedamos a las 18:00?
+741,38,11:50 08/09/2025,45,Error officia adipisci voluptatum sed incidunt autem quae ipsam tempore eum corporis. gracias
+742,9,10:21 20/09/2025,40,Hice el backup. Lo reviso con calma.
+743,39,05:38 04/09/2025,78,Amigos! terminé de editar el archivo. Run!. jaja
+744,7,10:54 23/09/2025,184,Eius odio molestias eveniet voluptatum.
+745,10,06:03 03/09/2025,98,Hey ¿quedamos a las 18:00?
+746,46,13:49 22/09/2025,39,Hola! escribí el resumen del proyecto.
+747,37,12:38 13/09/2025,85,Eos magni inventore recusandae beatae.
+748,34,04:55 14/09/2025,30,Chicos! mandé el link por correo. Porfa.
+749,32,11:05 16/09/2025,57,Oye! dejé la minuta en la carpeta.
+750,23,07:10 12/09/2025,193,Oye! revisé los pendientes.
+751,3,11:51 02/09/2025,27,Vale
+752,22,08:58 24/09/2025,159,Equipo! armé un borrado.
+753,14,05:56 19/09/2025,80,De acuerdo
+754,11,08:31 04/09/2025,112,Compartí la presentación. Lo reviso con calma. xd
+755,19,10:55 10/09/2025,24,De acuerdo jajjaja
+756,28,15:46 13/09/2025,68,Gente ¿cómo vamos con eso?
+757,41,09:28 26/09/2025,38,Armé un borrador. Mañana lo termino.
+758,15,10:23 24/09/2025,2,Amigos ¿qué opinan?
+759,16,08:10 24/09/2025,85,Quam dolor iste dolorem excepturi iste impedit atque incidunt. XDDDD
+760,34,04:58 14/09/2025,30,…ola ¿alguna novedad?
+761,15,10:26 24/09/2025,6,Hola ¿les parece si lo vemos mañana?
+762,47,05:25 13/09/2025,100,Oye! envié la invitación. Slds.
+763,25,07:14 26/09/2025,41,Queda así wuajajajaja
+764,20,13:31 02/09/2025,143,Chicos! publiqué la encuesta.
+765,5,06:24 09/09/2025,42,Oye! revisé los pendientes. Run!.
+766,13,05:28 21/09/2025,137,Confirmado
+767,23,07:15 12/09/2025,34,Chicos! terminé de editar el archivo.
+768,19,10:57 10/09/2025,55,Genial
+769,9,10:36 20/09/2025,40,Gente! envié la invitación.
+770,6,08:54 25/09/2025,187,Acabo de empujar cambios. Lo conversamos más rato.
+771,6,08:55 25/09/2025,137,Dale
+772,35,09:20 19/09/2025,112,Añadí los comentarios en el doc. Lo dejo listo hoy.
+773,28,16:01 13/09/2025,190,Vale xd
+774,35,09:23 19/09/2025,112,Escribí el resumen del proyecto. Lo presento el viernes.
+775,44,09:40 05/09/2025,71,Sincronizé el repo. No estoy ni ahí.
+776,16,08:13 24/09/2025,172,Oye ¿cómo vamos con eso?
+777,12,08:16 09/09/2025,77,Buenas ¿c!mo vamos con eso?
+778,30,12:48 10/09/2025,92,Oye ¿lo dejamos para la tarde?
+779,30,14:18 10/09/2025,171,Revisé los pendientes. Mañana lo termino.
+780,11,09:16 04/09/2025,117,Confirmado
+781,43,13:32 09/09/2025,119,Buenas ¿alguna novedad?
+782,10,06:08 03/09/2025,185,A!igos ¿qué opinan?
+783,39,05:58 04/09/2025,78,Chicos! subí el archivo al drive. Run!.
+784,34,05:00 14/09/2025,67,Oye ¿lo dejamos para la tarde?
+785,29,13:55 13/09/2025,39,Genial
+786,37,12:40 13/09/2025,18,Fugiat corrupti ullam architecto rerum at atque qui.
+787,48,09:58 13/09/2025,140,Creé la tabla con los resultados. Lo dejo listo hoy.
+788,21,08:24 27/09/2025,131,Subí las fotos al grupo. Mañana lo termino.
+789,26,11:32 05/09/2025,168,Gente! creé el evento en el calendario. Run!.
+790,10,06:10 03/09/2025,98,Hey ¿les parece si lo vemos mañana?
+791,39,06:03 04/09/2025,74,Chicos! subí el archivo al drive.
+792,42,12:24 04/09/2025,109,Gente! creé el evento en el calendario. Saludos. XD
+793,6,09:10 25/09/2025,119,Actualicé la base de datos. Lo conversamos más rato.
+794,32,11:08 16/09/2025,98,Oye! cargué la planilla. Gracias. XDDDD
+795,10,06:11 03/09/2025,136,Amigos ¿lo dejamos para la tarde? XD
+796,6,09:12 25/09/2025,119,Hola! sumé los cambios de ayer.
+797,45,09:25 10/09/2025,74,Equipo! revisé los pendientes.
+798,10,06:13 03/09/2025,3,Amigos! subí las fotos al grupo.
+799,34,05:20 14/09/2025,30,Hola! creé el evento en el calendario. Porfa. jajajaja
+800,32,11:10 16/09/2025,121,Hey ¿lo dejamos para la tarde?
+801,49,11:00 08/09/2025,145,Confirmado xd
+802,15,12:26 24/09/2025,6,Terminé de editar el archivo. No estoy ni ahí. jaja
+803,50,09:47 10/09/2025,84,Estamos clarens
+804,32,11:55 16/09/2025,98,Perfecto
+805,9,10:38 20/09/2025,161,Nam nesciunt natus. jajajaja
+806,19,11:00 10/09/2025,125,Pariatur illum sit velit in totam amet enim est aut.
+807,8,06:15 19/09/2025,102,Gente! agendé la reunión.
+808,8,07:00 19/09/2025,64,Distinctio omnis dolore autem sapiente facilis quis nemo. slds
+809,13,07:28 21/09/2025,22,Preparé el acta de la reunión. Lo veo en la tarde.
+810,22,09:03 24/09/2025,146,Corrigí los errores del informe. No estoy ni ahí.
+811,48,09:59 13/09/2025,193,Compartí la presentación. Lo reviso con calma.
+812,45,09:27 10/09/2025,86,Cargué la planilla. Lo convers?mos más rato.
+813,13,09:28 21/09/2025,79,Revisé los pendientes. Lo conversamos más rato.
+814,7,10:55 23/09/2025,199,Actualicé la base de datos. Mañana lo termino.
+815,12,08:19 09/09/2025,130,Vale
+816,9,10:58 20/09/2025,29,Gente! terminé de editar el archivo.
+817,43,13:35 09/09/2025,171,Amigos! corrigí os errores del informe. XDDDD
+818,33,13:02 05/09/2025,7,Listo
+819,33,13:03 05/09/2025,198,De acuerdo
+820,41,09:29 26/09/2025,19,Estamos clarens
+821,31,13:28 03/09/2025,106,Preparé el acta de la reunión. Lo reviso con calma.
+822,36,16:37 22/09/2025,12,Amigos! sincronizé el repo.
+823,26,11:35 05/09/2025,170,Me parece
+824,47,05:30 13/09/2025,120,Confirmado
+825,38,11:55 08/09/2025,146,Configuré el acceso. Lo dejo listo hoy.
+826,12,08:20 09/09/2025,154,Amigos ¿lo dejamos para la tarde?
+827,5,06:34 09/09/2025,50,Genial
+828,3,11:54 02/09/2025,88,Organicé la lista de tareas. Lo conversamos más rato.
+829,17,07:07 15/09/2025,111,Cerré la taarea pendiente. Lo presento el viernes. XD
+830,36,16:38 22/09/2025,148,Amigos! actualicé la base de d.tos.
+831,22,09:08 24/09/2025,159,Hola ¿alguna novedad? xd
+832,34,05:21 14/09/2025,67,Amigos ¿qué opinan?
+833,6,09:42 25/09/2025,70,Gente ¿les parece si lo vemos mañana?
+834,16,08:28 24/09/2025,9,Actualicé la base de datos. Lo reviso con calma.
+835,35,09:26 19/09/2025,153,Hola ¿qué hora prefieren?
+836,44,09:42 05/09/2025,67,Sumé los cambios de ayer. Lo dejo listo hoy.
+837,13,09:38 21/09/2025,79,Agendé la reunión. Lo dejo listo hoy.
+838,49,11:02 08/09/2025,33,Amigos! cerré la tarea pendiente.
+839,25,07:15 26/09/2025,41,Queda así
+840,28,16:31 13/09/2025,42,Sapiente voluptate repellendus nostrum odit ad ut repudiandae eaque debitis. diisen
+841,12,08:35 09/09/2025,51,Chicos ¿alguien puede revisar eso? jaja
+842,21,08:29 27/09/2025,131,Ullam expedita delectus corporis omnis architecto. jajajaja
+843,3,12:14 02/09/2025,179,Buenas ¿les parece si lo vemos mañana?
+844,3,12:44 02/09/2025,57,De acurdo
+845,44,09:45 05/09/2025,130,At minus fugiat iste culpa est. porfa
+846,9,11:08 20/09/2025,161,Terminé de editar el archivo. Lo dejo listo hoy.
+847,17,07:08 15/09/2025,104,Quod necessitatibus assumenda amet culpa nulla.
+848,49,11:47 08/09/2025,104,Hola ¿cómo vamos con eso?
+849,28,17:01 13/09/2025,42,Me parece
+850,22,09:11 24/09/2025,108,Gente! sincronizé el repo. XDDDD
+851,21,08:39 27/09/2025,15,Earum optio.
+852,46,13:51 22/09/2025,181,Agregué las notas al documento. Lo presento el viernes.
+853,45,09:32 10/09/2025,113,Hey ¿quedamos a las 18:00? muajajjaja
+854,18,10:50 16/09/2025,36,Non impedit dolor maiores exercitationem beatae. slds
+855,43,13:55 09/09/2025,171,Hola ¿alguna novedad?
+856,23,07:18 12/09/2025,3,Laborum pariatur aliquid hic nobis.
+857,24,06:30 06/09/2025,130,Dignissimos veniam quisquam quisquam enim. gracias
+858,13,09:41 21/09/2025,137,Oye! comparrtí la presentación. ¡gracias!.
+859,35,10:56 19/09/2025,112,Ab quia cupiditate fugit provident magnam rerum. diisen
+860,32,11:57 16/09/2025,10,Equipo! publiqué la encuesta. Porfa.
+861,26,11:37 05/09/2025,35,Asperiores similique aliquam accusantium ullam similique nemo nemo.
+862,31,13:30 03/09/2025,106,Enim illo vitae cupiditate. diisen
+863,25,08:15 26/09/2025,95,Confirmado
+864,31,13:45 03/09/2025,64,Confirmado
+865,19,11:15 10/09/2025,43,Amigos ¿qué opinan?
+866,20,13:46 02/09/2025,49,Creé el evento en el calendario. No estoy ni ahí. XD
+867,17,07:11 15/09/2025,104,Hey ¿alguien puede revisar eso? jajajaja
+868,46,14:06 22/09/2025,178,Amigos! subbí el video. kerí too
+869,32,13:57 16/09/2025,121,Itaque porro facere ipsa autem i…sa id aspernatur sit quia dolore quod asperiores.
+870,21,08:49 27/09/2025,41,Me parece jajajaja
+871,34,06:06 14/09/2025,67,Minus deserunt quod. diisen jajaja
+872,10,06:43 03/09/2025,142,Quas reprehenderit repellendus dolores corporis deserunt nobis quis omnis. diisen
+873,41,09:34 26/09/2025,12,Agendé la reunión. Lo reviso con calma.
+874,11,09:46 04/09/2025,1,Hey! dejé la minuuta en la carpeta. Gracias.
+875,47,05:33 13/09/2025,100,Veritatis occaecati iure natus neque. abrazo
+876,31,13:46 03/09/2025,189,Buenas! revisé los pendientes. Saludos.
+877,12,08:55 09/09/2025,154,Añadí los comentarios en el doc. Lo dejo listo hoy.
+878,2,06:25 22/09/2025,60,Estamoos clarens
+879,20,15:46 02/09/2025,40,Genial
+880,22,09:12 24/09/2025,64,Hice el backup. Lo presento el viernes.
+881,19,11:18 10/09/2025,141,De acuerdo
+882,48,10:00 13/09/2025,125,Officia v…luptates eum voluptas et ipsam iusto occaecati recusandae nihil explicabo asperiores iure.
+883,7,10:57 23/09/2025,103,Amigos ¿alguien puede revisar eso? xd
+884,27,04:17 14/09/2025,163,Animi rerum asperiores. run!
+885,21,08:59 27/09/2025,18,Hola ¿lo dejamos para la tarde?
+886,26,11:39 05/09/2025,170,Hola! terminé de editar el archivo. Abrazo.
+887,29,13:56 13/09/2025,20,Hey ¿qué opinan?
+888,33,13:13 05/09/2025,72,Agregué las notas al documento. Lo conversamos más rato.
+889,32,13:58 16/09/2025,121,Perfecto
+890,20,15:47 02/09/2025,125,Ok
+891,28,17:06 13/09/2025,164,Gente! organicé la lista de taareas. Porfa.
+892,13,09:42 21/09/2025,188,Hice el backup. Lo reviso con calma.
+893,50,09:50 10/09/2025,195,Nostrum magni iure mollitia.
+894,13,09:57 21/09/2025,62,Hola! creé el evento en el calendario. jaaja
+895,31,13:49 03/09/2025,172,Hey! agregué las notas al documento.
+896,45,09:52 10/09/2025,70,Dale jajaja
+897,46,14:36 22/09/2025,60,Buenas ¿qué opinan?
+898,36,16:39 22/09/2025,30,Buenas! corrigí los errores del informe. Porfa.
+899,46,16:06 22/09/2025,178,Cargué la planilla. Lo conversamos más rato.
+900,38,11:56 08/09/2025,174,Queda así
+901,28,17:21 13/09/2025,190,Configuré el acceso. Lo reviso con calma. muajajjaja
+902,39,06:05 04/09/2025,74,Ok
+903,6,10:12 25/09/2025,63,Corrigí los errores del informe. Mañana lo termino.
+904,24,06:45 06/09/2025,130,Perfecto
+905,30,14:23 10/09/2025,94,Añadí los comentarios en el doc. Lo reviso con calma.
+906,47,05:38 13/09/2025,179,Ipsum repellat officiis eum labore.
+907,45,10:12 10/09/2025,61,Buenas! sumé los cambios de ayer. Porfa.
+908,14,06:06 19/09/2025,55,Ya
+909,17,07:16 15/09/2025,169,Vero ipsum repellat saepe.
+910,34,06:26 14/09/2025,30,Hola ¿qué opinan? xd
+911,23,07:38 12/09/2025,166,Gente! sincronizé el repo. Porfa.
+912,30,14:26 10/09/2025,144,Magnam cupiditate.
+913,8,07:05 19/09/2025,165,Listo
+914,12,09:10 09/09/2025,40,Hey! subí el video.
+915,10,07:13 03/09/2025,17,Creé el evento en el calendario. No estoy ni ahí.
+916,32,14:00 16/09/2025,121,Perfecto
+917,25,08:16 26/09/2025,95,Amigos! publiqué la encuesta. Diisen.
+918,31,13:54 03/09/2025,64,Oye! envié la invitación. Gracias.
+919,6,10:15 25/09/2025,137,Terminé de editar el archivo. Lo veo en la tarde.
+920,4,08:52 10/09/2025,118,Queda así
+921,35,10:59 19/09/2025,153,Provident voluptatibus minima non facilis ullam harum quo.
+922,24,07:05 06/09/2025,19,Amet occaecati ex ex nam harum dolorum sed vitae nobis.
+923,15,12:36 24/09/2025,19,Hey! hice el backup. Diisen.
+924,7,11:02 23/09/2025,197,Buenas ¿qué hora prefieren?
+925,21,09:02 27/09/2025,21,Oye! subí el archivo al drive.
+926,21,09:05 27/09/2025,153,Subí el video. Mañana lo termino.
+927,34,06:27 14/09/2025,67,Hola! envié la invitación. Gracias.
+928,49,11:52 08/09/2025,137,Ex nesciunt consequuntur expedita voluptas praesentium hic.
+929,21,09:15 27/09/2025,129,Quae assumenda nam officia eveniet consectetur praesentium veniam voluptatum totam.
+930,17,07:19 15/09/2025,105,Creé la tabla con los resultados. No estoy niahí.
+931,28,17:22 13/09/2025,164,Actualicé el doc. Lo conversamos ás rato.
+932,39,06:35 04/09/2025,74,Escribí el resumen del proyecto. Lo conversamos más rato.
+933,33,14:43 05/09/2025,90,Officia incidunt facere.
+934,47,06:08 13/09/2025,198,V?le
+935,9,11:38 20/09/2025,161,Geenial
+936,25,10:16 26/09/2025,73,Hey ¿les parece si lo vemos mañana?
+937,39,06:36 04/09/2025,74,Est veritatis exercitationem quisquam deleniti voluptatum. run! kerí too
+938,4,08:57 10/09/2025,21,Hey ¿lo dejamos para la tarde?
+939,48,10:01 13/09/2025,125,Queda así
+940,30,14:56 10/09/2025,79,Amigos ¿quedamos a las 18:00?
+941,36,17:39 22/09/2025,112,Aspernatur sapiente aut quo rerum sunt alias. porfa
+942,38,12:16 08/09/2025,146,Hola! escribí el resumen del proyecto.
+943,38,13:16 08/09/2025,142,Terminé de editar el archivo. Lo conversam!s más rato.
+944,3,13:04 02/09/2025,179,Hey ¿alguien puede revisar eso?
+945,27,04:18 14/09/2025,12,Soluta nulla nisi culpa. slds
+946,22,09:14 24/09/2025,159,Listo
+947,13,10:12 21/09/2025,21,Yaa
+948,3,13:06 02/09/2025,57,Dale
+949,26,11:40 05/09/2025,168,Chicos ¿alguna novedad?
+950,9,11:39 20/09/2025,40,Creé el evento en el calendario. Mañana lo termino.
+951,16,08:30 24/09/2025,18,Rerum quo repellat cumque ipsa illum perspiciatis. slds
+952,7,11:07 23/09/2025,146,Buenas! organicé la lista de tareas.
+953,29,13:59 13/09/2025,10,Entendido
+954,43,13:56 09/09/2025,35,Voluptas nostrum quibusdam quos doloremque dolores. ¡gracias!
+955,24,07:15 06/09/2025,138,Dejé la minuta en la carpeta. Lo veo en la tarde.
+956,21,09:18 27/09/2025,13,Dale
+957,29,14:09 13/09/2025,177,Temporibus deserunt perspiciatis necessitatibus ipsam quo quod.
+958,50,09:53 10/09/2025,72,Equipo ¿lo dejamos para la tarde?
+959,23,08:23 12/09/2025,62,!k
+960,28,17:52 13/09/2025,114,Amigos! configuré el acceso. Porfa.
+961,44,09:55 05/09/2025,71,Amigos ¿lo dejamos para la tarde?
+962,46,16:07 22/09/2025,39,Chicos ¿alguna novedad? jaja
+963,45,10:14 10/09/2025,61,Minima vitae repellendus reiciendis consequuntur dolorum odit soluta mollitia aut sapiente. saludos
+964,25,10:18 26/09/2025,63,Eligendi quis ear…m temporibus corporis ipsa. muajajjaja
+965,12,09:12 09/09/2025,83,Buenas! acabo de empujar cambios.
+966,38,13:46 08/09/2025,108,Gente! probé la última versión. kerí too
+967,45,10:44 10/09/2025,82,Ya
+968,5,06:37 09/09/2025,26,Repellendus suscipit ut impedit id. run!
+969,4,08:58 10/09/2025,138,Doloremque voluptatum fugiat adipisci ut saepe officiis recusandae. gracias
+970,38,15:46 08/09/2025,142,Amigos ¿alguien puede revisar eso?
+971,23,08:24 12/09/2025,172,Oye! corrigí los errores del informe. Gracias.
+972,23,08:26 12/09/2025,172,Subí las fotos al grupo. No estoy ni ahí. wuajajajaja
+973,17,07:39 15/09/2025,63,Hola! escribí el resumen del proyecto. Porfa. jaja
+974,26,12:10 05/09/2025,142,Buenas! dejé la minuta en la carpeta.
+975,42,12:25 04/09/2025,28,Oye! agregué las notas al documento.
+976,28,18:22 13/09/2025,68,Oye! envié la invitación. Diisen.
+977,23,09:11 12/09/2025,19,Hey! preparé el acta de la reunión. Saludos. jaja
+978,6,10:35 25/09/2025,119,De acuerdo kerí too
+979,28,18:37 13/09/2025,190,Armé un borrador. L… veo en la tarde.
+980,34,06:29 14/09/2025,67,Alias totam iusto rerum quis iusto nostrum. run!
+981,25,10:23 26/09/2025,63,Buenas! dejé la minuta en la carpeta. Gracias.
+982,14,06:26 19/09/2025,139,Hey ¿alguna novedad?
+983,39,06:46 04/09/2025,74,Agendé la reunión. Mañana lo termino.
+984,4,09:00 10/09/2025,142,Vale
+985,15,12:41 24/09/2025,151,Equipo! publiqué la encuesta.
+986,2,06:26 22/09/2025,130,Hola ¿cómo vamos con eso?
+987,39,06:47 04/09/2025,74,Vale
+988,18,10:53 16/09/2025,138,Agendé la reunión. Lo veo en la tarde. XD
+989,3,13:09 02/09/2025,72,Hola! subí las fotos al grupo.
+990,25,11:08 26/09/2025,95,Accusantiuum dolor corrupti velit non.
+991,14,06:31 19/09/2025,139,Equipo! sumé los cambios de ayer. Saludos.
+992,39,07:17 04/09/2025,78,Buenas ¿lo dejamos para la tarde?
+993,19,11:48 10/09/2025,139,Beatae enim error aliquid in recusandae itaque. porfa
+994,41,09:35 26/09/2025,51,Equipo ¿alguna novedad?
+995,47,06:13 13/09/2025,53,Corrigí los errores del informe. Lo conversamos más rato.
+996,39,07:19 04/09/2025,78,Saepe libero modi odio nemo.
+997,26,12:11 05/09/2025,35,Eos a explicabo necessitatibus. jajaja
+998,35,11:01 19/09/2025,153,Me parece
+999,31,13:57 03/09/2025,189,Optio assumenda voluptate architecto. gracias
+1000,43,13:59 09/09/2025,117,Listaylor
