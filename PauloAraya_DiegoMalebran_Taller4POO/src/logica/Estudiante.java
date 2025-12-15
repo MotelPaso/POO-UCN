@@ -1,0 +1,177 @@
+/* Paulo Araya Rojo
+ * 21.918.080-2
+ * Diego Malebran
+ * 21.661.740-1
+ * ICCI 
+ */
+
+
+package logica;
+
+import java.util.ArrayList;
+
+public class Estudiante extends Usuario {
+	private String rut;
+	private String nombre;
+	private String carrera;
+	private String semestre;
+	private ArrayList<Curso> ramosCursados;
+	private ArrayList<Certificacion> certificaciones;
+
+	public Estudiante(String correo, String contraseña, String rut, String nombre, String carrera, String semestre) {
+		super(correo, contraseña, "estudiante");
+		this.rut = rut;
+		this.nombre = nombre;
+		this.carrera = carrera;
+		this.semestre = semestre;
+		this.ramosCursados = new ArrayList<>();
+		this.certificaciones = new ArrayList<>();
+	}
+
+	/**
+     * Genera un resumen en formato HTML con la información del estudiante y 
+     * el estado de sus ramos cursados.
+     * @return Array de Strings donde 
+     * 			 [0] info personal
+     * 			 [1] avance curricular.
+     */
+	public String[] getInformacion() {
+		
+		String ramos = "<html>Avance Curricular:<br>";
+		for (Curso c : ramosCursados) {
+			ramos += c.getNombre() + "\t\t | Estado: " + c.getEstado();
+			ramos += (c.getNotaFinal() != 0.0) ? "\tNota: " + c.getNotaFinal() + "<br>" : "<br>";
+		}
+		ramos += "</html>";
+		
+		return new String[]{"<html>" + nombre 
+				+ "<br>Rut: "+ rut
+				+ "<br>Carrera: "+ carrera 
+				+ "<br>Semestre: " + semestre 
+				+ "<br> </html>", ramos};
+	}
+	/**
+     * Calcula los promedios del estudiante, tanto el general como por semestre.
+     * @return Array de doubles. 
+     * 			 [0] promedio total, 
+     * 			 [i] semestre i.
+     */
+	public double[] getPromedios() {
+		
+		
+		double[] promedios = new double[Integer.parseInt(semestre) + 1];
+		int[] numCursosSemestre = new int[Integer.parseInt(semestre) + 1 ];
+		for (Curso c : ramosCursados) {
+			if (c.getSemestre() < promedios.length) { // si el ramo ya fue cursado
+				promedios[0] += c.getNotaFinal(); // el semestre 0 va a ser el promedioTotal
+				numCursosSemestre[0]++;
+				promedios[c.getSemestre()] += c.getNotaFinal();
+				numCursosSemestre[c.getSemestre()] ++;
+			}
+		}
+		for (int i = 0; i < promedios.length; i++) {
+			promedios[i] /= numCursosSemestre[i];
+		}
+		
+		return promedios;
+	}
+	public String getDatosCertificacionCompletada() { // para la gui
+		String datos = "";
+		for (Certificacion c : certificaciones) {
+			if (c.getProgreso() == 100) {
+				datos += nombre + " Rut: " + rut + "<br> " + c.getNombre() + " completada.<br>";
+			}
+		}
+		return datos;
+	}
+	public String getDatosCertificado() { // para el archivo
+		String datos = nombre + " Rut: " + rut + "\nHa completado exitosamente la certificacion de ";
+		String fecha = "";
+		for (Certificacion c : certificaciones) {
+			if (c.getProgreso() == 100) {
+				datos += c.getNombre() + ".";
+				fecha = c.getFechaObtencion();
+			}
+		}
+		if (fecha.equals("")) {
+			return "";
+		}
+		datos += "\nFecha: " + fecha;
+		datos += "\nMucho Exito!\n============================\n";
+		return datos;
+	}
+	public String getRut() {
+		return rut;
+	}
+
+	public void setRut(String rut) {
+		this.rut = rut;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getCarrera() {
+		return carrera;
+	}
+
+	public void setCarrera(String carrera) {
+		this.carrera = carrera;
+	}
+
+	public String getSemestre() {
+		return semestre;
+	}
+
+	public void setSemestre(String semestre) {
+		this.semestre = semestre;
+	}
+
+	public String getCorreo() {
+		return nombreUsuario;
+	}
+
+	public void setCorreo(String correo) {
+		this.nombreUsuario = correo;
+	}
+
+	public String getContraseña() {
+		return password;
+	}
+
+	public void setContraseña(String contraseña) {
+		this.password = contraseña;
+	}
+
+	public void agregarCurso(Curso c) {
+		ramosCursados.add(c);
+	}
+
+	public void agregarCertificacion(Certificacion cert) {
+		certificaciones.add(cert);
+	}
+
+	public ArrayList<Curso> getRamosCursados() {
+		return ramosCursados;
+	}
+
+	public ArrayList<Certificacion> getCertificaciones() {
+		return certificaciones;
+	}
+
+	
+
+	
+	
+	
+
+
+
+
+	
+}
