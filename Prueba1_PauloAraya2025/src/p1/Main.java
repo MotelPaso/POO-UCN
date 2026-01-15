@@ -5,11 +5,12 @@ import java.util.ArrayList;
 import java.io.File;
 import java.io.FileNotFoundException;
 
-
 public class Main {
+	// Listas globales de datos
 	private static ArrayList<Usuario> listaUsuarios = new ArrayList<>();
 	private static ArrayList<Chat> listaChats = new ArrayList<>();
 	private static ArrayList<Mensaje> listaMensajes = new ArrayList<>();
+	
 	public static void main(String[] args) throws FileNotFoundException{
 		Scanner s = new Scanner(System.in);
 		cargarArchivos();
@@ -30,20 +31,32 @@ public class Main {
 					+ "Elija su opcion: ");
 			opcion = s.nextLine();
 			switch(opcion) {
-			
 			case "1":
+				/* Muestra los chats disponibles
+			     * id. nombre
+				 * usuarios
+				 * mensajes
+				 */
 				mostrarChats(s);
 				break;
 			case "2":
+				/* Muestra los 3 users con mayor actividad en los chats 
+				 */
 				mostrarUsersMayor();
 				break;
 			case "3":
+				/* Muestra las horas con mayor actividad
+				 */
 				mostrarHorasMayor();
 				break;
 			case "4":
+				/* Edita un chat especifico
+				 */
 				editarChat(s);
 				break;
 			case "5":
+				/* Envia un mensaje semi-global, enviandolo a todos los chats elegidos.
+				 */
 				mensajeGlobal(s);
 				break;
 			case "0":
@@ -58,22 +71,23 @@ public class Main {
 	private static void mensajeGlobal(Scanner s) {
 		System.out.println("Ingrese el mensaje a enviar!");
 		String mensaje = s.nextLine();
-		System.out.println("Id de los chats: ");
 		int opcion = 0;
 		ArrayList<Integer> chats = new ArrayList<Integer>();
 		while (opcion != -1) {
-			System.out.println("Id de los chats: ");
-			opcion = Integer.parseInt(s.nextLine());
-			chats.add(opcion);
+			// es mejor parsear la linea entera a buscar el siguiente int con s.nextInt()
+			try {
+				System.out.println("Id de los chats a reenviar, ingrese -1 para terminar: ");
+				opcion = Integer.parseInt(s.nextLine());
+				chats.add(opcion);
+			} catch (Exception e){
+				throw new NumberFormatException("Tiene que ser un id valido...");
+			}
+			
 		}
 		for(Chat chat: listaChats) {
 			chat.addMensaje(new Mensaje(300, chat.getId(), "hoy", 1000, mensaje));
 		}
-		
-		// TODO: terminar
-		
 	}
-
 	private static void editarChat(Scanner s) {
 		System.out.println("Listado de chats: ");
 		for(Chat chat: listaChats) {
@@ -87,7 +101,7 @@ public class Main {
 				System.out.print("Ingrese el id del usuario que desea agregar! :");
 				int nuevoUsuario = Integer.parseInt(s.nextLine());
 				boolean added = false;
-				for(Usuario user:listaUsuarios) {
+				for(Usuario user: listaUsuarios) {
 					if (nuevoUsuario == user.getId()){
 						listaChats.get(Integer.parseInt(opcion)).addUser(user);
 						added = true;
@@ -128,7 +142,7 @@ public class Main {
 		for (int i = 0; i < 3; i++) {
 			int mayor = 0;
 			int hora = 0;
-			for(Integer cont : contadores) {
+			for (Integer cont : contadores) {
 				if (cont > mayor){
 					mayor = cont;
 					hora = horasDisp.get(contadores.indexOf(mayor));
@@ -144,8 +158,6 @@ public class Main {
 		for (int i = 0; i < 3; i++) {
 			System.out.println(horas[i] + " " + mayores[i]);
 		}
-		
-			
 	}
 
 	private static void mostrarUsersMayor() {
@@ -177,7 +189,7 @@ public class Main {
 		System.out.println("Eliga el chat que desea ver! ");
 		String opcion = s.nextLine();
 		boolean encontrado = false;
-		for (Chat chat:listaChats) {
+		for (Chat chat : listaChats) {
 			if (opcion.equals(String.valueOf(chat.getId()))) {
 				encontrado = chat.mostrarDetalles();
 			}
